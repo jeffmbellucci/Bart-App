@@ -1,7 +1,7 @@
 BartApp::Application.routes.draw do
   resources :stations
   
-  root to: "station#index"
+  root to: "stations#index"
 end
   
   # The priority is based upon order of creation:

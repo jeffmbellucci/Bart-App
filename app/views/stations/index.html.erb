@@ -1,0 +1,5 @@
+<h1>All Station </h1>
+<% @stations.each do |station| %>
+<%= link_to station.name, station_url(station), id: station.abbr, class: "station" %>
+<br>
+<% end %>

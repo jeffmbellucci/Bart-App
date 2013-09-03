@@ -10,6 +10,7 @@ gem 'pg'
 gem 'addressable', require: 'addressable/uri'
 gem 'httparty'
 gem 'nokogiri'
+gem 'json'
 
 # Gems used only for assets and not required
 # in production environments by default.
