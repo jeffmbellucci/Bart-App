@@ -41,3 +41,12 @@ ssan	South San Francisco
 ucty	Union City
 wcrk	Walnut Creek
 woak	West Oakland
+
+
+<% #color = data["root"]["station"]["etd"]["estimate"]["color"]%>
+<%= color %>
+<br>
+<%= # data["root"]["station"]["etd"]["destination"]%>
+<br>
+<%= # data["root"]["station"]["etd"]["estimate"]["minutes"]%>
+

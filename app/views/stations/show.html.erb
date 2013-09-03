@@ -1,3 +1,17 @@
-<%= @station.name %>
+<% data = get_station_data(@station.abbr) %>
+<h1><%= data["root"]["station"]["name"]%></h1>
 <br>
-<%= get_station_data(@station.abbr).to_json %>
+<%= data["root"]%>
+<br>
+<br>
+<% unless data["root"]["message"]["warning"] %>
+
+	<% color = data["root"]["station"]["etd"]["estimate"]["color"]%>
+	<%= color %>
+	<br>
+	<%=  data["root"]["station"]["etd"]["destination"]%>
+	<br>
+	<%=  data["root"]["station"]["etd"]["estimate"]["minutes"]%>
+<%else%>
+	<%= data["root"]["message"]["warning"]%>
+<% end %>
