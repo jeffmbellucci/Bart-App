@@ -14,7 +14,10 @@ module StationsHelper
       
     response = HTTParty.get(bart_query).to_json
     json_response = JSON.parse(response)
-    #if json_response[]
+    unless json_response['root']['station']['etd'].is_a?(Array)
+      json_response['root']['station']['etd'] = [json_response['root']['station']['etd']]
+    end
+    json_response
   end
     
 end
