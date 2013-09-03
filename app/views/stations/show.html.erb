@@ -1,5 +1,5 @@
 <% data = get_station_data(@station.abbr) %>
-<h1><%= data['root']['station']['name']%></h1>
+<h4><%= data['root']['station']['name']%></h4>
 
 <% unless data['root']['message'] %>
 	<% lines = data['root']['station']['etd'] %>
