@@ -1,8 +1,9 @@
 <h1>All Stations </h1>
 
 <h2><%= link_to "Times for All Stations", all_stations_url %></h2>
-
-<% @stations.each do |station| %>
-<%= link_to station.name, station_url(station), id: station.abbr, class: "station" %>
-<br>
-<% end %>
+<div id="stations">
+	<% @stations.each do |station| %>
+		<%= link_to station.name, station_url(station), id: station.id, class: "station" %>
+		<br>
+	<% end %>
+</div>
