@@ -1,17 +1,19 @@
 <% data = get_station_data(@station.abbr) %>
-<h1><%= data["root"]["station"]["name"]%></h1>
-<br>
-<%= data["root"]%>
-<br>
-<br>
-<% unless data["root"]["message"]["warning"] %>
+<h1><%= data['root']['station']['name']%></h1>
 
-	<% color = data["root"]["station"]["etd"]["estimate"]["color"]%>
-	<%= color %>
-	<br>
-	<%=  data["root"]["station"]["etd"]["destination"]%>
-	<br>
-	<%=  data["root"]["station"]["etd"]["estimate"]["minutes"]%>
+<% unless data['root']['message'] %>
+	<% lines = data['root']['station']['etd'] %>
+	<% lines.each do |line|%>
+	
+		<span class='train <%=line['estimate'][0]['color'].downcase%>'><%= line['destination'] %></span>
+		<% times = line['estimate'] %>
+		<% times.each do |time|%>
+			<%= time['minutes'] + " min" unless time['minutes'] == 'Leaving'%>
+			<%= time['minute'] if time['minutes'] == 'Leaving'%>
+		<% end %>
+		<br>
+	<% end %>
+	
 <%else%>
-	<%= data["root"]["message"]["warning"]%>
+	<%= data['root']['message']['warning']%>
 <% end %>

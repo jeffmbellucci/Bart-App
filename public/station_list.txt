@@ -43,10 +43,14 @@ wcrk	Walnut Creek
 woak	West Oakland
 
 
-<% #color = data["root"]["station"]["etd"]["estimate"]["color"]%>
-<%= color %>
-<br>
-<%= # data["root"]["station"]["etd"]["destination"]%>
-<br>
-<%= # data["root"]["station"]["etd"]["estimate"]["minutes"]%>
+<% unless data["root"]["message"]["warning"] %>
 
+	<% color = data["root"]["station"]["etd"]["estimate"]["color"]%>
+	<%= color %>
+	<br>
+	<%=  data["root"]["station"]["etd"]["destination"]%>
+	<br>
+	<%=  data["root"]["station"]["etd"]["estimate"]["minutes"]%>
+<%else%>
+	<%= data["root"]["message"]["warning"]%>
+<% end %>

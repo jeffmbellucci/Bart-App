@@ -13,7 +13,8 @@ module StationsHelper
         })
       
     response = HTTParty.get(bart_query).to_json
-    JSON.parse(response)
+    json_response = JSON.parse(response)
+    #if json_response[]
   end
     
 end
