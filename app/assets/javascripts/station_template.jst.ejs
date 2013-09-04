@@ -1,20 +1,22 @@
 <h4><%= data['root']['station']['name'] %></h4>
 
-<% if (data['root']['message']) { %>
+<% if (data['root']['message'] != 'null') { %>
 	<%= data['root']['message'] %>
-// <% } else {%>
-// 	<% lines = data['root']['station']['etd'] %>
-// 	<% for (i = 0; i < lines.length; i++) { %>
-// 	
-// 		<span class='train <%=lines[i]['estimate'][0]['color'].toLowerCase(); %>'><%= lines[i]['destination'] %></span>
-// 		<% times = lines[i]['estimate'] %>
-// 		<% for (j = 0; j < times.length; j++) { %>
-// 			<% if (times[i][minutes] != "Leaving" ) { %>
-// 				<%= times[i]['minutes'] + " min" %>
-// 				<% } else { %>
-// 				<%= times[i]['minutes'] + "," %>
-// 			<% } %>
-// 		<% } %>
-// 		<br>
-// 	<% } %>	
+<% } else { %>
+	
+	// bug below
+	<% lines = data['root']['station']['etd'] %>
+	<% for (var i = 0; i < lines.length; i++) { %>
+	
+		<span class='train <%=lines[i]['estimate'][0]['color'].toLowerCase(); %>'><%= lines[i]['destination'] %></span>
+		<% times = lines[i]['estimate'] %>
+		<% for (var j = 0; j < times.length; j++) { %>
+			<% if (times[j][minutes] != "Leaving" ) { %>
+				<%= times[j]['minutes'] + " min" %>
+				<% } else { %>
+				<%= times[j]['minutes'] + "," %>
+			<% } %>
+		<% } %>
+		<br>
+	<% } %>	
 <% } %>

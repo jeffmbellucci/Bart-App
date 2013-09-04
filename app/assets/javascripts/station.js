@@ -1,13 +1,13 @@
 $(document).ready(function() {
 	$('#stations a').on('click', function() {
-		//event.preventDefault();
+		event.preventDefault();
 		var $link = this;
 		console.log($link.id);
 		$($link).prepend($link.id + "  ");
 		getStationData($link.id, function(data){
 			var stationTemplateFn = JST["station_template"];
 			var contentToAdd = stationTemplateFn({data: data});
-			$($link).prepend(contentToAdd.html());
+			$($link).prepend(contentToAdd);
 		});
 		
 		
