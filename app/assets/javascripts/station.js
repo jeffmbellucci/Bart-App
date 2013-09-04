@@ -8,7 +8,7 @@ $(document).ready(function() {
 		getStationData($link.id, function(data){
 			var stationTemplateFn = JST["station_template"];
 			var contentToAdd = stationTemplateFn({data: data});
-			$(contentToAdd).hide().prependTo($link).fadeIn('fast');
+			$(contentToAdd).hide().prependTo($link).fadeIn('fast'); 
 			closeAllTimes();
 		});		
 	});
