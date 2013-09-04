@@ -9,11 +9,11 @@
 		<% times = line['estimate'] %>
 		<% times.each do |time|%>
 			<%= time['minutes'] + " min" unless time['minutes'] == 'Leaving'%>
-			<%= time['minutes'] if time['minutes'] == 'Leaving'%>
+			<%= time['minutes'] +"," if time['minutes'] == 'Leaving'%>
 		<% end %>
 		<br>
 	<% end %>
 	
-<%else%>
-	<%= data['root']['message']['warning']%>
+<% else %>
+	<%= data['root']['message'] %>
 <% end %>
