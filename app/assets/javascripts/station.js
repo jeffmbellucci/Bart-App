@@ -1,6 +1,13 @@
 $(document).ready(function() {
-	$('#stations').on('click', function() {
-		alert("click");
+	$('#stations a').on('click', function() {
+		event.preventDefault();
+		var $link = this;
+		console.log($link.id);
+		
+		var station = getStationData($link.id, parseStationData);
+		$($link).prepend($link.id);
+		
+		console.log(station);
 	});
 });
 
@@ -18,10 +25,9 @@ function getStationData(id, callback) {
 
 function parseStationData(data) {
 	var stationName = data['root']['station']['name'];
-	console.log(stationName);
 	var linesArray = data['root']['station']['etd'];
-	for (var i = 0; i < linesArray.length, i++) {
-		console.log(linesArray[i])
+	for (var i = 0; i < linesArray.length; i++) {
+		console.log(linesArray[i]);
 	}
-	console.log(linesArray)
+	return stationName;
 }
