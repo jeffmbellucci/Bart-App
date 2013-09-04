@@ -8,15 +8,15 @@ $(document).ready(function() {
 		getStationData($link.id, function(data){
 			var stationTemplateFn = JST["station_template"];
 			var contentToAdd = stationTemplateFn({data: data});
-			$($link).prepend(contentToAdd);
-		});
-			
+			$(contentToAdd).hide().prependTo($link).fadeIn('fast');
+			closeAllTimes();
+		});		
 	});
 });
 
 // append template to li
 
-
+// div onclick='functionName();
 //this way the callback has access to the link variable
 // use anonymous function (data) {}
 
@@ -26,6 +26,14 @@ function getStationData(id, callback) {
 		url: ("/stations/").concat(id).concat(".json"),
 		success: callback
 	});
-}
+};
 
+
+function closeAllTimes() {
+	$(document).ready(function() {
+		$('#closeLink').on('click', function () {
+			$('.stationDetailView').hide();
+		});
+	});
+};
 
