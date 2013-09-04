@@ -1,22 +1,26 @@
+<div id= <%=data['root']['station']['abbr'].toLowerCase() %> class="stationDetailView">
+
 <h4><%= data['root']['station']['name'] %></h4>
 
-<% if (data['root']['message'] != 'null') { %>
+<% if (data['root']['message']) { %>
 	<%= data['root']['message'] %>
 <% } else { %>
-	
-	// bug below
 	<% lines = data['root']['station']['etd'] %>
 	<% for (var i = 0; i < lines.length; i++) { %>
-	
-		<span class='train <%=lines[i]['estimate'][0]['color'].toLowerCase(); %>'><%= lines[i]['destination'] %></span>
+		<span class='train <%=lines[i]['estimate'][0]['color'].toLowerCase() %>'>
+			<%= lines[i]['destination'] %>
+		</span>
 		<% times = lines[i]['estimate'] %>
 		<% for (var j = 0; j < times.length; j++) { %>
-			<% if (times[j][minutes] != "Leaving" ) { %>
+			<% if (times[j]['minutes'] != "Leaving" ) { %>
 				<%= times[j]['minutes'] + " min" %>
 				<% } else { %>
 				<%= times[j]['minutes'] + "," %>
-			<% } %>
-		<% } %>
+			<% }; %>
+		<% }; %>
 		<br>
-	<% } %>	
-<% } %>
+	
+	<% }; %>
+<% }; %>
+	
+</div>

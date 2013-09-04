@@ -5,7 +5,9 @@
 	<% lines = data['root']['station']['etd'] %>
 	<% lines.each do |line|%>
 	
-		<span class='train <%=line['estimate'][0]['color'].downcase %>'><%= line['destination'] %></span>
+		<span class='train <%=line['estimate'][0]['color'].downcase %>'>
+			<%= line['destination'] %>
+		</span>
 		<% times = line['estimate'] %>
 		<% times.each do |time|%>
 			<%= time['minutes'] + " min" unless time['minutes'] == 'Leaving'%>

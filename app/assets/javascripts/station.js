@@ -2,17 +2,19 @@ $(document).ready(function() {
 	$('#stations a').on('click', function() {
 		event.preventDefault();
 		var $link = this;
+		
 		console.log($link.id);
-		$($link).prepend($link.id + "  ");
+		
 		getStationData($link.id, function(data){
 			var stationTemplateFn = JST["station_template"];
 			var contentToAdd = stationTemplateFn({data: data});
 			$($link).prepend(contentToAdd);
 		});
-		
-		
+			
 	});
 });
+
+// append template to li
 
 
 //this way the callback has access to the link variable
@@ -26,12 +28,4 @@ function getStationData(id, callback) {
 	});
 }
 
-// function parseStationData(data) {
-// 	var stationName = data['root']['station']['name'];
-// 	var linesArray = data['root']['station']['etd'];
-// 	for (var i = 0; i < linesArray.length(); i++) {
-// 		console.log(linesArray[i]);
-// 	}
-// 	console.log(JST["station_template"]);
-// }
 
