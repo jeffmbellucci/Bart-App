@@ -1,6 +1,8 @@
 $(document).ready(function() {
 	$('#stations a').on('click', function() {
 		event.preventDefault();
+		closeAllTimes();
+		
 		var $link = this;
 		
 		console.log($link.id);
@@ -8,8 +10,8 @@ $(document).ready(function() {
 		getStationData($link.id, function(data){
 			var stationTemplateFn = JST["station_template"];
 			var contentToAdd = stationTemplateFn({data: data});
-			$(contentToAdd).hide().prependTo($link).fadeIn('fast'); 
-			closeAllTimes();
+			$(contentToAdd).hide().prependTo($($link).parent()).fadeIn('fast'); 
+			closeListener();
 		});		
 	});
 });
@@ -28,12 +30,14 @@ function getStationData(id, callback) {
 	});
 };
 
+function closeListener() {
+	$(document).ready(function() {
+		$('.closeLink').on('click', closeAllTimes)
+	});
+}
 
 function closeAllTimes() {
-	$(document).ready(function() {
-		$('#closeLink').on('click', function () {
-			$('.stationDetailView').hide();
-		});
-	});
+	$('.bubble').hide();
 };
+	
 

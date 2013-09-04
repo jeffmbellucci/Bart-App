@@ -1,8 +1,8 @@
-<div id= <%=data['root']['station']['abbr'].toLowerCase() %> class="stationDetailView">
+<div id= <%=data['root']['station']['abbr'].toLowerCase() %> class="bubble stationDetailView">
+<span class="closeLink"> <a>close X</a> </span>
 
 <div id="stationTitle">
 	<h4><%= data['root']['station']['name'] %></h4>
-		<span id="closeLink"> <a>close X</a> </span>
 </div>
 
 <% if (data['root']['message']) { %>
