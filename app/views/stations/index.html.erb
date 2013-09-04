@@ -3,7 +3,7 @@
 <h2><%= link_to "Times for All Stations", all_stations_url %></h2>
 <div id="stations">
 	<% @stations.each do |station| %>
-		<%= link_to station.name, station_url(station), id: station.id, class: "station" %>
+		<%= link_to station.name, station_url(station), id: station.id, class: "station #{station.abbr}" %>
 		<br>
 	<% end %>
 </div>

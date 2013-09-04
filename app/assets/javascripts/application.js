@@ -15,3 +15,4 @@
 //= require bootstrap
 //= require underscore
 //= require station
+//= require station_template

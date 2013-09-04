@@ -49,6 +49,7 @@ GEM
     crack (0.4.1)
       safe_yaml (~> 0.9.0)
     debug_inspector (0.0.2)
+    ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.0.1)
     hike (1.2.3)
@@ -131,6 +132,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 3.2.1)
   crack
+  ejs
   httparty
   jquery-rails
   json

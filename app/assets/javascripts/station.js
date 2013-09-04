@@ -1,18 +1,18 @@
 $(document).ready(function() {
 	$('#stations a').on('click', function() {
-		event.preventDefault();
+		//event.preventDefault();
 		var $link = this;
 		console.log($link.id);
+		$($link).prepend($link.id +"  ");
+		var station = getStationData($link.id, function(data){});
 		
-		var station = getStationData($link.id, parseStationData);
-		$($link).prepend($link.id);
 		
-		console.log(station);
 	});
 });
 
 
-
+//this way the callback has access to the link variable
+// use anonymous function (data) {}
 
 function getStationData(id, callback) {
 	$.ajax({
@@ -22,6 +22,9 @@ function getStationData(id, callback) {
 	});
 }
 
+// function prependHelper(data, $el) {
+// 	$($el).prepend(parseStationData(data));
+// }
 
 function parseStationData(data) {
 	var stationName = data['root']['station']['name'];
@@ -29,5 +32,7 @@ function parseStationData(data) {
 	for (var i = 0; i < linesArray.length; i++) {
 		console.log(linesArray[i]);
 	}
-	return stationName;
+	console.log(JST["station_template"]);
 }
+
+this.template({data: data})

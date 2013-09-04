@@ -13,6 +13,7 @@ gem 'nokogiri'
 gem 'json'
 gem 'crack'
 gem 'simple_form'
+gem 'ejs'
 
 # Gems used only for assets and not required
 # in production environments by default.
