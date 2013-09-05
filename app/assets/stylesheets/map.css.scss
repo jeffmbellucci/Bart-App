@@ -1,6 +1,6 @@
 #stationsMap {
 	position: relative;
-	background-image: url('map_with_names.png');
+	background-image: url('map_no_text.png');
 	background-repeat: no-repeat;
 	width:800px;
 	height:800px;
@@ -260,7 +260,9 @@ position: absolute;
 	left:68.7%;
 } 
 #station_wdub {
-	position: absolute; 
+position: absolute; 
+	top: 69.4%;
+	left: 82.5%;
 }
 
 #station_woak { 
