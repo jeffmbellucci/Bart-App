@@ -59,3 +59,19 @@ background:url('http://i48.tinypic.com/1p7yg9.png') center right no-repeat;
 800 wide
 
 mdn positioning css
+
+
+//write css
+<% @stations.each { |station| %>
+	<%= "##{station.abbr} { " %>
+	<br>
+	position: absolute;
+	<br>
+	
+	<br>
+	
+	<br>
+	}
+	<br>
+	<br>
+<% } %>
