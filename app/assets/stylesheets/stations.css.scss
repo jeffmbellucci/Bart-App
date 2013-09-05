@@ -1,34 +1,12 @@
 .train
 {
 	font-size: medium;
-	font-weight: bold;
+	font-weight: normal;
 	text-shadow: -0px 0 black, 0 1px black,
       1px 0 black, 0 -1px black
  }
 
- .stationTitleContainer
- {
- 	
- }
- .stationTitle
- {
- 	display: inline;
- 	h4 {
-		width:80%;
-		display: inline;
- 		text-align: left;
- 		line-height: 10px;
- 	}
- }
-
-
-.closeLink {
-	font-family: Ariel;
-	position: absolute;
-	top: 3px;
-	right: 10px;
-}
-
+ 
 .blue
 {
 	color: #0099cc;
@@ -59,6 +37,11 @@
 	color: #ffffff;
 }
 
+.stationLink {
+	a:active { 
+		color: yellow;
+	}  /* selected link */
+}
 
 
 //make container with the map inside

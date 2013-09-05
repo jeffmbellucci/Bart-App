@@ -1,11 +1,11 @@
 <h1>All Stations </h1>
 
 <h2><%= link_to "Times for All Stations", all_stations_url %></h2>
-<div id="stations">
+<div id="stationsMap">
 	<ul id= "stationsList">
 	<% @stations.each do |station| %>
 	<li>
-		<%= link_to station.name, station_url(station), id: station.id, class: "station #{station.abbr}" %>
+		<%= link_to station.name, station_url(station), id: station.id, class: "stationLink #{station.abbr}" %>
 	</li>
 	<% end %>
 	</ul>

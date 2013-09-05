@@ -1,1 +1,21 @@
-a:hover {cursor: pointer; };
+
+a:link { color: black;}      /* unvisited link */
+a:visited { color: black; }  /* visited link */
+a:active { 
+	color: yellow;
+}  /* selected link */
+a:hover {
+	text-decoration: none;
+	font-size:110%;
+	cursor: pointer;
+	color: red;
+}  /* mouse over link */
+
+ul {
+	list-style-type:none;
+	padding:0px;
+	margin:0px;
+}
+li {
+	line-height: 55px;
+}
