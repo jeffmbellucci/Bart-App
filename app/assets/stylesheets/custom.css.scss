@@ -1,6 +1,8 @@
 
-a:link { color: black;}      /* unvisited link */
-a:visited { color: black; }  /* visited link */
+body { background-color: #E6E6E6;}
+
+a:link { color: blue; }      /* unvisited link */
+a:visited { color: blue; }  /* visited link */
 a:hover {
 	text-decoration: none;
 	font-size:110%;
@@ -9,9 +11,9 @@ a:hover {
 }  /* mouse over link */
 
 ul {
-	list-style-type:none;
-	padding:0px;
-	margin:0px;
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
 }
 li {
 	line-height: 70px;

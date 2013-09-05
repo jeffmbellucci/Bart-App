@@ -1,6 +1,5 @@
 
-.bubble 
-{
+.bubble {
 position: relative;
 width: 240px;
 //removed height so div would size dinamically
@@ -17,8 +16,7 @@ border-radius: 20px;
 line-height: 20px;	
 }
 
-.bubble:after 
-{
+.bubble:after {
 content: "";
 position: absolute;
 bottom: -25px;
@@ -31,8 +29,7 @@ width: 0;
 z-index: 1;
 }
 
-.bubble:before 
-{
+.bubble:before {
 content: "";
 position: absolute;
 bottom: -30px;
@@ -45,14 +42,12 @@ width: 0;
 z-index: 0;
 }
 
- .stationTitleContainer
- { 
+.stationTitleContainer { 
 	 padding-right:40px;
 	 margin-bottom:5px;
  }
  
- .stationTitle
- {
+.stationTitle {
  	display: inline;
  	h4 {
 		display: inline;

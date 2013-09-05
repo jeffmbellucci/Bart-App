@@ -43,51 +43,19 @@ wcrk	Walnut Creek
 woak	West Oakland
 
 
+div stationsMap
+.stationMap {
+postion:relative
+back-ground-image: url (/assets/images)
+}
+li id abbr
+position absolute
 
-
-.bubble
-{
-	position: relative;
-	width: 300px;
-	height: 200px;
-	text-align: left;
-	line-height: 20px;
-	background-color: #fff;
-	border: 4px solid #666;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	-webkit-box-shadow: 2px 2px 4px #888;
-	-moz-box-shadow: 2px 2px 4px #888;
-	box-shadow: 2px 2px 4px #888;
-	h4 {
-		text-align: center;
-	}
-	a {
-		text-align: right;
-	}
+background:url('http://i48.tinypic.com/1p7yg9.png') center right no-repeat;
+    position: relative;
+    right: -21px;
 }
 
-.bubble:before
-{
-	content: ' ';
-	position: relative;
-	width: 0;
-	height: 0;
-	left: 30px;
-	top: 220px;
-	border: 4px solid;
-	border-color: #666 transparent transparent #666;
-}
-.bubble:after
-{
-	content: ' ';
-	position: absolute;
-	width: 0;
-	height: 0;
-	left: 38px;
-	top: 220px;
-	border: 4px solid;
-	border-color: #fff transparent transparent #fff;
-}
-	
+800 wide
+
+mdn positioning css

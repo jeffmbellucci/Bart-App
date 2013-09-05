@@ -4,9 +4,17 @@
 <div id="stationsMap">
 	<ul id= "stationsList">
 	<% @stations.each do |station| %>
-	<li>
-		<%= link_to station.name, station_url(station), id: station.id, class: "stationLink #{station.abbr}" %>
+	<li id= <%= station.abbr %> >
+		<%= link_to station.name, station_url(station), id: station.id, class: "stationLink" %>
 	</li>
 	<% end %>
 	</ul>
 </div>
+
+<% @stations.each { |station| %>
+	<%= "##{station.abbr} { " %>
+	<br>
+	position: absolute;
+	<br>
+	<br>
+<% } %>
