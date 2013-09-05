@@ -8,9 +8,14 @@ $(document).ready(function() {
 		console.log($link.id);
 		
 		getStationData($link.id, function(data){
+			trains = getNumTrains(data);
+			bubbleHeight = (trains * 20 + 40) + "px";
+			console.log(bubbleHeight);
 			var stationTemplateFn = JST["station_template"];
 			var contentToAdd = stationTemplateFn({data: data});
-			$(contentToAdd).hide().prependTo($($link).parent()).fadeIn('fast'); 
+			
+			$(contentToAdd).hide().prependTo($($link).parent()).fadeIn('slow');
+			//$(".bubble").css("height", bubbleHeight);
 			closeListener();
 		});		
 	});
@@ -39,5 +44,10 @@ function closeListener() {
 function closeAllTimes() {
 	$('.bubble').hide();
 };
+
+function getNumTrains(data) {
+	var num = data['root']['station']['etd'].length;
+	return num;
+}
 	
 

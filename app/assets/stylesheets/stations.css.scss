@@ -6,10 +6,28 @@
       1px 0 black, 0 -1px black
  }
 
- .station
+ .stationTitleContainer
  {
  	
  }
+ .stationTitle
+ {
+ 	display: inline;
+ 	h4 {
+		width:80%;
+		display: inline;
+ 		text-align: left;
+ 		line-height: 10px;
+ 	}
+ }
+
+
+.closeLink {
+	font-family: Ariel;
+	position: absolute;
+	top: 3px;
+	right: 10px;
+}
 
 .blue
 {
@@ -41,7 +59,7 @@
 	color: #ffffff;
 }
 
-#stationTitle
-{
-	
-}
+
+
+//make container with the map inside
+//make position of links absolute inside of that container
