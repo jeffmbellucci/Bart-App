@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	$('#stationsMap a').on('click', function() {
 		event.preventDefault();
-		closeAllTimes();
 		
 		var $link = this;
+		closeAllTimes();
 		
 		console.log($link.id);
 		
@@ -12,9 +12,9 @@ $(document).ready(function() {
 			var stationTemplateFn = JST["station_template"];
 			var contentToAdd = stationTemplateFn({data: data});
 			
-			$(contentToAdd).hide().prependTo($($link).parent()).fadeIn(1000);
+			$(contentToAdd).hide().prependTo($($link).parent()).fadeIn(600);
 			
-			closeListener();
+			addCloseListener();
 		});		
 	});
 });
@@ -22,8 +22,7 @@ $(document).ready(function() {
 // append template to li
 
 // div onclick='functionName();
-//this way the callback has access to the link variable
-// use anonymous function (data) {}
+
 
 function getStationData(id, callback) {
 	$.ajax({
@@ -33,7 +32,7 @@ function getStationData(id, callback) {
 	});
 };
 
-function closeListener() {
+function addCloseListener() {
 	$(document).ready(function() {
 		$('.closeLink').on('click', closeAllTimes)
 	});

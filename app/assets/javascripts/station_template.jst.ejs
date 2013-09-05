@@ -18,8 +18,14 @@
 		<% times = lines[i]['estimate'] %>
 		<% for (var j = 0; j < times.length; j++) { %>
 			<% if (times[j]['minutes'] != "Leaving" ) { %>
-				<%= times[j]['minutes'] + " min" %>
-				<% } else { %>
+				<% if (j === times.length - 1) { %>
+					<%= times[j]['minutes'] + " min" %>
+				<% } else {%>
+					<%= times[j]['minutes'] + " min," %>
+				<% } %>
+			<% } else if (j === times.length - 1) { %>
+				<%= times[j]['minutes'] %>
+			<% } else { %>
 				<%= times[j]['minutes'] + "," %>
 			<% }; %>
 		<% }; %>
