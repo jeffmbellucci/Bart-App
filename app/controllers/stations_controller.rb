@@ -1,7 +1,6 @@
 class StationsController < ApplicationController
   include StationsHelper
   
-  
   def index
     @stations = Station.all
     render :index

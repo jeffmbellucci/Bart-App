@@ -20,9 +20,7 @@ $(document).ready(function() {
 });
 
 // append template to li
-
-// div onclick='functionName();
-
+// div onclick='functionName()';
 
 function getStationData(id, callback) {
 	$.ajax({
@@ -34,17 +32,17 @@ function getStationData(id, callback) {
 
 function addCloseListener() {
 	$(document).ready(function() {
-		$('.closeLink').on('click', closeAllTimes)
+		$('.closeLink').on('click', closeAllTimes);	
 	});
 }
 
 function closeAllTimes() {
-	$('.bubble').hide();
+	$('.bubble').fadeOut(400); // versus hide() ???
 };
 
 function getNumLines(data) {
 	var num = data['root']['station']['etd'].length;
 	return num;
-}
+};
 	
 
