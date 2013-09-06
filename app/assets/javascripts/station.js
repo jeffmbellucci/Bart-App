@@ -12,7 +12,7 @@ $(document).ready(function() {
 			var stationTemplateFn = JST["station_template"];
 			var contentToAdd = stationTemplateFn({data: data});
 			
-			$(contentToAdd).hide().prependTo($($link).parent()).fadeIn(600);
+			$(contentToAdd).hide().prependTo($($link).parent()).fadeIn(200);
 			
 			addCloseListener();
 		});		
@@ -37,7 +37,7 @@ function addCloseListener() {
 }
 
 function closeAllTimes() {
-	$('.bubble').fadeOut(400); // versus hide() ???
+	$('.bubble').fadeOut(200); // versus hide() ???
 };
 
 function getNumLines(data) {
