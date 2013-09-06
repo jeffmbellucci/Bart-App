@@ -78,3 +78,9 @@ mdn positioning css
 <% } %>
 
 - put up spinner
+- make new bubble first
+- media query for different device sizes
+- map 768 x 768 for ipad?
+- pop up bubble first, then add spinner
+- spinner display:none, use jqery to show, then hide
+
