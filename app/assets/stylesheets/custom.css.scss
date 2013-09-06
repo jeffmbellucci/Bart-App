@@ -1,5 +1,14 @@
 
-body { background-color: #E6E6E6;}
+body {
+	background-color: #444444;
+    text-align: center; 
+}
+
+.centered {
+    margin: 0 auto;
+    text-align: left;
+    width: 800px;
+}
 
 a:link { color: black; }      /* unvisited link */
 a:visited { color: black; }  /* visited link */

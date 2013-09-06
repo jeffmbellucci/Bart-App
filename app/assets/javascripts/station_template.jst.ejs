@@ -8,6 +8,7 @@
 <% if (data['root']['message']) { %>
 	<%= data['root']['message'] %>
 <% } else { %>
+	
 	<% lines = data['root']['station']['etd'] %>
 	<% for (var i = 0; i < lines.length; i++) { %>
 		
@@ -30,9 +31,11 @@
 			<% }; %>
 		<% }; %>
 		
-		<br>
-	
 	<% }; %>
 <% }; %>
-	
+
+<div class='currentTime'>
+	Times as of <%= data['root']['time'].substring(0, data['root']['time'].length - 3) %>  
+</div>
+
 </div>

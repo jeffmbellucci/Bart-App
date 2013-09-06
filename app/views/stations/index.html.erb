@@ -1,7 +1,7 @@
 <h1>All Stations </h1>
 
 <h2><%= link_to "Times for All Stations", all_stations_url %></h2>
-<div id="stationsMap">
+<div id="stationsMap" class="centered">
 	<ul id= "stationsList">
 	<% @stations.each do |station| %>
 	<li id= "station_<%= station.abbr %>" >

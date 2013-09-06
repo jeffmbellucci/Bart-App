@@ -4,7 +4,7 @@ position: absolute;
 bottom: 33px;
 left: -110px; /* Scooches bubble down 20px */
 z-index: 1;
-width: 250px;
+width: 240px;
 //removed height so div would size dinamically
 padding-top:5px;
 padding-bottom: 5px;
@@ -74,4 +74,13 @@ z-index: 0;
 	a:active { 
 		color: black;
 	}  /* selected link */
+}
+
+.currentTime {
+	padding-top:0px;
+	margin-top:0px;
+	font-family: futura;
+	font-size: smaller;
+	text-align: center;
+	bottom: 2px;
 }
