@@ -7,15 +7,19 @@ $(document).ready(function() {
 		
 		console.log($link.id);
 		
+		//show bubble template
+		//add spinner
+		
 		getStationData($link.id, function(data){
 			
 			var stationTemplateFn = JST["station_template"];
 			var contentToAdd = stationTemplateFn({data: data});
-			
+			// hide spinner
 			$(contentToAdd).hide().prependTo($($link).parent()).fadeIn(200);
 			
 			addCloseListener();
-		});		
+		});	
+			
 	});
 });
 

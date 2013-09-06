@@ -40,6 +40,7 @@ shay	South Hayward
 ssan	South San Francisco
 ucty	Union City
 wcrk	Walnut Creek
+wdub	West Dublin/Pleasanton
 woak	West Oakland
 
 
@@ -75,3 +76,5 @@ mdn positioning css
 	<br>
 	<br>
 <% } %>
+
+- put up spinner
