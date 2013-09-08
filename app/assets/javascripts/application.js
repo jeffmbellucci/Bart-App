@@ -16,3 +16,4 @@
 //= require underscore
 //= require station
 //= require station_template
+//= require spinner_template

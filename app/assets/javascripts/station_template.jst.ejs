@@ -1,43 +1,43 @@
-<div id= <%=data['root']['station']['abbr'].toLowerCase() + "TimesView" %> class="bubble">
+<div id= <%= "TimesView" %> class="bubble">
 
-<div class="stationTitleContainer">
-	<div class="stationTitle"> <h4> <%= data['root']['station']['name'] %> </h4> </div>
-	<div class="closeLink"> <a>close</a> </div>
-</div>
+	<div class="stationTitleContainer">
+		<div class="stationTitle"> <h4> <%= data['root']['station']['name'] %> </h4> </div>
+		<div class="closeLink"> <a>close</a> </div>
+	</div>
 
-<% if (data['root']['message']) { %>
-	<%= data['root']['message'] %>
-<% } else { %>
+	<% if (data['root']['message']) { %>
+		<%= data['root']['message'] %>
+	<% } else { %>
 	
-	<% lines = data['root']['station']['etd'] %>
-	<% for (var i = 0; i < lines.length; i++) { %>
+		<% lines = data['root']['station']['etd'] %>
+		<% for (var i = 0; i < lines.length; i++) { %>
 		
-		<span class='train <%=lines[i]['estimate'][0]['color'].toLowerCase() %>'>
-			<%= lines[i]['destination'] %>
-		</span>
+			<span class='train <%=lines[i]['estimate'][0]['color'].toLowerCase() %>'>
+				<%= lines[i]['destination'] %>
+			</span>
 		
-		<% times = lines[i]['estimate'] %>
-		<% for (var j = 0; j < times.length; j++) { %>
-			<% if (times[j]['minutes'] != "Leaving" ) { %>
-				<% if (j === times.length - 1) { %>
-					<%= times[j]['minutes'] + " min" %>
-				<% } else {%>
+			<% times = lines[i]['estimate'] %>
+			<% for (var j = 0; j < times.length; j++) { %>
+				<% if (times[j]['minutes'] != "Leaving" ) { %>
+					<% if (j === times.length - 1) { %>
+						<%= times[j]['minutes'] + " min" %>
+					<% } else {%>
+						<%= times[j]['minutes'] + "," %>
+					<% } %>
+				<% } else if (j === times.length - 1) { %>
+					<%= times[j]['minutes'] %>
+				<% } else { %>
 					<%= times[j]['minutes'] + "," %>
-				<% } %>
-			<% } else if (j === times.length - 1) { %>
-				<%= times[j]['minutes'] %>
-			<% } else { %>
-				<%= times[j]['minutes'] + "," %>
+				<% }; %>
 			<% }; %>
+		
+			<br>
+		
 		<% }; %>
-		
-		<br>
-		
 	<% }; %>
-<% }; %>
 
-<div class='currentTime'>
-	Times as of <%= data['root']['time'].substring(0, data['root']['time'].length - 3) %>  
-</div>
+	<div class='currentTime'>
+		Times as of <%= data['root']['time'].substring(0, data['root']['time'].length - 3) %>  
+	</div>
 
 </div>

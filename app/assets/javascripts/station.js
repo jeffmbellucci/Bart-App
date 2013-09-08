@@ -7,16 +7,17 @@ $(document).ready(function() {
 		
 		console.log($link.id);
 		
-		//show bubble template
-		//add spinner
-		
+		var spinnerView = JST["spinner_template"]();
+		$(spinnerView).hide().prependTo($($link).parent()).fadeIn(200);
+		 addCloseListener();
+		 
 		getStationData($link.id, function(data){
 			
 			var stationTemplateFn = JST["station_template"];
-			var contentToAdd = stationTemplateFn({data: data});
-			// hide spinner
-			$(contentToAdd).hide().prependTo($($link).parent()).fadeIn(200);
+			var timesView = stationTemplateFn({data: data});
+			closeSpinner();
 			
+			$(timesView).prependTo($($link).parent());
 			addCloseListener();
 		});	
 			
@@ -43,6 +44,10 @@ function addCloseListener() {
 function closeAllTimes() {
 	$('.bubble').fadeOut(200); // versus hide() ???
 };
+
+function closeSpinner() {
+	$('.spinner').hide();
+}
 
 function getNumLines(data) {
 	var num = data['root']['station']['etd'].length;
