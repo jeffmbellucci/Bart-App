@@ -1,5 +1,6 @@
 BartApp::Application.routes.draw do
-  resources :stations
+  resources :stations, only: [:index, :show]
+  
   root to: "stations#index"
   match "/all_stations", to: "static_pages#all_stations"
   match "/about", to: "static_pages#help"

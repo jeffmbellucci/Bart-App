@@ -4,14 +4,14 @@ position: absolute;
 bottom: 33px;
 left: -110px; /* Scooches bubble down 20px */
 z-index: 1;
-width: 240px;
+width: 270px;
 //removed height so div would size dinamically
 padding-top:5px;
-padding-bottom: 5px;
+padding-bottom: 3px;
 padding-left: 8px;
-padding-right: 10px;
-background: #E6E6E6;
-border: #000000 solid 3px; //007FFF 4px?
+padding-right: 5px;
+background: #FFFFFF;  //background color e6e6e6
+border: #000000 solid 3px; //007FFF 4px? blue #0099CC
 -webkit-border-radius: 20px;
 -moz-border-radius: 20px;
 border-radius: 20px;
@@ -25,7 +25,7 @@ bottom: -25px;
 left: 42%;  // 3px greater than "before" or 0.4% more
 border-style: solid;
 border-width: 25px 15px 0;
-border-color: #E6E6E6 transparent;
+border-color: #FFFFFF transparent; //background color e6e6e6
 display: block;
 width: 0;
 z-index: 1;
@@ -76,10 +76,10 @@ z-index: 0;
 }
 
 .currentTime {
-	padding-top:0px;
-	margin-top:0px;
+	padding-top: 0px;
+	margin-top: 0px;
 	font-family: futura;
 	font-size: smaller;
 	text-align: center;
-	line-height:14px;
+	line-height: 14px;
 }
