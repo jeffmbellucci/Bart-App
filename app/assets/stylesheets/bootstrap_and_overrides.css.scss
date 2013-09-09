@@ -1,7 +1,34 @@
 @import "bootstrap";
+@import "bootstrap-responsive";
 body { 
 	padding-top: 0px; 
-	padding-bottom: 60px;
-	background-color: #CCCCCC; 
+	background-color: #888888; 
+	height: 100%;
 }
-@import "bootstrap-responsive";
+html {
+	height:100%;
+	 height: auto !important;
+	bottom:-80px;
+}
+#wrap {
+    min-height: 100%;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -80px;
+  }
+
+  /* Set the fixed height of the footer here */
+  #push,
+  #footer {
+    height: 80px;
+  }
+
+  /* Lastly, apply responsive CSS fixes as necessary */
+  @media (max-width: 767px) {
+    #footer {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }

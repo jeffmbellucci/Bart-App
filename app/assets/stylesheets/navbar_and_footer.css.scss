@@ -1,26 +1,24 @@
 .navbar {
-	border-color:#0033CC;
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-	border-radius: 0px;
 	margin-bottom: 0px;
+	width:100%;
 }
 
 .navbar-inner {
 	border-radius: 0px;
 	height: 80px;
-	
 	padding-bottom: 0px;
 	margin-bottom: 0px;
+	width: 100%;
 }
 .navbar .brand {
-	padding-top: 17px;
+	padding-top: 16px;
 }
 
 .navbar .nav > li {
 	a {
 	padding-top: 40px;
 	color: #FFFFFF; 
+	line-height: 5px;
 	font-family: futura;
 	font-size: xx-large;
 	letter-spacing: -2px;
@@ -33,8 +31,11 @@
 	}  /* selected link */	
 }
 
-.footer {
-	position: fixed;
-	bottom: 0px;
-	
+#footer {
+	.container {
+		margin-left: 25%;
+	}
+	li {
+		margin-left: 40px;
+	}
 }
