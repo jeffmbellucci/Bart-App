@@ -7,6 +7,7 @@ gem 'bootstrap-sass'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'rails_12factor'
 gem 'addressable', require: 'addressable/uri'
 gem 'httparty'
 gem 'nokogiri'
