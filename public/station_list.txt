@@ -83,3 +83,6 @@ mdn positioning css
 - map 768 x 768 for ipad?
 - pop up bubble first, then add spinner
 - spinner display:none, use jqery to show, then hide
+
+
+<h2><%= link_to "Times for All Stations", all_stations_url %></h2>

@@ -8,6 +8,7 @@ $(document).ready(function() {
 		console.log($link.id);
 		
 		var spinnerView = JST["spinner_template"]();
+		//add spinner
 		$(spinnerView).hide().prependTo($($link).parent()).fadeIn(200);
 		 addCloseListener();
 		 
@@ -15,12 +16,13 @@ $(document).ready(function() {
 			
 			var stationTemplateFn = JST["station_template"];
 			var timesView = stationTemplateFn({data: data});
+			
+			// hide spinner
 			closeSpinner();
 			
 			$(timesView).prependTo($($link).parent());
 			addCloseListener();
-		});	
-			
+		});			
 	});
 });
 

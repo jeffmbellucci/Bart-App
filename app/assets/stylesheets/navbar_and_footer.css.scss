@@ -1,0 +1,40 @@
+.navbar {
+	border-color:#0033CC;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
+
+.navbar-inner {
+	border-radius: 0px;
+	height: 80px;
+	
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+.navbar .brand {
+	padding-top: 17px;
+}
+
+.navbar .nav > li {
+	a {
+	padding-top: 40px;
+	color: #FFFFFF; 
+	font-family: futura;
+	font-size: xx-large;
+	letter-spacing: -2px;
+	}
+	a:hover {
+		color: #0033CC;
+	};
+	a:active { 
+		color: black;
+	}  /* selected link */	
+}
+
+.footer {
+	position: fixed;
+	bottom: 0px;
+	
+}
