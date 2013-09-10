@@ -51,9 +51,4 @@ function closeSpinner() {
 	$('.spinner').hide();
 }
 
-function getNumLines(data) {
-	var num = data['root']['station']['etd'].length;
-	return num;
-};
-	
 

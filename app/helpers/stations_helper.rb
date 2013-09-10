@@ -1,5 +1,5 @@
 module StationsHelper
-  API_KEY = "Q5K4-2SIW-TMRY-8U3Z"
+  API_KEY = ENV["BART_API_KEY"]
   
   def get_station_data(abbr)
     bart_query = Addressable::URI.new(
