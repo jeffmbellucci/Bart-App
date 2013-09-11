@@ -14,17 +14,17 @@ module StationsHelper
       
     response = HTTParty.get(bart_query).to_json
     json_response = JSON.parse(response)
-    
+   
     if json_response['root']['message']
-      json_response['root']['message'] = "No trains at this time"
-      return json_response
-    end
+      json_response['root']['message'] = "No trains at this time" 
+     return json_response
+   end
     
     if json_response['root']['station']['message']
       json_response['root']['message'] = "Bart server error"
       return json_response
     end
-
+  
     unless json_response['root']['station']['etd'].is_a?(Array)
       json_response['root']['station']['etd'] = [json_response['root']['station']['etd']]
     end

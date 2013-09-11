@@ -1,5 +1,4 @@
 class StaticPagesController < ApplicationController
-  include StaticPagesHelper
   
   def help
   end

@@ -1,5 +1,5 @@
 module StaticPagesHelper
-  API_KEY = ENV["BART_API_KEY"]
+  API_KEY = 'Q5K4-2SIW-TMRY-8U3Z'
   
   def get_all_station_data
     bart_query = Addressable::URI.new(
