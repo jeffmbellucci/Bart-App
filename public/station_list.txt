@@ -83,5 +83,10 @@ mdn positioning css
 
 <h2><%= link_to "Times for All Stations", all_stations_url %></h2>
 
-- add figaro
+- change width of map
 - namespace javascript
+
+render :json => @user.errors, status: :unprocessable_entity
+
+Never used reminders before? Sign Up
+reset bart API Key
