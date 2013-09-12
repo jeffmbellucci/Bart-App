@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(:version => 20130911063730) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "phone_number",  :limit => 8, :null => false
-    t.string   "name",                       :null => false
+    t.string   "phone_number",  :null => false
+    t.string   "name",          :null => false
     t.string   "session_token"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "users", ["phone_number"], :name => "index_users_on_phone_number", :unique => true

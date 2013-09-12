@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require underscore
+//= require bootstrap-formhelpers-phone
 //= require station
 //= require station_template
 //= require spinner_template

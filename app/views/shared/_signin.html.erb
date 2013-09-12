@@ -1,0 +1,23 @@
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Sign In for Reminders</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-horizontal">
+          <form action="/sessions" method="post">
+
+             <input id="phone_number" type="text" name="session[phone_number]" 
+			 	class="input-medium bfh-phone" data-format=(ddd)ddd-dddd>
+				<h5><label for="phone_number">Phone Number</label></h5>
+			 <button type="submit" class="btn btn-primary">Sign In</button>
+             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+          </form>
+		  <div class"signup"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

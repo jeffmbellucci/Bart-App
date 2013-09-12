@@ -1,16 +1,16 @@
 class SessionsController < ApplicationController
-  def new
-    render :new
-  end
   
   def create
+    nil.id
     user = User.find_by_phone_number(params[:session][:phone_number])
     if user
+      
       sign_in(user)
-      redirect_to user
+      flash[success] = "welcome back, #{user.name}"
+      redirect_to root_url
     else
       flash.now[:error] = 'No user with that phone number'
-      render :new
+      
     end
   end
   

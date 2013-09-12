@@ -9,7 +9,15 @@
 <body>
 	<div id="wrap">
 		<%= render "shared/navbar" %>
-
+		
+		<% flash.each do |key, val| %>
+			<% if key == :success %>
+				<font color= "lime"><%= val %></font>
+			<% else %>
+				<font color= "red"><%= val %></font>
+			<% end %>
+		<% end %>
+		
 		<%= yield %>
     </div>
 	<%= render "shared/footer" %>

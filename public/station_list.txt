@@ -85,8 +85,10 @@ mdn positioning css
 
 - change width of map
 - namespace javascript
+- reset bart API Key
+
 
 render :json => @user.errors, status: :unprocessable_entity
 
 Never used reminders before? Sign Up
-reset bart API Key
+
