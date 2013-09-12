@@ -12,4 +12,5 @@ class User < ActiveRecord::Base
      self.save!
      token
    end
+   
 end

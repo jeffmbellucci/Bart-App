@@ -15,6 +15,7 @@
 //= require bootstrap
 //= require underscore
 //= require bootstrap-formhelpers-phone
+//= require bootstrap-formhelpers-timepicker
 //= require station
 //= require station_template
 //= require spinner_template

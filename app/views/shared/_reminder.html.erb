@@ -8,12 +8,11 @@
       <div class="modal-body">
 		 <h5>Choose a station and time:</h5>
         <div class="form-horizontal">
-          <form action="" method="post">
+          <form action="/reminders" method="post">
 			  <% stations = Station.all %>
-			  <select name="reminder[station_name]" id="station_name">
-			  	
+			  <select name="reminder[abbr]" id="station_name">
 			  	<% stations.each do |station| %>
-			  		<option value=<%= station.name %>> <%= station.name %> </option>
+			  		<option value= <%= station.abbr %>> <%= station.name %> </option>
 			  	<% end %>
 			    </select>
 				<br>

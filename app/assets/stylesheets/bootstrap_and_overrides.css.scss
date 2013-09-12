@@ -40,6 +40,13 @@ html {
 	  background-color: #AAAAAA;
 	  border: solid 3px black;
 	  border-radius: 20px;
+	  
+	  &.fade {
+		  z-index: -1050;
+	  }
+	  &.fade.in{
+		  z-index:1050;
+	  }
   }
   
   .modal-header {

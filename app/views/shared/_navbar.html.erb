@@ -1,24 +1,21 @@
 <div class="navbar navbar-inverse">	
   <div class="navbar-inner">
-    <div class="container">
-      <a class="brand" href= <%= root_url %>> <%= image_tag "bart_live_logo.png"%></a>
-		 
+      <a class="brand" href= <%= root_url %>> <%= image_tag "bart_live_logo.png"%></a> 
         <ul class="nav">
 			<% if logged_in? %>
 				<li><li><a data-toggle="modal" href="#reminderModal">Set Reminder</a></li>
 	            <li><a href="#">Closest Station</a></li>		  
 				<li><a href="#">Directions</a></li>
 				<li><%=link_to 'logout', sessions_url, method: 'delete'%></li>
-				<%= render "shared/reminder"%>
+				<% modal_template = "shared/reminder" %>
 			<% else%>
 				<li><a data-toggle="modal" href="#signinModal">Reminders</a></li>
 	            <li><a href="#">Closest Station</a></li>
 	    		<li><a href="#">Directions</a></li>
-				<%= render "shared/signin"%>
+				<% modal_template = "shared/signin" %>
 			<% end %>
         </ul>
-		
-    </div>
+		<%= render modal_template %>
   </div>
 </div>
 	
