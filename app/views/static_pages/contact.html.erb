@@ -1,7 +1,11 @@
 <h1>StaticPages#contact</h1>
 <p>Find me in app/views/static_pages/contact.html.erb</p>
-
-
+<ul>
+	<% stations = Station.all %>
+	<% stations.each do |station| %>
+	<li> <%= station.abbr %> </li>
+	<br>
+	<% end%>
 <br>
 
 <% @user.errors.full_messages.each do |error| %>
@@ -21,3 +25,4 @@
 <% end %>
 <br>
 <br>
+

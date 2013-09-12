@@ -1,0 +1,27 @@
+<div class="modal fade" id="reminderModal" tabindex="-1" role="dialog" aria-labelledby="reminderModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Create text reminder</h4>
+      </div>
+      <div class="modal-body">
+		 <h5>Choose a station and time:</h5>
+        <div class="form-horizontal">
+          <form action="" method="post">
+			  <% stations = Station.all %>
+			  <select name="reminder[station_name]" id="station_name">
+			  	
+			  	<% stations.each do |station| %>
+			  		<option value=<%= station.name %>> <%= station.name %> </option>
+			  	<% end %>
+			    </select>
+				<br>
+			 <button type="submit" class="btn">Create reminder</button>
+             <button type="button" class="btn" data-dismiss="modal">Cancel</button> 
+          </form>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>

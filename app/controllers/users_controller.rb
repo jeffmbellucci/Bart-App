@@ -1,15 +1,12 @@
 class UsersController < ApplicationController
-  def new
-     @user = User.new
-   end
-  
-   def create
+  def create
      @user = User.new(params[:user])
      if @user.save
        flash[:success] = "Account created."
        login(@user)
        redirect_to root_url
      else
+       flash[:error] = "Failed account creation."
        redirect_to root_url
      end
    end
@@ -26,4 +23,4 @@ class UsersController < ApplicationController
      redirect_to root_url
    end
  end
-end
+

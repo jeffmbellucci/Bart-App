@@ -34,3 +34,27 @@ html {
   }
   
   .modal-backdrop { background-color: #666666 }
+  
+  .modal {
+	  width: 400px;
+	  background-color: #AAAAAA;
+	  border: solid 3px black;
+	  border-radius: 20px;
+  }
+  
+  .modal-header {
+	  border-bottom: solid 3px black;
+  }
+  
+  .accordion-group {
+	 border: none;
+  }
+  
+  .accordion-inner {
+  	border: none;
+  }
+  
+  .alert {
+	  position: absolute;
+	  top:85px;
+  }

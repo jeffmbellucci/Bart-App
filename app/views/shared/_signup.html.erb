@@ -1,20 +1,18 @@
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Register for Reminders</h4>
-      </div>
-      <div class="modal-body">
-        <div class="form-horizontal">
-          <form action="" method="post">
-               <input type="text" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+<div class="accordion-group">
+	  <span> Never used reminders before?</span> <a class="accordion-toggle" data-toggle="collapse" href="#signup_form">
+	    Click here to sign up!</a> 
+	<div id="signup_form" class="accordion-body collapse">
+	  <div class="accordion-inner">
+	    <form id="user_signup" action="/users" method="post">
+			<input id="user_name" name="user[name]" type="text" placeholder="Name (max 12 letters)" style="width: 150px">
+			
+            <input id="phone_number" type="text" name="user[phone_number]" 
+			 	class="input-medium bfh-phone" data-format="(ddd)ddd-dddd" placeholder="Phone Number">
+			 
+		 	<button type="submit" class="btn">Sign Me Up!</button>
+            <button type="button" class="btn accordion-toggle" data-toggle="collapse" href="#signup_form" >Cancel</button>
+         </form>
+	  </div> <!--/.accordion-inner -->
+	</div> <!-- /#viewpage -->
+  </div> <!-- /.accordion-group -->

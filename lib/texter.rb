@@ -8,7 +8,7 @@
   @account = @client.account
   
   @message = @account.sms.messages.create({from: '16503535181',
-                                               to: '16507764854',
+                                               to: '(650)776-4854',
                                                body: "Hanging out at...\n your mom's house..."})
   
 

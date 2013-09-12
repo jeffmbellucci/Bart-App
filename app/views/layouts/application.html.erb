@@ -9,12 +9,18 @@
 <body>
 	<div id="wrap">
 		<%= render "shared/navbar" %>
-		
+	<div id>	
 		<% flash.each do |key, val| %>
 			<% if key == :success %>
-				<font color= "lime"><%= val %></font>
+				<div class="alert alert-success"> 
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					<%= val %> 
+				</div>
 			<% else %>
-				<font color= "red"><%= val %></font>
+				<div class="alert alert-error"> 
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					<%= val %> 
+				</div>
 			<% end %>
 		<% end %>
 		
