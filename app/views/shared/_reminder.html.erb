@@ -15,6 +15,7 @@
 			  		<option value= <%= station.abbr %>> <%= station.name %> </option>
 			  	<% end %>
 			  </select>
+			  
 			 
 			  <!-- timepicker start -->
 			  
@@ -28,6 +29,11 @@
 	          </script>
 			  
 			  <!-- time picker end -->
+			  
+			  <select name="reminder[direction]" id="reminder_direction">
+			  		<option value="north"> Northbound trains </option>
+					<option value="south"> Southbound trains </option>
+			  </select>
 			  
 			<br>
 			

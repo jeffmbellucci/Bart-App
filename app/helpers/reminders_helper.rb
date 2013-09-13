@@ -1,16 +1,16 @@
 module RemindersHelper
   
-  def create_station_texts(station_abbr, user)
-    data = get_station_data(station_abbr)
+  def create_station_texts(options)
+    data = get_station_data(options[:abbr])
   
   	station_name = data['root']['station']['name'] 
   	current_time = data['root']['time'][0..-5].reverse.chomp("0").reverse
    
   	if data['root']['message']
-      return ["Hi #{user.name}, #{station_name} has no trains at this time\n #{current_time}"]
+      return ["Hi #{options[:user].name}, #{station_name} has no trains at this time\n #{current_time}"]
     end
     
-    header = "Hi #{user.name}, here are the Bart departure times for #{station_name} as of #{current_time}"
+    header = "Hi #{options[:user].name}, here are the Bart departure times you requested for #{station_name} as of #{current_time}"
     northbound = ["NORTHBOUND\n"]
     southbound = ["SOUTHBOUND\n"]
       
@@ -28,11 +28,16 @@ module RemindersHelper
         southbound <<"\n"
       end
     end
-    [header, northbound.join(""), southbound.join("")]
+    if options[:direction] == "north"
+      [header, northbound.join("")]
+    else
+      [header, southbound.join("")]
+    end
   end
   
-  def send_reminder(station_abbr, user)
-    texts = create_station_texts(station_abbr, user)
+  def send_reminder(options)           
+    texts = create_station_texts(options)
+    #nil.id
     texts.each do |message|
       text = Text.new(current_user.phone_number, message)
       text.send
