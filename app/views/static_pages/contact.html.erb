@@ -8,13 +8,11 @@
 	<% end%>
 <br>
 
-<% @user.errors.full_messages.each do |error| %>
-<font color="red"><%= error %></font>
-<% end %>
-<br>
 
 
-<%= form_for(@user) do |f| %>
+
+
+<%= form_for(User.new) do |f| %>
 <%= f.text_field :name %>
 <%= f.label :name %>
 <br>

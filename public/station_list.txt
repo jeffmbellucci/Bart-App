@@ -83,9 +83,6 @@ mdn positioning css
 
 <h2><%= link_to "Times for All Stations", all_stations_url %></h2>
 
-- change width of map
-- namespace javascript
-- reset bart API Key
 
 
 render :json => @user.errors, status: :unprocessable_entity
@@ -94,6 +91,9 @@ Never used reminders before? Sign Up
 
 -delayed job
 -toggle data in bubble from minutes to absolute time
--clean up javascript
+-clean up and namespace javascript
 -widen map
-
+-grayscale map?
+-recurring reminders
+-editable reminders
+-last train reminder
