@@ -1,14 +1,16 @@
-
 class RemindersController < ApplicationController
   
   def create
-    texts = create_station_texts(params[:reminder][:abbr])
-    texts.each do |message|
-      text = Text.new(current_user.phone_number, message)
-      text.send
-    end
+    #nil.id
+    send_reminder(params[:reminder][:abbr], current_user)
     flash[:success] = "Reminder created"
     redirect_to root_url
   end
   
 end
+
+# def create_texts(station_abbreviation, phone_number)
+#    yadda yadda
+# end
+#
+#
