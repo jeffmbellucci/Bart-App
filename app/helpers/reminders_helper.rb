@@ -5,7 +5,7 @@ module RemindersHelper
   
   	station_name = data['root']['station']['name'] 
   	current_time = data['root']['time'][0..-5].reverse.chomp("0").reverse
-
+   
   	if data['root']['message']
       return ["Hi #{user.name}, #{station_name} has no trains at this time\n #{current_time}"]
     end
@@ -17,14 +17,14 @@ module RemindersHelper
     lines = data['root']['station']['etd']
     lines.each do |line|
       if line['estimate'][0]['direction'] == "North"
-        northbound << "#{line['destination']}:\n"
+        northbound << "#{line['destination']}\n"
         times = line['estimate']
-        times.each { |time| northbound << (Time.now + time['minutes'].to_i.minutes).strftime("%l:%M") }
+        times.each { |time| northbound << (Time.now + time['minutes'].to_i.minutes).strftime("%l:%M") + " " }
         northbound <<"\n"
       else
-        southbound << "#{line['destination']}:\n"
+        southbound << "#{line['destination']}\n"
         times = line['estimate']
-        times.each { |time| southbound << (Time.now + time['minutes'].to_i.minutes).strftime("%l:%M") }
+        times.each { |time| southbound << (Time.now + time['minutes'].to_i.minutes).strftime("%l:%M") + " " }
         southbound <<"\n"
       end
     end

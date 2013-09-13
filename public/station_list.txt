@@ -92,3 +92,8 @@ render :json => @user.errors, status: :unprocessable_entity
 
 Never used reminders before? Sign Up
 
+-delayed job
+-toggle data in bubble from minutes to absolute time
+-clean up javascript
+-widen map
+
