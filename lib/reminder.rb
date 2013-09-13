@@ -29,9 +29,9 @@ class Reminder < Struct.new(:options)
       end
     end
     if options[:direction] == "north"
-      [header, northbound.join("")]
+      [header, northbound.join("")[0...160]]
     else
-      [header, southbound.join("")]
+      [header, southbound.join("")[0...160]]
     end
   end
   

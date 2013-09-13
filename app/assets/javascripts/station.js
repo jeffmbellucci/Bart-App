@@ -1,54 +1,56 @@
-$(document).ready(function() {
-	$('#stationsMap a').on('click', function() {
-		event.preventDefault();
+(function () {
+	var BA = window.BA = {};
+
+	var getStationData = BA.getStationData = function (id, callback) {
+		$.ajax({
+			type: "GET",
+			url: ("/stations/").concat(id).concat(".json"),
+			success: callback
+		});
+	};
+
+	var addCloseListener = BA.addCloseListener = function () {
+		$(document).ready(function() {
+			$('.closeLink').on('click', closeAllTimes);	
+		});
+	}
+
+	var closeAllTimes = BA.closeAllTimes = function () {
+		$('.bubble').fadeOut(200); // versus hide() ???
+	};
+
+	var closeSpinner = BA.closeSpinner = function () {
+		$('.spinner').hide();
+	}
+	
+	var initialize = BA.initialize = function() {
+		$('#stationsMap a').on('click', function() {
+			event.preventDefault();
 		
-		var $link = this;
-		closeAllTimes();
+			var $link = this;
+			closeAllTimes();
 		
-		console.log($link.id);
+			console.log($link.id);
 		
-		var spinnerView = JST["spinner_template"]();
-		//add spinner
-		$(spinnerView).hide().prependTo($($link).parent()).fadeIn(200);
-		 addCloseListener();
+			var spinnerView = JST["spinner_template"]();
+			//add spinner
+			$(spinnerView).hide().prependTo($($link).parent()).fadeIn(200);
+			 addCloseListener();
 		 
-		getStationData($link.id, function(data){
+			getStationData($link.id, function(data){
 			
-			var stationTemplateFn = JST["station_template"];
-			var timesView = stationTemplateFn({data: data});
+				var stationTemplateFn = JST["station_template"];
+				var timesView = stationTemplateFn({data: data});
 			
-			// hide spinner
-			closeSpinner();
+				// hide spinner
+				closeSpinner();
 			
-			$(timesView).prependTo($($link).parent());
-			addCloseListener();
-		});			
-	});
-});
-
-// append template to li
-// div onclick='functionName()';
-
-function getStationData(id, callback) {
-	$.ajax({
-		type: "GET",
-		url: ("/stations/").concat(id).concat(".json"),
-		success: callback
-	});
-};
-
-function addCloseListener() {
-	$(document).ready(function() {
-		$('.closeLink').on('click', closeAllTimes);	
-	});
-}
-
-function closeAllTimes() {
-	$('.bubble').fadeOut(200); // versus hide() ???
-};
-
-function closeSpinner() {
-	$('.spinner').hide();
-}
+				$(timesView).prependTo($($link).parent());
+				addCloseListener();
+			});			
+		});
+	};
+})();
 
 
+$(document).ready(BA.initialize);

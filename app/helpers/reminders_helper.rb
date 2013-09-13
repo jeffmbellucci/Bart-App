@@ -1,6 +1,5 @@
 module RemindersHelper
   
-  
 end 	
  
  

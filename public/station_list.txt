@@ -83,7 +83,7 @@ mdn positioning css
 
 <h2><%= link_to "Times for All Stations", all_stations_url %></h2>
 
-
+// div onclick='functionName()';
 
 render :json => @user.errors, status: :unprocessable_entity
 
