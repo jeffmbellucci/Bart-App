@@ -91,9 +91,12 @@ Never used reminders before? Sign Up
 
 -delayed job
 -toggle data in bubble from minutes to absolute time
--clean up and namespace javascript
+-clean up and namespace javascript x
 -widen map
 -grayscale map?
 -recurring reminders
 -editable reminders
 -last train reminder
+-regis/cache times
+-reminder model?
+-gem daemon?

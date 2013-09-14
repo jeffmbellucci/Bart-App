@@ -53,5 +53,4 @@
 	
 })();
 
-
 $(document).ready(BA.initialize);

@@ -8,6 +8,7 @@
       <div class="modal-body reminder">
 		 <h5>Choose a station, direction and time:</h5>
         <div class="form-horizontal">
+			
           <form action="/reminders" method="post">
 			  <% stations = Station.all %>
 			  <select name="reminder[abbr]" id="station_name">
@@ -16,7 +17,6 @@
 			  	<% end %>
 			  </select>
 			  
-			 
 			  <!-- timepicker start -->
 			  
 			  <div class="input-append bootstrap-timepicker">
@@ -36,11 +36,11 @@
 			  </select>
 			  
 			<br>
-			
+		
 			 <button type="submit" class="btn">Create reminder</button>
-             <button type="button" class="btn" data-dismiss="modal">Cancel</button> 
-			 
+             <button type="button" class="btn" data-dismiss="modal">Cancel</button> 	 
           </form>
+		  
 		</div>
       </div>
     </div>

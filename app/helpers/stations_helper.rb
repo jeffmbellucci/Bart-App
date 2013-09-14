@@ -10,7 +10,7 @@ module StationsHelper
         cmd: "etd",
         orig: abbr,
         key: API_KEY 
-        })
+      })
       
     response = HTTParty.get(bart_query).to_json
     json_response = JSON.parse(response)

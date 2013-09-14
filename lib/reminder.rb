@@ -8,7 +8,7 @@ class Reminder < Struct.new(:options)
   	current_time = data['root']['time'][0..-5].reverse.chomp("0").reverse
    
   	if data['root']['message']
-      return ["Hi #{options[:user].name}, #{station_name} has no trains at this time\n #{current_time}"]
+      return ["Hi #{options[:user].name}, #{station_name} has no trains at this time #{current_time}"]
     end
     
     header = "Hi #{options[:user].name}, here are the Bart departure times you requested for #{station_name} as of #{current_time}"

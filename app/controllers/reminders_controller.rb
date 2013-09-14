@@ -8,7 +8,7 @@ class RemindersController < ApplicationController
                                       direction: params[:reminder][:direction], 
                                       abbr: params[:reminder][:abbr]), 
                                       run_at: time_to_send)
-    flash[:success] = "Reminder created"
+    flash[:success] = "Reminder created."
     redirect_to root_url
   end
   
