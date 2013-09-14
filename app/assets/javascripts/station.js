@@ -29,7 +29,7 @@
 		
 			var $link = this;
 			closeAllTimes();
-		
+			
 			console.log($link.id);
 		
 			var spinnerView = JST["spinner_template"]();

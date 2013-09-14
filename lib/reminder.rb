@@ -1,7 +1,8 @@
 class Reminder < Struct.new(:options)
-
+  include StationsHelper
+  
   def create_station_texts
-    data = StationsHelper::get_station_data(options[:abbr])
+    data = get_station_data(options[:abbr])
   
   	station_name = data['root']['station']['name'] 
   	current_time = data['root']['time'][0..-5].reverse.chomp("0").reverse
