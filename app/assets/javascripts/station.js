@@ -1,27 +1,5 @@
 (function () {
 	var BA = window.BA = {};
-
-	var getStationData = BA.getStationData = function (id, callback) {
-		$.ajax({
-			type: "GET",
-			url: ("/stations/").concat(id).concat(".json"),
-			success: callback
-		});
-	};
-
-	var addCloseListener = BA.addCloseListener = function () {
-		$(document).ready(function() {
-			$('.closeLink').on('click', closeAllTimes);	
-		});
-	}
-
-	var closeAllTimes = BA.closeAllTimes = function () {
-		$('.bubble').fadeOut(200); // versus hide() ???
-	};
-
-	var closeSpinner = BA.closeSpinner = function () {
-		$('.spinner').hide();
-	}
 	
 	var initialize = BA.initialize = function() {
 		$('#stationsMap a').on('click', function() {
@@ -50,6 +28,29 @@
 			});			
 		});
 	};
+	
+	var getStationData = BA.getStationData = function (id, callback) {
+		$.ajax({
+			type: "GET",
+			url: ("/stations/").concat(id).concat(".json"),
+			success: callback
+		});
+	};
+
+	var addCloseListener = BA.addCloseListener = function () {
+		$(document).ready(function() {
+			$('.closeLink').on('click', closeAllTimes);	
+		});
+	}
+
+	var closeAllTimes = BA.closeAllTimes = function () {
+		$('.bubble').fadeOut(200); // versus hide() ???
+	};
+
+	var closeSpinner = BA.closeSpinner = function () {
+		$('.spinner').hide();
+	}
+	
 })();
 
 

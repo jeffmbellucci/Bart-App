@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def create
      @user = User.new(params[:user])
      if @user.save
-       flash[:success] = "Account created."
+       flash[:success] = "Hi #{params[:user][:name]}, your account has been created."
        login(@user)
        redirect_to root_url
      else
