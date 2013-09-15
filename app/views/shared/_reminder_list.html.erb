@@ -1,0 +1,29 @@
+<div class="accordion-group">
+	
+	  <div class="reminder_link">
+		  <a class="accordion-toggle" data-toggle="collapse" href="#reminder_view">
+	      <h5>Click here to view your reminders</h5></a> 
+	  </div>
+	  
+	<div id="reminder_view" class="accordion-body collapse">
+	  <div class="accordion-inner">
+		  
+		  <br><br><br>
+		  
+		  <div id="reminder_list">
+			  <% reminders = current_user.reminders %>
+			  <% if reminders.empty? %>
+			  You dont have any current reminders 
+			  <% end %>
+			  <% reminders.each do |reminder| %>
+			  <div class="reminder_container">
+			  	<div class="reminder_text"><%=Station.find_by_abbr(reminder.station).name %>, <%= reminder.direction %>, <%=reminder.runtime.strftime("%b %-d, %l:%M%p") %></div>
+		 	  	<div class="reminder_delete"><%= button_to('Delete', reminder_url(reminder), id: reminder.id, class: "btn-mini btn-danger", method: :delete) %></div>
+		  	  </div>
+			<% end %>
+			<div class="reminder_close"><button type="button" class="btn accordion-toggle" data-toggle="collapse" href="#reminder_view"> Close </button></div>
+		 </div>
+	  </div> <!--/.accordion-inner -->
+	</div> <!-- /#signup_form -->
+  </div> <!-- /.accordion-group -->
+  

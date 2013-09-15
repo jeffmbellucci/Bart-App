@@ -1,8 +1,8 @@
 class Reminder < ActiveRecord::Base
   include StationsHelper
   
-  attr_accessible :direction, :runtime, :station, :user_id
-  validates :direction, :runtime, :station, :user_id, presence: true
+  attr_accessible :direction, :runtime, :station, :user_id, :job_id
+  validates :direction, :runtime, :station, :user_id, :job_id, presence: true
   
   belongs_to :user
   
@@ -34,7 +34,7 @@ class Reminder < ActiveRecord::Base
         southbound <<"\n"
       end
     end
-    if direction == "north"
+    if direction == "Northbound"
       [header, northbound.join("")[0...160]]
     else
       [header, southbound.join("")[0...160]]
@@ -47,6 +47,7 @@ class Reminder < ActiveRecord::Base
       text = Text.new(user.phone_number, message)
       text.send
     end
+    #delete reminder from DB
   end
     
 end

@@ -13,11 +13,20 @@ class RemindersController < ApplicationController
     params[:reminder][:runtime] = runtime
     
     @reminder = Reminder.new(params[:reminder])
-    flash[:success] = "Reminder created." if @reminder.save
-    
     Delayed::Job.enqueue(@reminder, run_at: runtime)
+    @reminder.job_id = Delayed::Job.last.id
+
+    flash[:success] = "Reminder created." if @reminder.save
+    # @reminder.perform
     redirect_to root_url 
   end
  
+  def destroy
+    @reminder = Reminder.find(params[:id])
+    #Delayed::Job.find(@reminder.job_id).destroy
+    @reminder.destroy
+    flash[:success] = "Reminder deleted."
+    redirect_to root_url
+  end
 end
 

@@ -5,7 +5,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title">Create a text reminder</h4>
       </div>
-      <div class="modal-body reminder">
+      <div class="modal-body reminder_modal">
 		 <h5>Choose a station, direction and time:</h5>
         <div class="form-horizontal">
 			
@@ -31,8 +31,8 @@
 			  <!-- time picker end -->
 			  
 			  <select name="reminder[direction]" id="reminder_direction">
-			  		<option value="north"> Northbound trains </option>
-					<option value="south"> Southbound trains </option>
+			  		<option value="Northbound"> Northbound trains </option>
+					<option value="Southbound"> Southbound trains </option>
 			  </select>
 			  
 			<br>
@@ -42,6 +42,7 @@
           </form>
 		  
 		</div>
+		<%= render "shared/reminder_list"%>
       </div>
     </div>
   </div>

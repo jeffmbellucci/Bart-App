@@ -2,7 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.reminder {
+.reminder_modal {
 	width: 450px;
-	height: 200px;
+	min-height: 200px;
+}
+
+.reminder_list {
+	padding-bottom: 400px;
+}
+
+.reminder_container {
+	height: 30px;
+	width: 400px;
+}
+
+.reminder_container div {
+	display: inline-block;
+}
+
+.reminder_text {
+	height: 30px;
+	width: 330px;
+}
+
+.reminder_delete {
+	height: 30px;
+	width: 40px;
+}
+
+.reminder_link {
+	position: absolute;
+	top: 180px;
+	left: 20%;
+}
+
+.reminder_close {
+	position: absolute;
+	left: 35%;
+	bottom: 5px;
+	padding-bottom: 0px;
+}
+
+.accordion-inner {
+	padding: 0px;
+	padding-bottom: 40px;
+}
+
+.modal-body {
+	padding-bottom: 0px;
 }
