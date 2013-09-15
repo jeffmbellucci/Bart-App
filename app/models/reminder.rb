@@ -2,7 +2,7 @@ class Reminder < ActiveRecord::Base
   include StationsHelper
   
   attr_accessible :direction, :runtime, :station, :user_id, :job_id
-  validates :direction, :runtime, :station, :user_id, :job_id, presence: true
+  validates :direction, :runtime, :station, :user_id, presence: true
   
   belongs_to :user
   
@@ -47,7 +47,7 @@ class Reminder < ActiveRecord::Base
       text = Text.new(user.phone_number, message)
       text.send
     end
-    #delete reminder from DB
+    self.destroy
   end
     
 end
