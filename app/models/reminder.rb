@@ -1,17 +1,22 @@
-class Reminder < Struct.new(:options)
+class Reminder < ActiveRecord::Base
   include StationsHelper
   
+  attr_accessible :direction, :runtime, :station, :user_id
+  validates :direction, :runtime, :station, :user_id, presence: true
+  
+  belongs_to :user
+  
   def create_station_texts
-    data = get_station_data(options[:abbr])
+    data = get_station_data(station)
   
   	station_name = data['root']['station']['name'] 
   	current_time = data['root']['time'][0..-5].reverse.chomp("0").reverse
    
   	if data['root']['message']
-      return ["Hi #{options[:user].name}, #{station_name} has no trains at this time #{current_time}"]
+      return ["Hi #{user.name}, #{station_name} has no trains at this time #{current_time}"]
     end
     
-    header = "Hi #{options[:user].name}, here are the Bart departure times you requested for #{station_name} as of #{current_time}"
+    header = "Hi #{user.name}, here are the Bart departure times you requested for #{station_name} as of #{current_time}"
     northbound = ["NORTHBOUND\n"]
     southbound = ["SOUTHBOUND\n"]
       
@@ -29,19 +34,19 @@ class Reminder < Struct.new(:options)
         southbound <<"\n"
       end
     end
-    if options[:direction] == "north"
+    if direction == "north"
       [header, northbound.join("")[0...160]]
     else
       [header, southbound.join("")[0...160]]
     end
   end
   
-  def perform           
+  def perform        
     texts = create_station_texts
     texts.each do |message|
-      text = Text.new(options[:user].phone_number, message)
+      text = Text.new(user.phone_number, message)
       text.send
     end
   end
-  
+    
 end

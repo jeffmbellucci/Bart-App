@@ -5,6 +5,7 @@
 		<div class="closeLink"> <a>close</a> </div>
 	</div>
 
+	<div id="timesContainer">
 	<% if (data['root']['message']) { %>
 		<%= data['root']['message'] %>
 	<% } else { %>
@@ -35,6 +36,7 @@
 		
 		<% }; %>
 	<% }; %>
+	</div>
 
 	<div class='currentTime'>
 		Times as of <%= data['root']['time'].substring(0, data['root']['time'].length - 3) %>  

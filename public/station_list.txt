@@ -100,3 +100,4 @@ Never used reminders before? Sign Up
 -regis/cache times
 -reminder model?
 -gem daemon?
+-round corners of map

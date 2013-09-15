@@ -1,16 +1,23 @@
 class RemindersController < ApplicationController
-  before_filter :logged_in_user, only: [:create]
+  before_filter :logged_in_user, only: [:create, :destroy]
   
   def create
-    time_to_send = Time.parse(params[:reminder][:time])
+    if params[:reminder][:runtime].blank?
+      flash[:error] = "Time can't be blank."
+      redirect_to root_url
+      return
+    end
     
-    Delayed::Job.enqueue(Reminder.new(user: current_user, 
-                                      direction: params[:reminder][:direction], 
-                                      abbr: params[:reminder][:abbr]), 
-                                      run_at: time_to_send)
-    flash[:success] = "Reminder created."
-    redirect_to root_url
+    runtime = Time.parse(params[:reminder][:runtime])
+    params[:reminder][:user_id] = current_user.id
+    params[:reminder][:runtime] = runtime
+    
+    @reminder = Reminder.new(params[:reminder])
+    flash[:success] = "Reminder created." if @reminder.save
+    
+    Delayed::Job.enqueue(@reminder, run_at: runtime)
+    redirect_to root_url 
   end
-  
+ 
 end
 

@@ -1,7 +1,7 @@
 BartApp::Application.routes.draw do
   resources :stations, only: [:index, :show]
   resources :users#,only: [:new, :show]
-  resources :reminders, only: [:create]
+  resources :reminders, only: [:create, :destroy]
   resource :sessions, only: [:new, :create, :destroy]
   
   root to: "stations#index"

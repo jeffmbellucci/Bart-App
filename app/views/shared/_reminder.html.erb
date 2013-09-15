@@ -11,7 +11,7 @@
 			
           <form action="/reminders" method="post">
 			  <% stations = Station.all %>
-			  <select name="reminder[abbr]" id="station_name">
+			  <select name="reminder[station]" id="station_name">
 			  	<% stations.each do |station| %>
 			  		<option value= <%= station.abbr %>> <%= station.name %> </option>
 			  	<% end %>
@@ -20,7 +20,7 @@
 			  <!-- timepicker start -->
 			  
 			  <div class="input-append bootstrap-timepicker">
-	              <input name="reminder[time]" id="timepicker1" type="text" class="input-small">
+	              <input name="reminder[runtime]" id="timepicker1" type="text" class="input-small">
 	              <span class="add-on"><i class="icon-time"></i></span>
 	          </div>
 
