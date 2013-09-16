@@ -9,6 +9,7 @@ class RemindersController < ApplicationController
     end
     
     runtime = Time.parse(params[:reminder][:runtime])
+    
     params[:reminder][:user_id] = current_user.id
     params[:reminder][:runtime] = runtime
     

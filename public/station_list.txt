@@ -89,12 +89,15 @@ render :json => @user.errors, status: :unprocessable_entity
 
 Never used reminders before? Sign Up
 
--delayed job
+-delayed job X
 -toggle data in bubble from minutes to absolute time
--clean up and namespace javascript x
+-clean up and namespace javascript X
 -widen map
 -grayscale map?
 -recurring reminders
+	-reminders have many jobs
+	-join table between reminders and delayed jobs
+	-or add column to delayed job table, find_all_by_reminder_id(@reminder.id), then delete
 -editable reminders
 -last train reminder
 -regis/cache times
