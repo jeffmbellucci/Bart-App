@@ -24,9 +24,8 @@
 				closeSpinner();
 			
 				$(timesView).prependTo($($link).parent());
-				addToggleListener();
 				addCloseListener();
-				
+				addToggleListener();
 			});			
 		});
 	};
