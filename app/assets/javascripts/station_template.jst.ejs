@@ -1,11 +1,11 @@
-<div id= <%= "TimesView" %> class="bubble">
+<div id="TimesView" class="bubble">
 
 	<div class="stationTitleContainer">
 		<div class="stationTitle"> <h4> <%= data['root']['station']['name'] %> </h4> </div>
 		<div class="closeLink"> <a>close</a> </div>
 	</div>
 
-	<div id="timesContainer">
+	<div class="minutesContainer">
 	<% if (data['root']['message']) { %>
 		<%= data['root']['message'] %>
 	<% } else { %>
@@ -37,9 +37,47 @@
 		<% }; %>
 	<% }; %>
 	</div>
+	
+	<% var currentDate = data['root']['date'] %>
+	<% var currentTime = data['root']['time'] %>
+	<% var dateTime = currentDate + " " + currentTime.substring(0, currentTime.length - 3) %>
+	<% var date = new Date(dateTime) %>
+	
+	<div class="timesContainer hidden">
+	<% if (data['root']['message']) { %>
+		<%= data['root']['message'] %>
+	<% } else { %>
+	
+		<% lines = data['root']['station']['etd'] %>
+		<% for (var i = 0; i < lines.length; i++) { %>
+		
+			<span class='train <%=lines[i]['estimate'][0]['color'].toLowerCase() %>'>
+				<%= lines[i]['destination'] %>
+			</span>
+		
+			<% times = lines[i]['estimate'] %>
+			<% for (var j = 0; j < times.length; j++) { %>
+				<% if (times[j]['minutes'] != "Leaving" ) { %>
+					<% if (j === times.length - 1) { %>
+						<%= BA.printTime(BA.addMinutes(date, parseInt(times[j]['minutes']))) %>
+					<% } else {%>
+						<%= BA.printTime(BA.addMinutes(date, parseInt(times[j]['minutes']))) + "," %>
+					<% } %>
+				<% } else if (j === times.length - 1) { %>
+					<%= times[j]['minutes'] %>
+				<% } else { %>
+					<%= times[j]['minutes'] + "," %>
+				<% }; %>
+			<% }; %>
+		
+			<br>
+		
+		<% }; %>
+	<% }; %>
+	</div>
 
 	<div class='currentTime'>
 		Times as of <%= data['root']['time'].substring(0, data['root']['time'].length - 3) %>  
 	</div>
-
+	<div class="toggleLink"> <a>format</a> </div>
 </div>

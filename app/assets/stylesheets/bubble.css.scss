@@ -79,6 +79,23 @@ z-index: 0;
 	}  /* selected link */
 }
 
+.toggleLink {
+	position: absolute;
+	bottom: 3px;
+	right: 8px;
+	a { 
+		color: black; 
+		font-family: futura;
+	}
+	a:hover {
+		color: red;
+		font-size: 100%;
+	};
+	a:active { 
+		color: black;
+	}  /* selected link */
+}
+
 .currentTime {
 	padding-top: 0px;
 	margin-top: 0px;
