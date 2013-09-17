@@ -11,6 +11,7 @@ class Reminder < ActiveRecord::Base
   
   	station_name = data['root']['station']['name'] 
   	current_time = data['root']['time'][0..-5].reverse.chomp("0").reverse
+    # current_time = current_time[0..-7]
    
   	if data['root']['message']
       return ["Hi #{user.name}, #{station_name} has no trains at this time #{current_time}"]

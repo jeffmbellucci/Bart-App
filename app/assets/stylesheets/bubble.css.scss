@@ -2,10 +2,10 @@
 .bubble {
 position: absolute;
 bottom: 33px;
-left: -110px; /* Scooches bubble down 20px */
+left: -125px; /* Moves bubble side to side */
 z-index: 1;
 width: 300px;
-//removed height so div would size dinamically
+//removed height so div would size dynamically
 padding-top:5px;
 padding-bottom: 3px;
 padding-left: 6px;
@@ -35,7 +35,7 @@ z-index: 1;
 content: "";
 position: absolute;
 bottom: -30px;
-left: 41.2%; // 3px less than "after" or 0.4% less
+left: 41.2%; // 3px less than "after" or 0.8% less
 border-style: solid;
 border-width: 28px 18px 0;
 border-color: #000000 transparent;
@@ -64,8 +64,8 @@ z-index: 0;
 
 .closeLink {
 	position: absolute;
-	top: 5px;
-	right: 8px;
+	top: 4px;
+	right: 7px;
 	a { 
 		color: black; 
 		font-family: futura;
@@ -82,8 +82,8 @@ z-index: 0;
 
 .toggleLink {
 	position: absolute;
-	bottom: 1px;
-	right: 10px;
+	bottom: 3px;
+	right: 11px;
 	a { 
 		color: black; 
 		font-family: futura;
@@ -98,7 +98,7 @@ z-index: 0;
 }
 
 .currentTime {
-	padding-top: 0px;
+	padding-top: 5px;
 	margin-top: 0px;
 	font-family: futura;
 	font-size: smaller;
