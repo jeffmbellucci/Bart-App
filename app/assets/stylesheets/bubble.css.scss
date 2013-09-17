@@ -64,15 +64,16 @@ z-index: 0;
 
 .closeLink {
 	position: absolute;
-	top: 3px;
+	top: 5px;
 	right: 8px;
 	a { 
 		color: black; 
 		font-family: futura;
+		font-size: x-large;
 	}
 	a:hover {
 		color: red;
-		font-size: 100%;
+		font-size: x-large;
 	};
 	a:active { 
 		color: black;
@@ -81,8 +82,8 @@ z-index: 0;
 
 .toggleLink {
 	position: absolute;
-	bottom: 3px;
-	right: 8px;
+	bottom: 1px;
+	right: 10px;
 	a { 
 		color: black; 
 		font-family: futura;

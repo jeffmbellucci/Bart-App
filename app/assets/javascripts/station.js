@@ -16,7 +16,6 @@
 			addCloseListener();
 		 	
 			getStationData($link.id, function(data){
-			
 				var stationTemplateFn = JST["station_template"];
 				var timesView = stationTemplateFn({data: data});
 			
@@ -70,23 +69,23 @@
 	}
 	
 	var printTime = BA.printTime = function(date) {
-		var result = new Array();
+		var output = new Array();
 		if (date.getHours() > 12) {
-		    result[0] = date.getHours() - 12;
+		    output[0] = date.getHours() - 12;
 		} else if (date.getHours() == 0 ) {
-		    result[0] = "12";
+		    output[0] = "12";
 		} else {
-		    result[0] = date.getHours();
+		    output[0] = date.getHours();
 		}
-		result[1] = ":"
-		result[2] = date.getMinutes();
-
-		if (date.getHours() > 12) {
-		    result[3] = "pm";
+		output[1] = ":"
+		var minutes = date.getMinutes();
+		//console.log(minutes)
+		if (minutes < 10) {
+		   output[2] = "0" + minutes;
 		} else {
-		    result[3] = "am";
+			output[2] = minutes;
 		}
-		return result.join("");
+		return output.join("");
 	}
 	
 })();
