@@ -1,5 +1,5 @@
-(function () {
-	var BA = window.BA = {};
+(function (root) {
+	var BA = root.BA = (root.BA || {});
 	
 	var initialize = BA.initialize = function() {
 		$('#stationsMap a').on('click', function() {
@@ -88,6 +88,7 @@
 		return output.join("");
 	}
 	
-})();
+})(this);
 
+console.log(this);
 $(document).ready(BA.initialize);
