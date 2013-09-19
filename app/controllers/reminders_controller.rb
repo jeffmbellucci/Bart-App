@@ -7,11 +7,14 @@ class RemindersController < ApplicationController
       redirect_to root_url
       return
     end
-    
-    runtime = Time.parse(params[:reminder][:runtime])
-    
+    runtime = Time.parse(params[:reminder][:runtime]) if params[:reminder][:date].blank?
+    date_time = params[:reminder][:date] + " " + params[:reminder][:runtime]
+    runtime = Time.parse(date_time)
+ 
     params[:reminder][:user_id] = current_user.id
     params[:reminder][:runtime] = runtime
+    params[:reminder][:completed] = false
+    params[:reminder].delete(:date)
     
     @reminder = Reminder.new(params[:reminder])
     flash[:success] = "Reminder created." if @reminder.save
@@ -25,7 +28,7 @@ class RemindersController < ApplicationController
  
   def destroy
     @reminder = Reminder.find(params[:id])
-    Delayed::Job.find(@reminder.job_id).destroy
+    Delayed::Job.find(@reminder.job_id).destroy unless Delayed::Job.find_by_id(@reminder.job_id).nil?
     @reminder.destroy
     flash[:success] = "Reminder deleted."
     redirect_to root_url

@@ -2,7 +2,7 @@
 @import "bootstrap-responsive";
 body { 
 	padding-top: 0px; 
-	background-color: #666666; 
+	background-color: #999999; 
 	height: 100%;
 }
 html {
@@ -33,17 +33,17 @@ html {
     }
   }
   
-  .modal-backdrop { background-color: #666666 }
+  .modal-backdrop { background-color: #CCCCCC }
   .modal-header { 
-	  background-color: #DDDDDD;
+	  background-color: #FFFFFF;
 	  border-top-left-radius: 20px;
 	  border-top-right-radius: 20px;
   }
   .modal {
 	  width: 420px;
 	  height: auto;
-	  background-color: #AAAAAA;
-	  border: solid 3px black;
+	  background-color: #CCCCCC;
+	  border: solid 3px #555555;
 	  border-radius: 20px;
 	  
 	  &.fade {
@@ -55,7 +55,7 @@ html {
   }
   
   .modal-header {
-	  border-bottom: solid 3px black;
+	  border-bottom: solid 3px #555555;
   }
   
   .accordion-group {

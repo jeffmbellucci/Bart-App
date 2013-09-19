@@ -6,6 +6,7 @@ class CreateReminders < ActiveRecord::Migration
       t.string :station
       t.integer :user_id
       t.integer :job_id
+      t.boolean :completed
 
       t.timestamps
     end

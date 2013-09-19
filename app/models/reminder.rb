@@ -1,7 +1,7 @@
 class Reminder < ActiveRecord::Base
   include StationsHelper
   
-  attr_accessible :direction, :runtime, :station, :user_id, :job_id
+  attr_accessible :direction, :runtime, :station, :user_id, :job_id, :completed
   validates :direction, :runtime, :station, :user_id, presence: true
   
   belongs_to :user
@@ -48,7 +48,8 @@ class Reminder < ActiveRecord::Base
       text = Text.new(user.phone_number, message)
       text.send
     end
-    self.destroy
+    self.completed = true
+    self.save
   end
     
 end

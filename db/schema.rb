@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130915052327) do
     t.string   "station"
     t.integer  "user_id"
     t.integer  "job_id"
+    t.boolean  "completed"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

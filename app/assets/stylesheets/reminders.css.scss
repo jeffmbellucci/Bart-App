@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#reminder_direction {
+	width: 150px;
+}
+
+.input-small {
+	width:109px;
+}
+
 .reminder_modal {
 	width: 450px;
 	min-height: 200px;
@@ -12,7 +20,7 @@
 }
 
 .reminder_container {
-	height: 30px;
+	height: 40px;
 	width: 400px;
 }
 
