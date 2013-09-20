@@ -3,10 +3,12 @@ class RemindersController < ApplicationController
   
   def create
     if params[:reminder][:runtime].blank?
-      flash[:error] = "Time can't be blank."
-      redirect_to root_url
+      #flash[:error] = "Time can't be blank."
+      render json: "Time cant be blank."
+      # redirect_to root_url
       return
     end
+    
     runtime = Time.parse(params[:reminder][:runtime]) if params[:reminder][:date].blank?
     date_time = params[:reminder][:date] + " " + params[:reminder][:runtime]
     runtime = Time.parse(date_time)
@@ -22,8 +24,10 @@ class RemindersController < ApplicationController
     Delayed::Job.enqueue(@reminder, run_at: runtime)
     @reminder.job_id = Delayed::Job.last.id
     @reminder.save
-   
-    redirect_to root_url 
+    
+    respond_to do |format|
+      format.json {render json: @reminder}
+    end
   end
  
   def destroy

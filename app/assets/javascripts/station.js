@@ -15,7 +15,7 @@
 			$(spinnerView).hide().prependTo($($link).parent()).fadeIn(200);
 			addCloseListener();
 		 	
-			getStationData($link.id, function(data){
+			getStationData($link.id.substring(8,10), function(data){
 				var stationTemplateFn = JST["station_template"];
 				var timesView = stationTemplateFn({data: data});
 			
@@ -64,9 +64,9 @@
 	
 	var addMinutes = BA.addMinutes = function(date, minutes) {
 		var newDate = new Date(date)
-		newDate.setMinutes(date.getMinutes() + minutes)
-		return newDate
-	}
+		newDate.setMinutes(date.getMinutes() + minutes);
+		return newDate;
+	};
 	
 	var printTime = BA.printTime = function(date) {
 		var output = new Array();
@@ -84,11 +84,10 @@
 		   output[2] = "0" + minutes;
 		} else {
 			output[2] = minutes;
-		}
+		};
 		return output.join("");
-	}
+	};
 	
 })(this);
 
-console.log(this);
 $(document).ready(BA.initialize);

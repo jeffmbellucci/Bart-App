@@ -3,7 +3,7 @@
 		<ul id= "stationsList">
 		<% @stations.each do |station| %>
 		<li id= "station_<%= station.abbr %>" >
-			<%= link_to station.name, station_url(station), id: station.id, class: "stationLink" %>
+			<%= link_to station.name, station_url(station), id: "station_" + station.id.to_s, class: "stationLink" %>
 		</li>
 		<% end %>
 		</ul>

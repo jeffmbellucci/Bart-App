@@ -16,7 +16,7 @@
 			  You dont have any current reminders 
 			  <% end %>
 			  <% reminders.each do |reminder| %>
-			  <div class="reminder_container">
+			  <div class="reminder_container" id=<%="reminder_" + reminder.id.to_s %>>
 				  <% station = Station.find_by_abbr(reminder.station).name %>
 				  <% time = reminder.runtime - 7.hours %>
 				  <% status = "Sent" if reminder.completed %>

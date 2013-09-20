@@ -17,5 +17,7 @@
 //= require bootstrap-formhelpers-phone
 //= require bootstrap-formhelpers-timepicker
 //= require station
+//= require reminder
 //= require station_template
 //= require spinner_template
+//= require reminder_template
