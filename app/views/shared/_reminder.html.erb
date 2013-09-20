@@ -12,7 +12,7 @@
 			
 			
           <form id="reminder_form" action="/reminders" method="post">
-			  
+			  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 			  <input type="date" name="reminder[date]">
 			  
 			  <!-- timepicker start -->

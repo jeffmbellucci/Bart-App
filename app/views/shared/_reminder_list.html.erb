@@ -13,7 +13,7 @@
 		  <div id="reminder_list">
 			  <% reminders = current_user.reminders %>
 			  <% if reminders.empty? %>
-			  You dont have any current reminders 
+			   <div class="empty_reminders"><strong> You dont have any scheduled reminders. </strong></div>
 			  <% end %>
 			  <% reminders.each do |reminder| %>
 			  <div class="reminder_container" id=<%="reminder_" + reminder.id.to_s %>>
@@ -21,8 +21,15 @@
 				  <% time = reminder.runtime - 7.hours %>
 				  <% status = "Sent" if reminder.completed %>
 				  <% status = "Scheduled" unless reminder.completed %>
-			  	<div class="reminder_text"><%= station%>, <%= reminder.direction %>, <%= time.strftime("%b %-d, %l:%M%p")%>, Status: <strong><%= status%></strong></div>
-		 	  	<div class="reminder_delete"><%= button_to('Delete', reminder_url(reminder), id: reminder.id, class: "btn-mini btn-danger", method: :delete) %></div>
+			  	<div class="reminder_text"><%= station%>, <%= reminder.direction %>, <%= time.strftime("%b %-d, %l:%M%p")%>, Status: <strong><%= status %></strong></div>
+		 	  	<div class="reminder_delete">
+					
+					<form class="reminder_delete" action=<%="/reminders/" + reminder.id.to_s %>  method="delete">
+						<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">	
+						<input class="btn-mini btn-danger" type="submit" value="Delete" />
+					</form>	
+						
+				</div>
 		  	  </div>
 			<% end %>
 			<div class="reminder_close"><button type="button" class="btn accordion-toggle" data-toggle="collapse" href="#reminder_view"> Close </button></div>

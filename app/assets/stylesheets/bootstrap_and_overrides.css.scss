@@ -41,7 +41,7 @@ html {
   }
   .modal {
 	  width: 420px;
-	  height: auto;
+	  height: auto;  //dont change this ever
 	  background-color: #CCCCCC;
 	  border: solid 3px #555555;
 	  border-radius: 20px;
@@ -56,6 +56,10 @@ html {
   
   .modal-header {
 	  border-bottom: solid 3px #555555;
+  }
+  
+  .modal-body {
+	  height: auto;
   }
   
   .accordion-group {

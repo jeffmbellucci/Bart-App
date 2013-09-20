@@ -88,6 +88,14 @@
 		return output.join("");
 	};
 	
+	var printAmPm = BA.printAmPm = function (date) {
+		if (date.getHours() < 12) {
+			return "AM";
+		} else {
+			return "PM";
+		};
+	};
+	
 })(this);
 
 $(document).ready(BA.initialize);
