@@ -17,15 +17,15 @@
 			  <% end %>
 			  <% reminders.each do |reminder| %>
 			  <div class="reminder_container" id=<%="reminder_" + reminder.id.to_s %>>
-				  <% station = Station.find_by_abbr(reminder.station).name %>
+				  <% station = reminder.station_name %>
 				  <% time = reminder.runtime - 7.hours %>
 				  <% status = "Sent" if reminder.completed %>
 				  <% status = "Scheduled" unless reminder.completed %>
 			  	<div class="reminder_text"><%= station%>, <%= reminder.direction %>, <%= time.strftime("%b %-d, %l:%M%p")%>, Status: <strong><%= status %></strong></div>
 		 	  	<div class="reminder_delete">
 					
-					<form class="reminder_delete" action=<%="/reminders/" + reminder.id.to_s %>  method="delete">
-						<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">	
+					<form class="reminder_delete_button" action=<%="/reminders/" + reminder.id.to_s %>  method="delete">
+						
 						<input class="btn-mini btn-danger" type="submit" value="Delete" />
 					</form>	
 						

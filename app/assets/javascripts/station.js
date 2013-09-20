@@ -16,6 +16,7 @@
 			addCloseListener();
 		 	
 			getStationData($link.id.substring(8,10), function(data){
+				
 				var stationTemplateFn = JST["station_template"];
 				var timesView = stationTemplateFn({data: data});
 			
@@ -66,6 +67,11 @@
 		var newDate = new Date(date)
 		newDate.setMinutes(date.getMinutes() + minutes);
 		return newDate;
+	};
+	
+	
+	var printDate = BA.printDate = function(date) {
+		return date.toString().substring(4, 10);
 	};
 	
 	var printTime = BA.printTime = function(date) {

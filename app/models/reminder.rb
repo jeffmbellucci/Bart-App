@@ -1,13 +1,13 @@
 class Reminder < ActiveRecord::Base
   include StationsHelper
   
-  attr_accessible :direction, :runtime, :station, :user_id, :job_id, :completed
-  validates :direction, :runtime, :station, :user_id, presence: true
+  attr_accessible :direction, :runtime, :station_abbr, :station_name, :user_id, :job_id, :completed
+  validates :direction, :runtime, :station_abbr, :station_name, :user_id, presence: true
   
   belongs_to :user
   
   def create_station_texts
-    data = get_station_data(station)
+    data = get_station_data(station_abbr)
   
   	station_name = data['root']['station']['name'] 
   	current_time = data['root']['time'][0..-5].reverse.chomp("0").reverse

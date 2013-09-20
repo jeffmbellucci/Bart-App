@@ -12,19 +12,20 @@ class RemindersController < ApplicationController
     runtime = Time.parse(params[:reminder][:runtime]) if params[:reminder][:date].blank?
     date_time = params[:reminder][:date] + " " + params[:reminder][:runtime]
     runtime = Time.parse(date_time)
- 
+    @station = Station.find_by_abbr(params[:reminder][:station_abbr])
+    
+    params[:reminder][:station_name] = @station.name
     params[:reminder][:user_id] = current_user.id
     params[:reminder][:runtime] = runtime
     params[:reminder][:completed] = false
     params[:reminder].delete(:date)
     
     @reminder = Reminder.new(params[:reminder])
-    flash[:success] = "Reminder created." if @reminder.save
+    render :json => @reminder, :status => 422 unless @reminder.save
     
     Delayed::Job.enqueue(@reminder, run_at: runtime)
     @reminder.job_id = Delayed::Job.last.id
     @reminder.save
-   
     respond_to do |format|
       format.json { render json: @reminder }
     end

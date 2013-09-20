@@ -32,12 +32,13 @@ ActiveRecord::Schema.define(:version => 20130915052327) do
   create_table "reminders", :force => true do |t|
     t.datetime "runtime"
     t.string   "direction"
-    t.string   "station"
+    t.string   "station_abbr"
+    t.string   "station_name"
     t.integer  "user_id"
     t.integer  "job_id"
     t.boolean  "completed"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "stations", :force => true do |t|

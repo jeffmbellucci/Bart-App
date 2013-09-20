@@ -7,19 +7,33 @@
 			var formData = $(this).serialize();
 			sendReminderData(formData, function(data) {
 				console.log(data);
+				
+				var reminderTemplateFn = JST["reminder_template"];
+				var reminderView = reminderTemplateFn({data: data});
+				
+				$(".empty_reminders").hide();
+				$(reminderView).prependTo($("#reminder_list"));
 				alert("Reminder created.")
 			});	
 		});
 	};
 	
 	var reminderDeleter = BA.reminderDeleter = function(id, callback) {
-		console.log("inside deleter")
-		$('.reminder_delete').on('submit', function() {
+		$('.reminder_delete_button').on('submit', function() {
 			event.preventDefault();
-			var formData = $(this).serialize();
-			console.log(formData);
-			sendDeleteData(event.target.action, formData, function(data) {
-				console.log(data)
+			var url = event.target.action;
+			
+			console.log(url)
+			
+			sendDeleteData(url, function(data) {
+				var reminder_id ="#reminder_" + url.substring(32,34)
+				console.log(reminder_id);
+				console.log(data);
+				$(reminder_id).hide();
+				if (data == "0") {
+					var emptyView = JST["empty_reminder"]();
+					$(emptyView).prependTo($("#reminder_list"));
+				};
 			});
 			
 		});
@@ -37,7 +51,7 @@
 		});
 	};
 	
-	var sendDeleteData = BA.sendDeleteData = function(url, data, callback) {
+	var sendDeleteData = BA.sendDeleteData = function(url, callback) {
 		$.ajax({
 			type: "DELETE",
 			url: url,
