@@ -18,15 +18,19 @@
 		});
 	};
 	
-	var reminderDeleter = BA.reminderDeleter = function(id, callback) {
-		$('.reminder_delete_button').on('submit', function() {
+	//need to add submit listener to all new reminders
+	
+	var reminderDeleter = BA.reminderDeleter = function() {
+		// move this to add delete listener
+		$('.reminder_delete_button').on('submit', function() { 
+			alert("button clicked")
 			event.preventDefault();
 			var url = event.target.action;
 			
 			console.log(url)
 			
-			sendDeleteData(url, function(data) {
-				var reminder_id ="#reminder_" + url.substring(32,34)
+			sendDeleteRequest(url, function(data) {
+				var reminder_id = "#reminder_" + url.substring(32,34)
 				console.log(reminder_id);
 				console.log(data);
 				$(reminder_id).hide();
@@ -51,7 +55,7 @@
 		});
 	};
 	
-	var sendDeleteData = BA.sendDeleteData = function(url, callback) {
+	var sendDeleteRequest = BA.sendDeleteData = function(url, callback) {
 		$.ajax({
 			type: "DELETE",
 			url: url,
@@ -59,7 +63,13 @@
 		})
 	}
 	
+	var addDeleteListener = BA.addDeleteListener = function() {
+		$(document).ready(function () {
+			$('.reminder_delete_button').on('submit', deleteReminder);
+		});
+	};
 	
+	// write deleteReminder();
 	
 })(this);
 
