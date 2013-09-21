@@ -5,7 +5,7 @@
 	<div class="reminder_text"><%= data['station_name']%>, <%= data['direction'] %>, <%= BA.printDate(time) + ", "+ BA.printTime(time) + BA.printAmPm(time) %>,  Status: <strong><%= status %></strong></div>
 	<div class="reminder_delete">
 	
-	<form class="reminder_delete_button" action=<%="/reminders/" + data['id'] %> method="delete">
+	<form class="reminder_delete_button_new" action=<%="/reminders/" + data['id'] %> method="delete">
 		
 		<input class="btn-mini btn-danger" type="submit" value="Delete" />
 	</form>	

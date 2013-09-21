@@ -7,7 +7,7 @@
 }
 
 .input-small {
-	width:109px;
+	width: 110px;
 }
 
 .reminder_modal {
@@ -58,4 +58,12 @@
 
 .modal-body {
 	padding-bottom: 0px;
+}
+
+.reminder_notice {
+	bottom: 35px;
+	width: 300px;
+	position: absolute;
+	color: #CC3333;
+	font-size: x-large;
 }

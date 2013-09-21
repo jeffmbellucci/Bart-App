@@ -4,7 +4,6 @@
 	var initialize = BA.initialize = function() {
 		$('#stationsMap a').on('click', function() {
 			event.preventDefault();
-		
 			var $link = this;
 			closeAllTimes();
 			
@@ -15,8 +14,8 @@
 			$(spinnerView).hide().prependTo($($link).parent()).fadeIn(200);
 			addCloseListener();
 		 	
-			getStationData($link.id.substring(8,10), function(data){
-				
+			getStationData($link.id.substring(8, $link.id.length), function(data){
+				//this will have to change in production
 				var stationTemplateFn = JST["station_template"];
 				var timesView = stationTemplateFn({data: data});
 			
@@ -31,6 +30,7 @@
 	};
 	
 	var getStationData = BA.getStationData = function (id, callback) {
+		console.log(("/stations/").concat(id).concat(".json"));
 		$.ajax({
 			type: "GET",
 			url: ("/stations/").concat(id).concat(".json"),
@@ -39,15 +39,11 @@
 	};
 
 	var addCloseListener = BA.addCloseListener = function () {
-		$(document).ready(function() {
-			$('.closeLink').on('click', closeAllTimes);	
-		});
+		$('.closeLink').on('click', closeAllTimes);	
 	};
 	
 	var addToggleListener = BA.addToggleListener = function () {
-		$(document).ready(function() {
-			$('.toggleLink').on('click', toggleTimes);	
-		});
+		$('.toggleLink').on('click', toggleTimes);	
 	}
 
 	var closeAllTimes = BA.closeAllTimes = function () {
@@ -68,8 +64,7 @@
 		newDate.setMinutes(date.getMinutes() + minutes);
 		return newDate;
 	};
-	
-	
+		
 	var printDate = BA.printDate = function(date) {
 		return date.toString().substring(4, 10);
 	};
@@ -85,7 +80,6 @@
 		}
 		output[1] = ":"
 		var minutes = date.getMinutes();
-		//console.log(minutes)
 		if (minutes < 10) {
 		   output[2] = "0" + minutes;
 		} else {
