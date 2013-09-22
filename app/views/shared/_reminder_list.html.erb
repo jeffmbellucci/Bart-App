@@ -1,7 +1,7 @@
 <div class="accordion-group">
 	
 	  <div class="reminder_link">
-		  <a class="accordion-toggle" data-toggle="collapse" href="#reminder_view">
+		  <a class="accordion-toggle link-toggle" data-toggle="collapse" href="#reminder_view">
 	      <h4>Click here to view your reminders</h4></a> 
 	  </div>
 	  <!-- add class "in" below for accordian to start open -->
@@ -13,7 +13,7 @@
 		  <div id="reminder_list">
 			  <% reminders = current_user.reminders %>
 			  <% if reminders.empty? %>
-			   <div class="empty_reminders"><strong> You dont have any scheduled reminders. </strong></div>
+			   <div class="empty_reminders"><strong> You don't have any scheduled reminders. </strong></div>
 			  <% end %>
 			  <% reminders.each do |reminder| %>
 			  <div class="reminder_container" id=<%="reminder_" + reminder.id.to_s %>>
@@ -31,7 +31,14 @@
 				</div>
 		  	  </div>
 			<% end %>
-			<div class="reminder_close"><button type="button" class="btn accordion-toggle hidden" data-toggle="collapse" href="#reminder_view"> Close </button></div>
+			<div class="reminder_button_container hidden">
+				<div class="reminder_close"><button type="button" class="btn btn-inverse accordion-toggle button-toggle" data-toggle="collapse" href="#reminder_view"> Close </button></div>
+				<div class="reminder_refresh">
+					<form action="/" method="get">
+						<input class="btn btn-inverse" type="submit" value="Update status" />
+					</form>
+				</div>
+			</div>
 		 </div>
 	  </div> <!--/.accordion-inner -->
 	</div> <!-- /#signup_form -->

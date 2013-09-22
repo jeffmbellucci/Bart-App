@@ -1,17 +1,17 @@
 <div class="accordion-group">
 	  <span> Never used reminders before?</span> <a class="accordion-toggle" data-toggle="collapse" href="#signup_form">
-	    Click here to sign up!</a> 
+	    <strong>Click here to sign up!</strong></a> 
 	<div id="signup_form" class="accordion-body collapse">
 	  <div class="accordion-inner">
 	    <form id="user_signup" action="/users" method="post">
 			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 			<input id="user_name" name="user[name]" type="text" placeholder="Name (max 12 letters)" style="width: 150px">
-			
+			<!-- add athentication field -->
             <input id="phone_number" type="text" name="user[phone_number]" 
 			 	class="input-medium bfh-phone" data-format="(ddd)ddd-dddd" placeholder="(555)555-5555">
 			 
-		 	<button type="submit" class="btn">Sign Me Up!</button>
-            <button type="button" class="btn accordion-toggle" data-toggle="collapse" href="#signup_form" >Cancel</button>
+		 	<button type="submit" class="btn btn-inverse">Sign Me Up!</button>
+            <button type="button" class="btn btn-inverse accordion-toggle" data-toggle="collapse" href="#signup_form" >Cancel</button>
          </form>
 	  </div> <!--/.accordion-inner -->
 	</div> <!-- /#signup_form -->

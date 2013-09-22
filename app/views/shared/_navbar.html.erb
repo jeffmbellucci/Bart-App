@@ -3,13 +3,13 @@
       <a class="brand" href= <%= root_url %>> <%= image_tag "bart_live_logo.png"%></a> 
         <ul class="nav">
 			<% if logged_in? %>
-				<li><li><a data-toggle="modal" href="#reminderModal">Set Reminder</a></li>
+				<li><li><a data-toggle="modal" href="#reminderModal">My Reminders</a></li>
 	            <li><a href="#">Closest Station</a></li>		  
 				<li><a href="#">Directions</a></li>
 				<li><%=link_to 'logout', sessions_url, method: 'delete'%></li>
 				<% modal_template = "shared/reminder" %>
 			<% else%>
-				<li><a data-toggle="modal" href="#signinModal">Reminders</a></li>
+				<li><a data-toggle="modal" href="#signinModal">Login</a></li>
 	            <li><a href="#">Closest Station</a></li>
 	    		<li><a href="#">Directions</a></li>
 				<% modal_template = "shared/signin" %>

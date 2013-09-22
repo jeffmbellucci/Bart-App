@@ -7,7 +7,6 @@
 		$('#reminder_form').on('submit', function() {
 			event.preventDefault();
 			var formData = $(this).serialize();
-			
 			var reminder_notice = JST["new_reminder_notice"]();
 			
 			sendReminderData(formData, function(data) {
@@ -74,11 +73,14 @@
 	}
 	
 	var accordionToggleHider = BA.reminderLinkHider = function () {
-		$(".accordion-toggle").on("click", function () {
-			$(".accordion-toggle").toggleClass("hidden");
-		});
+		$(".accordion-toggle").on("click", hideAccordionToggle);
 	};
-
+	
+	var hideAccordionToggle = BA.hideAccordionToggle = function () {
+		$(".reminder_button_container").toggleClass("hidden");
+		$(".link-toggle").toggleClass("hidden");
+	}
+	
 })(this);
 
 $(document).ready(BA.reminderHandler);

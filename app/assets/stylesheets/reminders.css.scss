@@ -46,12 +46,30 @@
 	left: 15%;
 }
 
-.reminder_close {
+.reminder_button_container {
+	width: 200px;
+	height: 35px;
 	position: absolute;
-	left: 35%;
+	left: 20%;
 	bottom: 5px;
-	padding-bottom: 0px;
 }
+
+.reminder_button_container div {
+	display: inline-block;
+}
+
+.reminder_close {
+	position: relative;
+	width: 65px;
+	height: 30px;	
+}
+
+.reminder_refresh {
+	position: relative;
+	width: 115px;
+	height: 30px;
+}
+
 
 .accordion-inner {
 	padding: 0px;
@@ -67,4 +85,8 @@
 	width: 300px;
 	position: absolute;
 	font-size: x-large;
+}
+
+.close {
+	font-size: 30px;
 }

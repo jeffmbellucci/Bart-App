@@ -29,7 +29,6 @@
 	};
 	
 	var getStationData = BA.getStationData = function (id, callback) {
-		console.log(("/stations/").concat(id).concat(".json"));
 		$.ajax({
 			type: "GET",
 			url: ("/stations/").concat(id).concat(".json"),

@@ -8,7 +8,7 @@ class RemindersController < ApplicationController
     end
     
     if current_user.reminders.count == 10
-      render json: "You can only have 10 reminders"
+      render json: "You can only have 10 reminders."
       return
     end
     
@@ -29,18 +29,20 @@ class RemindersController < ApplicationController
     Delayed::Job.enqueue(@reminder, run_at: runtime)
     @reminder.job_id = Delayed::Job.last.id
     @reminder.save
-    respond_to do |format|
-      format.json { render json: @reminder }
-    end
+    # respond_to do |format|
+ #      format.json { render json: @reminder }
+ #    end
+    render json: @reminder
   end
  
   def destroy
     @reminder = Reminder.find(params[:id])
     Delayed::Job.find(@reminder.job_id).destroy unless Delayed::Job.find_by_id(@reminder.job_id).nil?
     @reminder.destroy
-    respond_to do |format|
-      format.json { render json: [current_user.reminders.count, @reminder.id] }
-    end
+    # respond_to do |format|
+#       format.json { render json: [current_user.reminders.count, @reminder.id] }
+#     end
+    render json: [current_user.reminders.count, @reminder.id]
   end
 end
 
