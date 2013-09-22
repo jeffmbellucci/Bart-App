@@ -17,7 +17,7 @@ class Reminder < ActiveRecord::Base
       return ["Hi #{user.name}, #{station_name} has no trains at this time #{current_time}"]
     end
     
-    header = "Hi #{user.name}, here are the Bart departure times you requested for #{station_name} as of #{current_time}."
+    header = "Hi #{user.name}, here are the #{direction} Bart departure times you requested for #{station_name} as of #{current_time}."
     northbound = ["NORTHBOUND\n"]
     southbound = ["SOUTHBOUND\n"]
       
@@ -35,7 +35,7 @@ class Reminder < ActiveRecord::Base
         southbound <<"\n"
       end
     end
-    if direction == "Northbound"
+    if direction == "northbound"
       [header, northbound.join("")[0...160]]  #split into 2 texts if too long
     else
       [header, southbound.join("")[0...160]]

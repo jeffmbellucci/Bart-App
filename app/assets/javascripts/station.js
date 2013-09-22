@@ -14,8 +14,7 @@
 			$(spinnerView).hide().prependTo($($link).parent()).fadeIn(200);
 			addCloseListener();
 		 	
-			getStationData($link.id.substring(8, $link.id.length), function(data){
-				//this will have to change in production
+			getStationData($link.id.substring(8, $link.id.length), function(data) {
 				var stationTemplateFn = JST["station_template"];
 				var timesView = stationTemplateFn({data: data});
 			

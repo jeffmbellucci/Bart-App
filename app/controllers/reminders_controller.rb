@@ -3,9 +3,12 @@ class RemindersController < ApplicationController
   
   def create
     if params[:reminder][:runtime].blank?
-      #flash[:error] = "Time can't be blank."
       render json: "Time cant be blank."
-      # redirect_to root_url
+      return
+    end
+    
+    if current_user.reminders.count == 10
+      render json: "You can only have 10 reminders"
       return
     end
     
@@ -36,7 +39,7 @@ class RemindersController < ApplicationController
     Delayed::Job.find(@reminder.job_id).destroy unless Delayed::Job.find_by_id(@reminder.job_id).nil?
     @reminder.destroy
     respond_to do |format|
-      format.json { render json: current_user.reminders.count }
+      format.json { render json: [current_user.reminders.count, @reminder.id] }
     end
   end
 end

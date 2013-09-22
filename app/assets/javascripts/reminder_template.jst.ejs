@@ -1,11 +1,11 @@
-<div class="reminder_container" id=<%="reminder_" + data['id'] %>>
+<div class="reminder_container" id=<%="reminder_" + data['id'] %> >
 	<% if (data['completed']) { status = "Sent" } %>
 	<% if (!data['completed']) { status = "Scheduled" } %>
 	<% var time = new Date(data['runtime']) %>
 	<div class="reminder_text"><%= data['station_name']%>, <%= data['direction'] %>, <%= BA.printDate(time) + ", "+ BA.printTime(time) + BA.printAmPm(time) %>,  Status: <strong><%= status %></strong></div>
 	<div class="reminder_delete">
 	
-	<form class="reminder_delete_button_new" action=<%="/reminders/" + data['id'] %> method="delete">
+	<form class=<%="reminder_delete_button_" + data['id'] %> action=<%="/reminders/" + data['id'] %> method="delete">
 		
 		<input class="btn-mini btn-danger" type="submit" value="Delete" />
 	</form>	
