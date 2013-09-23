@@ -15,13 +15,13 @@
 			  <% if reminders.empty? %>
 			   <div class="empty_reminders"><strong> You don't have any scheduled reminders. </strong></div>
 			  <% end %>
-			  <% reminders.reverse.each do |reminder| %>
+			  <% reminders.reverse_each do |reminder| %>
 			  <div class="reminder_container" id=<%="reminder_" + reminder.id.to_s %>>
 				  <% station = reminder.station_name %>
 				  <% time = reminder.runtime - 7.hours %>
 				  <% status = "Sent" if reminder.completed %>
 				  <% status = "Scheduled" unless reminder.completed %>
-			  	<div class="reminder_text"><%= station%>, <%= reminder.direction %>, <%= time.strftime("%b %-d, %l:%M%p")%>, Status: <strong><%= status %></strong></div>
+			  	<div class="reminder_text"><%= station%>, <%= reminder.direction %>, <%= time.strftime("%b %d, %l:%M%p")%>, Status: <strong><%= status %></strong></div>
 		 	  	<div class="reminder_delete">
 					
 					<form class="reminder_delete_button" action=<%="/reminders/" + reminder.id.to_s %>  method="delete">
@@ -35,7 +35,7 @@
 				<div class="reminder_close"><button type="button" class="btn btn-inverse accordion-toggle button-toggle" data-toggle="collapse" href="#reminder_view"> Close </button></div>
 				<div class="reminder_refresh">
 					<form id="refresh_form" action="/" method="get">
-						<input class="btn btn-inverse" type="submit" value="Refresh" />
+						<input class="btn btn-inverse" type="submit" value="Refresh statuses" />
 					</form>
 				</div>
 			</div>

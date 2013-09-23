@@ -41,6 +41,7 @@ html {
   }
   .modal {
 	  width: 420px;
+	  max-height: 700px; // not sure if this does anything
 	  height: auto;  //dont change this ever
 	  background-color: #CCCCCC;
 	  border: solid 3px #555555;
@@ -69,6 +70,8 @@ html {
   .accordion-inner {
   	border: none;
   }
+  
+  .accordion
   
   .alert {
 	  position: absolute;

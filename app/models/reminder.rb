@@ -36,6 +36,10 @@ class Reminder < ActiveRecord::Base
         southbound <<"\n"
       end
     end
+    
+    northbound << "This station has no northbound trains at this time." if northbound.length == 1
+    southbound << "This station has no southbound trains at this time." if southbound.length == 1
+    
     if direction == "Northbound"
       [header, northbound.join("")[0...160]]  #split into 2 texts if too long
     elsif direction == "Southbound"

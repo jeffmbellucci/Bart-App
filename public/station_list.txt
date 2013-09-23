@@ -106,3 +106,5 @@ Never used reminders before? Sign Up
 -round corners of map
 - add status column to reminders, and change status on perform instead of delete X
 -authentication key for reminders
+- look into short code for number
+- fix northbound/southbound no trains bug X
