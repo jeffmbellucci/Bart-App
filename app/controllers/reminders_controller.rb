@@ -1,5 +1,9 @@
 class RemindersController < ApplicationController
-  before_filter :logged_in_user, only: [:create, :destroy]
+  before_filter :logged_in_user, only: [:index, :create, :destroy]
+  
+  def index
+    render json: current_user.reminders
+  end
   
   def create
     if params[:reminder][:runtime].blank?

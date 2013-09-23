@@ -11,9 +11,11 @@
 			
 			sendReminderData(formData, function(data) {
 				console.log(data);
-				$(reminder_notice).prependTo($(".reminder_link"));
-				$(".reminder_notice").fadeOut(500);
 				$(".empty_reminders").hide();
+				
+				$(reminder_notice).prependTo($(".reminder_link"));
+				setTimeout(function() { $(".reminder_notice").fadeOut(300) }, 300);
+				
 				var reminderTemplateFn = JST["reminder_template"];
 				var reminderView = reminderTemplateFn({data: data});
 				$(reminderView).prependTo($("#reminder_list"));
@@ -28,7 +30,7 @@
 		
 		var reminder_notice = JST["deleted_reminder_notice"]();
 		$(reminder_notice).prependTo($(".reminder_link"));
-		$(".reminder_notice").fadeOut(500);
+		setTimeout(function() { $(".reminder_notice").fadeOut(300) }, 300);
 		//console.log(url)
 		
 		sendDeleteRequest(url, function(data) {
@@ -62,6 +64,14 @@
 			url: url,
 			success: callback
 		});
+	};
+	
+	var refreshReminders = BA.refreshReminders = function () {
+		
+	};
+	
+	var getReminders = BA.getReminders = function () {
+		
 	};
 	
 	var addDeleteListenerNew = BA.addDeleteListenerNew = function (id) {

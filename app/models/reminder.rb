@@ -11,13 +11,14 @@ class Reminder < ActiveRecord::Base
   
   	station_name = data['root']['station']['name'] 
   	current_time = data['root']['time'][0..-5].reverse.chomp("0").reverse
-    # current_time = current_time[0..-7]
+    meridian = current_time[-2..-1]
+    current_time = current_time[0..-7] + meridian
    
   	if data['root']['message']
       return ["Hi #{user.name}, #{station_name} has no trains at this time #{current_time}"]
     end
     
-    header = "Hi #{user.name}, here are the #{direction} Bart departure times you requested for #{station_name} as of #{current_time}."
+    header = "Hi #{user.name}, here are the #{direction.downcase} Bart departure times you requested for #{station_name} as of #{current_time}."
     northbound = ["NORTHBOUND\n"]
     southbound = ["SOUTHBOUND\n"]
       
@@ -28,16 +29,16 @@ class Reminder < ActiveRecord::Base
         times = line['estimate']
         times.each { |time| northbound << (Time.now + time['minutes'].to_i.minutes).strftime("%l:%M") + " " }
         northbound <<"\n"
-      else
+      elsif line['estimate'][0]['direction'] == "South"
         southbound << "#{line['destination']}\n"
         times = line['estimate']
         times.each { |time| southbound << (Time.now + time['minutes'].to_i.minutes).strftime("%l:%M") + " " }
         southbound <<"\n"
       end
     end
-    if direction == "northbound"
+    if direction == "Northbound"
       [header, northbound.join("")[0...160]]  #split into 2 texts if too long
-    else
+    elsif direction == "Southbound"
       [header, southbound.join("")[0...160]]
     end
   end

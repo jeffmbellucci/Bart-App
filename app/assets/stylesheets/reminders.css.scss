@@ -50,7 +50,7 @@
 	width: 200px;
 	height: 35px;
 	position: absolute;
-	left: 20%;
+	left: 25%;
 	bottom: 5px;
 }
 
@@ -81,12 +81,30 @@
 }
 
 .reminder_notice {
-	bottom: 40px;
-	width: 300px;
+	bottom: 30px;
+	width: auto;
+	padding: 3px;
 	position: absolute;
 	font-size: x-large;
+	border-radius: 10px;
+}
+
+.green_notice {
+	color: #298A08;  //#99CC66 matches green on map
+	border: solid 3px #298A08;
+	background-color: #BCF5A9;
+}
+
+.red_notice {
+	color: #CC3333;
+	border: solid 3px #CC3333;
+	background-color: #F8E0E0;
 }
 
 .close {
 	font-size: 30px;
+}
+
+.reminder_submit {
+	
 }
