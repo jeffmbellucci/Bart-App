@@ -4,6 +4,7 @@
 	var reminderHandler = BA.reminderHandler = function () {
 		accordionToggleHider();
 		addDeleteListenerOld();
+		addRefreshListener();
 		$('#reminder_form').on('submit', function() {
 			event.preventDefault();
 			var formData = $(this).serialize();
@@ -45,6 +46,20 @@
 			};
 		});
 	};
+	
+	var refreshReminders = BA.refreshReminders = function () {
+		event.preventDefault();
+		getReminders(function (data) {
+			$(".reminder_container").hide();
+			console.log(data);
+			for (var i = 0; i < data.length; i++) {
+				var reminderTemplateFn = JST["reminder_template"];
+				var reminderView = reminderTemplateFn({data: data[i]});
+				$(reminderView).prependTo($("#reminder_list"));
+				addDeleteListenerNew(data[i].id);
+			};
+		});
+	};
 		
 	var sendReminderData = BA.sendReminderData = function (data, callback) {
 		$.ajax({
@@ -66,13 +81,17 @@
 		});
 	};
 	
-	var refreshReminders = BA.refreshReminders = function () {
-		
+	var getReminders = BA.getReminders = function (callback) {
+		$.ajax({
+			type: "GET",
+			url: "/reminders",
+			success: callback
+		})
 	};
 	
-	var getReminders = BA.getReminders = function () {
-		
-	};
+	var addRefreshListener = BA.addRefreshListener = function () {
+		$("#refresh_form").on("submit", refreshReminders);
+	}
 	
 	var addDeleteListenerNew = BA.addDeleteListenerNew = function (id) {
 		$('.reminder_delete_button_' + id).on('submit', deleteReminder);

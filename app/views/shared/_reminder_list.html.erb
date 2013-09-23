@@ -15,7 +15,7 @@
 			  <% if reminders.empty? %>
 			   <div class="empty_reminders"><strong> You don't have any scheduled reminders. </strong></div>
 			  <% end %>
-			  <% reminders.each do |reminder| %>
+			  <% reminders.reverse.each do |reminder| %>
 			  <div class="reminder_container" id=<%="reminder_" + reminder.id.to_s %>>
 				  <% station = reminder.station_name %>
 				  <% time = reminder.runtime - 7.hours %>
@@ -34,7 +34,7 @@
 			<div class="reminder_button_container hidden">
 				<div class="reminder_close"><button type="button" class="btn btn-inverse accordion-toggle button-toggle" data-toggle="collapse" href="#reminder_view"> Close </button></div>
 				<div class="reminder_refresh">
-					<form action="/" method="get">
+					<form id="refresh_form" action="/" method="get">
 						<input class="btn btn-inverse" type="submit" value="Refresh" />
 					</form>
 				</div>
