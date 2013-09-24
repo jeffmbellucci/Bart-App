@@ -55,12 +55,17 @@ html {
 	  }
   }
   
+  .modal.fade.in {
+	  top: 5%;
+	  left: 55%;
+  }
+  
   .modal-header {
 	  border-bottom: solid 3px #555555;
   }
   
   .modal-body {
-	  height: auto;
+	  max-height: 550px;  // max height of the entire modal once expanded
   }
   
   .accordion-group {
@@ -70,8 +75,6 @@ html {
   .accordion-inner {
   	border: none;
   }
-  
-  .accordion
   
   .alert {
 	  position: absolute;
