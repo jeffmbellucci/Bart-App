@@ -109,3 +109,4 @@ Never used reminders before? Sign Up
 - look into short code for number
 - fix northbound/southbound no trains bug X
 - Text disclaimer...  (Text reminders will send you departure times at the station of your choosing... text reminders will come from # )
+- my info, edit/update user info

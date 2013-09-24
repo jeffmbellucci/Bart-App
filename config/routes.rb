@@ -7,7 +7,7 @@ BartApp::Application.routes.draw do
   root to: "stations#index"
   
   get "/all_stations", to: "static_pages#all_stations"
-  get "/about", to: "static_pages#help"
+  get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"
   get "/help", to: "static_pages#help"
  
