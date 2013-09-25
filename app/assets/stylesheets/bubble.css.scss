@@ -2,8 +2,8 @@
 .bubble {
 	font-size: 1em;
 	position: absolute;
-	bottom: 33px;
-	left: -125px; /* Moves bubble side to side */
+	bottom: 28px; // Moves bubble up and down
+	left: -110px; // Moves bubble side to side 
 	z-index: 1;
 	width: 290px;
 	//removed height so div would size dynamically

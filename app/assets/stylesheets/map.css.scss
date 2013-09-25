@@ -11,22 +11,32 @@
 	margin: 0 auto;
 	background-image: url('new_map_no_text.jpg');
 	background-repeat: no-repeat;
-	width: 960px;  // 1000 x 1000?
+	width: 960px;  
 	height: 800px;
 	// border: 3px solid #000000;
-	//radius
+}
+
+.mapText {
+	position: absolute;
+	top: 2%;
+	left: 2%;
+	color: #FFFFFF; 
+	font-family: futura;
+	font-size: 48px;
+	letter-spacing: -2px;
+	line-height: 44px;
 }
 
 #station_12th { 
 	position: absolute; 
 	top: 43.9%;
-	left: 42%;
+	left: 41.8%;
 } 
 
 #station_16th { 
 	position: absolute; 
-	top: 55.9%;
-	left: 5.3%;
+	top: 56.7%;
+	left: 8.1%;
 } 
 
 #station_19th { 
@@ -37,20 +47,20 @@
 
 #station_24th { 
 	position: absolute; 
-	top: 57.9%;
-	left: 4%;
+	top: 58.6%;
+	left: 7.1%;
 } 
 
 #station_ashb { 
 	position: absolute; 
-	top: 33%;
-	left: 35.7%;
+	top: 34.2%;
+	left: 33.2%;
 } 
 
 #station_balb { 
 	position: absolute; 
-	top: 62.1%;
-	left: 3.4%;
+	top: 62.5%;
+	left: 7.3%;
 } 
 
 #station_bayf { 
@@ -67,8 +77,8 @@
 
 #station_civc { 
 	position: absolute; 
-	top: 53.7%;
-	left: 9.5%;
+	top: 54.9%;
+	left: 11.6%;
 } 
 
 #station_cols { 
@@ -79,56 +89,65 @@
 
 #station_colm { 
 	position: absolute; 
-	top: 70.2%;
-	left: 7.4%;
+	top: 71%;
+	left: 10.7%;
 } 
 
 #station_conc { 
 	position: absolute; 
 	top: 16.6%;
-	left: 69.4%;
+	left: 69.6%;
 } 
 
 #station_daly { 
 	position: absolute; 
-	top: 66.1%;
-	left: 4.2%;
+	top: 67%;
+	left: 1.5%;
+	.stationLink {
+		font-size: 2em;
+	}
 } 
 
 #station_dbrk { 
 	position: absolute; 
-	top: 30.1%;
-	left: 25%;
+	top: 31.8%;
+	left: 23.4%;
 } 
 
 #station_dubl { 
 	position: absolute; 
-	top: 65%;
-	left: 83%;
+	top: 64.5%;
+	left: 74%;
+	.stationLink {
+		font-size: 2em;
+	}
 } 
 
 #station_deln { 
 	position: absolute; 
-	top: 21.1%;
-	left: 19%;
+	top: 23%;
+	left: 19.5%;
 } 
 
 #station_plza { 
 	position: absolute; 
-	top: 24.1%;
-	left: 24%;
+	top: 26%;
+	left: 23.4%;
 } 
 
 #station_embr { 
 	position: absolute; 
-	top: 47.7%;
-	left: 12.4%;
+	top: 49.5%;
+	left: 14%;
 } 
 
 #station_frmt { 
 	position: absolute; 
-	top: 95%;
-	left: 67.8%;
+	top: 96.3%;
+	left: 67.4%;
+	.stationLink {
+		font-size: 2em;
+	}
 } 
 
 #station_ftvl { 
@@ -139,20 +158,20 @@
 
 #station_glen { 
 	position: absolute; 
-	top: 60%;
-	left: 6.3%;
+	top: 60.5%;
+	left: 9.8%;
 } 
 
 #station_hayw { 
 	position: absolute; 
-	top: 77.2%;
-	left: 53.5%;
+	top: 77.3%;
+	left: 53.2%;
 } 
 
 #station_lafy { 
 	position: absolute; 
 	top: 27.5%;
-	left: 54.7%;
+	left: 54.9%;
 } 
 
 #station_lake { 
@@ -169,75 +188,86 @@
 
 #station_mlbr { 
 	position: absolute; 
-	top: 88.9%;
-	left: 22.7%;
+	top: 89.2%;
+	left: 19.5%;
+	.stationLink {
+		font-size: 2em;
+	}
 } 
 
 #station_mont { 
 	position: absolute; 
-	top: 49.7%;
-	left: 9.5%;
+	top: 51.3%;
+	left: 11.2%;
 } 
 
 #station_nbrk { 
 	position: absolute; 
-	top: 27.1%;
-	left: 26%;
+	top: 29%;
+	left: 25.2%;
 } 
 
 #station_ncon { 
 	position: absolute; 
 	top: 12.9%;
-	left: 74.7%;
+	left: 74.9%;
 } 
 
 #station_orin { 
 	position: absolute; 
 	top: 31%;
-	left: 49.8%;
+	left: 50%;
 } 
 
 #station_pitt { 
 	position: absolute; 
-	top: 8.4%;
-	left: 79.9%;
+	top: 6%;
+	left: 70%;
+	.stationLink {
+		font-size: 2em;
+	}
 } 
 
 #station_phil { 
 	position: absolute; 
 	top: 20.1%;
-	left: 64.9%;
+	left: 65%;
 } 
 
 #station_powl { 
 	position: absolute; 
-	top: 51.7%;
-	left: 11.9%;
-
+	top: 53.1%;
+	left: 14.1%;
 } 
 
 #station_rich { 
 	position: absolute; 
-	top: 16.3%;
+	top: 17%;
 	left: 23%;
+	.stationLink {
+		font-size: 2em;
+	}
 } 
 
 #station_rock { 
 	position: absolute; 
 	top: 34.7%;
-	left:45%;
+	left:45.1%;
 } 
 
 #station_sbrn { 
 	position: absolute; 
-	top: 78.1%;
-	left: 10.4%;
+	top: 78.5%;
+	left: 12.5%;
 } 
 
 #station_sfia { 
 	position: absolute; 
-	top: 79.2%;
-	left: 24.7%;
+	top: 80.4%;
+	left: 25.5%;
+	.stationLink {
+		font-size: 1.5em;
+	}
 } 
 
 #station_sanl { 
@@ -249,30 +279,30 @@
 #station_shay { 
 	position: absolute; 
 	top: 83.1%;
-	left: 54.6%;
+	left: 53.9%;
 } 
 
 #station_ssan { 
 	position: absolute; 
-	top: 74.1%;
-	left: 0.9%;
+	top: 74.4%;
+	left: 3.8%;
 } 
 
 #station_ucty { 
 	position: absolute; 
 	top: 89.8%;
-	left: 63%;
+	left: 62.4%;
 } 
 
 #station_wcrk { 
 	position: absolute; 
 	top: 23.9%;
-	left: 59.7%;
+	left: 59.9%;
 } 
 #station_wdub {
 	position: absolute; 
-	top: 69.3%;
-	left: 75.6%;
+	top: 69.5%;
+	left: 74.8%;
 }
 
 #station_woak { 
