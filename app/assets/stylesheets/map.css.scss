@@ -9,7 +9,7 @@
 #stationsMap {
 	position: relative;
 	margin: 0 auto;
-	background-image: url('new_map_no_text_white.jpg');
+	background-image: url('new_map_square_10px.jpg');
 	background-repeat: no-repeat;
 	width: 960px;  
 	height: 800px;
@@ -18,8 +18,8 @@
 
 .mapText {
 	position: absolute;
-	top: 2%;
-	left: 2%;
+	top: 2.5%;
+	left: 2.5%;
 	color: #FFFFFF; 
 	font-family: futura;
 	font-size: 48px;

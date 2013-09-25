@@ -36,8 +36,8 @@ html {
   .modal-backdrop { background-color: #CCCCCC }
   .modal-header { 
 	  background-color: #FFFFFF;
-	  border-top-left-radius: 20px;
-	  border-top-right-radius: 20px;
+	  border-top-left-radius: 10px;
+	  border-top-right-radius: 10px;
   }
   .modal {
 	  width: 420px;
@@ -45,7 +45,7 @@ html {
 	  height: auto;  //dont change this ever
 	  background-color: #CCCCCC;
 	  border: solid 3px #555555;
-	  border-radius: 20px;
+	  border-radius: 10px;
 	  
 	  &.fade {
 		  z-index: -1050;
@@ -57,7 +57,7 @@ html {
   
   .modal.fade.in {
 	  top: 5%;
-	  left: 55%;
+	  left: 50%;
   }
   
   .modal-header {
@@ -79,6 +79,6 @@ html {
   .alert {
 	  position: absolute;
 	  left: 40%;
-	  top: 82px;
+	  top: 84px;
 	  z-index: 10;
   }
