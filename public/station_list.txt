@@ -92,21 +92,23 @@ Never used reminders before? Sign Up
 -delayed job X
 -toggle data in bubble from minutes to absolute time X
 -clean up and namespace javascript X
--widen map
--grayscale map?
+-widen map X
+-grayscale map? X
 -recurring reminders
 	-reminders have many jobs
 	-join table between reminders and delayed jobs
 	-or add column to delayed job table, find_all_by_reminder_id(@reminder.id), then delete
--editable reminders
+-editable reminders X
 -last train reminder
 -regis/cache times
 -reminder model? X
 -gem daemon?
--round corners of map
+-round corners of map X
 - add status column to reminders, and change status on perform instead of delete X
 -authentication key for reminders
-- look into short code for number
+- look into short code for number X
 - fix northbound/southbound no trains bug X
 - Text disclaimer...  (Text reminders will send you departure times at the station of your choosing... text reminders will come from # )
 - my info, edit/update user info
+- contact and about page
+- closest station

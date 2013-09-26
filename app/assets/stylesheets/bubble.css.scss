@@ -13,8 +13,8 @@
 	padding-right: 0px;
 	background: #CCCCCC;  //background color e6e6e6
 	// border: #333333 solid 3px; //007FFF 4px? blue #0099CC
-	opacity:0.93;
-	filter:alpha(opacity=93);
+	opacity:0.92;
+	filter:alpha(opacity=92);
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
@@ -67,15 +67,15 @@
 
 .closeLink {
 	position: absolute;
-	top: 4px;
-	right: 7px;
+	top: 2px;
+	right: 5px;
 	a { 
 		color: black; 
 		font-family: futura;
 		font-size: x-large;
 	}
 	a:hover {
-		color: red;
+		color: white;
 		font-size: x-large;
 	};
 	a:active { 
@@ -85,14 +85,14 @@
 
 .toggleLink {
 	position: absolute;
-	bottom: 3px;
-	right: 11px;
+	bottom: 2px;
+	right: 8px;
 	a { 
 		color: black; 
 		font-family: futura;
 	}
 	a:hover {
-		color: red;
+		color: white;
 		font-size: 100%;
 	};
 	a:active { 

@@ -45,7 +45,7 @@
 	}
 
 	var closeAllTimes = BA.closeAllTimes = function () {
-		$('.bubble').fadeOut(200); // versus hide() ???
+		$('.bubble').fadeOut(200, this.remove); // versus hide() ???
 	};
 	
 	var toggleTimes = BA.toggleTimes = function () {
@@ -54,7 +54,7 @@
 	};
 
 	var closeSpinner = BA.closeSpinner = function () {
-		$('.spinner').hide();
+		$('.spinner').remove(); // versus hide?
 	}
 	
 	var addMinutes = BA.addMinutes = function(date, minutes) {

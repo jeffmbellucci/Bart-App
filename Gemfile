@@ -10,7 +10,6 @@ gem 'pg'
 gem 'rails_12factor'
 gem 'addressable', require: 'addressable/uri'
 gem 'httparty'
-gem 'nokogiri'
 gem 'json'
 
 gem 'simple_form'

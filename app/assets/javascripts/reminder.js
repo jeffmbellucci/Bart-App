@@ -12,10 +12,12 @@
 			
 			sendReminderData(formData, function(data) {
 				console.log(data);
-				$(".empty_reminders").hide();
+				$(".empty_reminders").remove(); //versus hide?
 				
 				$(reminder_notice).prependTo($(".reminder_link"));
-				setTimeout(function() { $(".reminder_notice").fadeOut(300) }, 300);
+				setTimeout(function() { 
+					$(".reminder_notice").fadeOut(300);
+				}, 300); // remove?
 				
 				var reminderTemplateFn = JST["reminder_template"];
 				var reminderView = reminderTemplateFn({data: data});
@@ -31,15 +33,16 @@
 		
 		var reminder_notice = JST["deleted_reminder_notice"]();
 		$(reminder_notice).prependTo($(".reminder_link"));
-		setTimeout(function() { $(".reminder_notice").fadeOut(300) }, 300);
-		//console.log(url)
+		setTimeout(function() { 
+			$(".reminder_notice").fadeOut(300); // remove?
+		}, 300);
 		
 		sendDeleteRequest(url, function(data) {
 			console.log(data);
 			
-			var reminder_id = "#reminder_" + data[1] 
+			var reminder_id = "#reminder_" + data[1]; 
 			console.log(reminder_id);
-			$(reminder_id).hide();
+			$(reminder_id).remove(); //hide?
 			if (data[0] == "0") {
 				var emptyReminder = JST["empty_reminder"]();
 				$(emptyReminder).prependTo($("#reminder_list"));
@@ -50,7 +53,7 @@
 	var refreshReminders = BA.refreshReminders = function () {
 		event.preventDefault();
 		getReminders(function (data) {
-			$(".reminder_container").hide();
+			$(".reminder_container").remove(); // hide?
 			console.log(data);
 			for (var i = 0; i < data.length; i++) {
 				var reminderTemplateFn = JST["reminder_template"];
