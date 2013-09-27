@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :phone_number
   
-  validates :name, :phone_number, presence: true
+  validates :name, presence: true
   validates :name, length: {maximum: 12}
   validates :phone_number, uniqueness: true
   validates :phone_number, length: { is: 13 }

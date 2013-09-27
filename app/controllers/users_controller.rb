@@ -2,34 +2,31 @@ class UsersController < ApplicationController
   before_filter :correct_user, :logged_in_user, except: [:create]
   
   def create
+    unless params[:password] == ENV["SIGNUP_PASSWORD"]
+      flash[:error] = ["Sorry, that is not the password. Click contact for information."]
+      redirect_to root_url
+      return
+    end
+    
      @user = User.new(params[:user])
      if @user.save
-       flash[:success] = "Hi #{params[:user][:name]}, your account has been created."
+       flash[:success] = ["Hi #{params[:user][:name]}, your account has been created."]
        login(@user)
        redirect_to root_url
      else
-       flash[:error] = "Failed account creation."
+       flash[:error] = @user.errors.full_messages
        redirect_to root_url
      end
    end
   
-   def show
-     @user = User.find(params[:id])
-     render :show
-   end
-   
-   def edit
-     @user = User.find(params[:id])
-   end
-   
    def update
      @user = User.find(params[:id])
      if @user.update_attributes(params[:user])
-        flash[:success] = "You information has been updated."
+        flash[:success] = ["You're information has been updated."]
        redirect_to root_url
      else
-       flash[:error] = "Failed account update."
-       render :edit
+       flash[:error] = @user.errors.full_messages
+       redirect_to root_url
      end
      
    end
@@ -37,6 +34,7 @@ class UsersController < ApplicationController
    def destroy
      @user = User.find(params[:id])
      @user.delete
+     flash[:success] = ["You're account has been destroyed."]
      redirect_to root_url
    end
  end
