@@ -64,11 +64,11 @@
 		});
 	};
 		
-	var sendReminderData = BA.sendReminderData = function (data, callback) {
+	var sendReminderData = BA.sendReminderData = function (formData, callback) {
 		$.ajax({
 			type: "POST",
 			url: "/reminders",
-			data: data,
+			data: formData,
 			success: callback,
 			error: function (data) {
 				alert(data.responseText);

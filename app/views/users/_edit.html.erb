@@ -1,0 +1,79 @@
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title">Update your information</h3>
+      </div>
+      <div class="modal-body reminder_modal">
+		  
+        <div class="form-horizontal">
+			
+			<% current_user.errors.full_messages.each do |error| %>
+			<font color="red"><%= error %></font>
+			<br>
+			<% end  %>
+
+
+			<form id="edit_form" action= <%= user_url(@user) %> method="POST">
+			  <input type="hidden" name="_method" value="PUT">
+			  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  
+		  	  <strong> Your name: <strong>
+				  <br>
+			  <input style="width: 80px" type="text" name="user[name]" id="user_name" value= <%= @user.name %> >
+			  <label for="user_name"><strong>Your name</strong></label>
+				<br>
+			  <strong> Your current phone number: <strong>
+			 	<br>
+			  <input id="phone_number" type="text" name="user[phone_number]" class="input-medium bfh-phone" 
+			  	data-format="(ddd)ddd-dddd" data-number= <%= @user.phone_number %> >
+		  	  <label for="phone_number"><strong>Add a new phone number</strong></label>
+			
+			 <button type="submit" class="reminder_submit btn btn-inverse">Update</button>
+             <button type="button" class="btn btn-inverse" data-dismiss="modal">Cancel</button> 	 
+          </form>
+		  
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+	
+	<% @user.errors.full_messages.each do |error| %>
+	<font color="red"><%= error %></font>
+	<br>
+	<% end  %>
+
+
+	<form id="edit_form" action= <%= user_url(@user) %> method="POST">
+	  <input type="hidden" name="_method" value="PUT">
+	  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  
+  	  <strong> Your name: <strong>
+		  <br>
+	  <input style="width: 80px" type="text" name="user[name]" id="user_name" value= <%= @user.name %> >
+	  <label for="user_name"><strong>Your name</strong></label>
+		<br>
+	  <strong> Your current phone number: <strong>
+	 	<br>
+	  <input id="phone_number" type="text" name="user[phone_number]" class="input-medium bfh-phone" 
+	  	data-format="(ddd)ddd-dddd" data-number= <%= @user.phone_number %> >
+  	  <label for="phone_number"><strong>Add a new phone number</strong></label>
+		<br>
+	  <input type="submit" value="Update info" class="btn btn-inverse">
+	</form>
+
+  
+
+
