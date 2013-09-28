@@ -76,7 +76,7 @@
 		});
 	};
 	
-	var sendDeleteRequest = BA.sendDeleteData = function (url, callback) {
+	var sendDeleteRequest = BA.sendDeleteRequest = function (url, callback) {
 		$.ajax({
 			type: "DELETE",
 			url: url,

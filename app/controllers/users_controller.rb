@@ -34,8 +34,7 @@ class UsersController < ApplicationController
    def destroy
      @user = User.find(params[:id])
      @user.delete
-     flash[:success] = ["You're account has been destroyed."]
-     redirect_to root_url
+     render json: @user
    end
  end
 

@@ -18,10 +18,12 @@
 //= require bootstrap-formhelpers-timepicker
 //= require station
 //= require reminder
+//= require user
 //= require empty_reminder
 //= require new_reminder_notice
 //= require deleted_reminder_notice
 //= require station_template
 //= require spinner_template
 //= require reminder_template
+//= require alert_template
 
