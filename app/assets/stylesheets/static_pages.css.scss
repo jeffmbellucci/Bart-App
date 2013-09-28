@@ -1,0 +1,27 @@
+#contactModal {
+	width: 450px;
+}
+
+#fields_container {
+	position:absolute;
+	left:0%;
+	top:0%;
+	height: 200px;
+	width: 350px;
+}
+
+#fields_container div {
+	display: inline-block;
+}
+#subject {
+	position:relative ;
+	left: 0%;
+}
+
+#email_body {
+	position:relative;
+	left: 0%;
+	top:20%;
+	width: 400px;
+	height: 120px;
+}

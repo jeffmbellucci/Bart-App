@@ -14,31 +14,33 @@
 			BA.sendDeleteRequest(url, function(data) {
 				
 				var alert = JST['alert_template']({data: {'alertType': 'alert alert-error', 
-														  'message': 'Your Account has been deleted'}});
-				$('.alert').remove()										  									  
-			    $('#editModal').modal('hide');
-				$('#wrap').append(alert);	
+														  'message': 'Your Account has been deleted.'}});
+				handleUserResponse(alert);
 				setTimeout(function() { 
-					$(".alert").fadeOut(300);
 					location.reload();
-				}, 2000);  	
+				}, 2300);  	
+				
 			});
 			
 		} else {
 			var alert = JST['alert_template']({data: {'alertType': 'alert alert-success', 
-													  'message': 'You chose... Wisely'}});
-			$('.alert').remove()										  									  
-		    $('#editModal').modal('hide');
-			$('#wrap').append(alert);	
-			setTimeout(function() { 
-				$(".alert").fadeOut(300);
-			}, 1500);  
-		}		
+													  'message': 'You chose... Wisely.'}});
+			handleUserResponse(alert);
+		};		
 	};
 
 	var addUserDeleteListener = BA.addUserDeleteListener = function () {
 		$('.account_delete_button').on('submit', deleteAccount);
 	}
+	
+	var handleUserResponse = BA.handleUserResponse = function (alert) {
+		$('.alert').remove()										  									  
+	    $('#editModal').modal('hide');
+		$('#wrap').append(alert);	
+		setTimeout(function() { 
+			$(".alert").fadeOut(300);
+		}, 2000);  	
+	};
 	
 })(this);
 
