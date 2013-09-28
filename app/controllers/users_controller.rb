@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   
   def create
     unless params[:password] == ENV["SIGNUP_PASSWORD"]
-      flash[:error] = ["Sorry, that is not the password. Click contact for information."]
+      flash[:error] = ["Incorrect activation code. Click contact for information."]
       redirect_to root_url
       return
     end

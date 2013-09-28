@@ -86,14 +86,15 @@
 .toggleLink {
 	position: absolute;
 	bottom: 2px;
-	right: 8px;
+	right: 5px;
 	a { 
+		font-size: 2em;
 		color: black; 
 		font-family: futura;
 	}
 	a:hover {
 		color: white;
-		font-size: 100%;
+		font-size: 2em;
 	};
 	a:active { 
 		color: black;

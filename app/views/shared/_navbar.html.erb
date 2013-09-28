@@ -6,20 +6,17 @@
 				<%= render "shared/reminder" %>
 				<%= render "users/edit" %>
 				<li><a data-toggle="modal" href="#reminderModal">My Reminders</a></li>
-				<li><a data-toggle="modal" href="#editModal">My info</a></li>
+				<li><a data-toggle="modal" href="#editModal">My Info</a></li>
 	            <li><a href="#">Closest Station</a></li>		  
 				<li><a href="#">Directions</a></li>
 				<li><%=link_to 'Logout', sessions_url, method: 'delete'%></li>
-				<% modal_template = "shared/reminder" %>
 			<% else %>
 				<%= render "shared/signin" %>
-				<li><a data-toggle="modal" href="#signinModal">Login</a></li>
+				<li><a data-toggle="modal" href="#signinModal">Reminders</a></li>
 	            <li><a href="#">Closest Station</a></li>
 	    		<li><a href="#">Directions</a></li>
-				<% modal_template = "shared/signin" %>
 			<% end %>
-		</ul>
-		
+		</ul>	
   </div>
 </div>
 	

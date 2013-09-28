@@ -28,7 +28,7 @@ module SessionsHelper
   
   def logged_in_user
     if !logged_in?
-      flash[:notice] = "Please sign in."
+      flash[:notice] = ["Please sign in."]
       redirect_to root_url
     end
   end
@@ -36,7 +36,7 @@ module SessionsHelper
   def correct_user
     @user = User.find(params[:id])
     unless current_user?(@user)
-      flash[:notice] = "You are not allowed to do that."
+      flash[:notice] = ["You are not allowed to do that."]
       redirect_to root_url unless logged_in?
       redirect_to root_url if logged_in?
     end

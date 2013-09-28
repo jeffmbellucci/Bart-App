@@ -1,6 +1,6 @@
 <div id="mapContainer">	
 	<div id="stationsMap">
-		<div class="mapText"> Click a station for live <br> departure times</div>
+		<div class="mapText"> Click for <span class="live blue">live</span> station<br>departure times</div>
 		<ul id= "stationsList">
 		<% @stations.each do |station| %>
 		<li id= "station_<%= station.abbr %>" >
