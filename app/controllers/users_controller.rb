@@ -35,7 +35,10 @@ class UsersController < ApplicationController
    def destroy
      @user = User.find(params[:id])
      @user.delete
-     @user.reminders.each { |reminder| reminder.destroy }
+     @user.reminders.each do |reminder| 
+       reminder.destroy 
+       reminder.delete_delayed_job
+     end
      render json: @user
    end
  end

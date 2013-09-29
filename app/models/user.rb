@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates :email, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true
   
-  has_many :reminders, dependent: :destroy
+  has_many :reminders
   
    def create_session_token  
      token = SecureRandom.urlsafe_base64  

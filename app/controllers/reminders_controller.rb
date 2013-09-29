@@ -39,7 +39,7 @@ class RemindersController < ApplicationController
  
   def destroy
     @reminder = Reminder.find(params[:id])
-    Delayed::Job.find(@reminder.job_id).destroy unless Delayed::Job.find_by_id(@reminder.job_id).nil?
+    @reminder.delete_delayed_job
     @reminder.destroy
 
     render json: [current_user.reminders.count, @reminder.id]

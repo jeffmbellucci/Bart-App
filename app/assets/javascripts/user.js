@@ -19,8 +19,7 @@
 				handleUserResponse(alert);
 				setTimeout(function() { 
 					location.reload();
-				}, 2300);  	
-				
+				}, 2300);  		
 			});
 			
 		} else {

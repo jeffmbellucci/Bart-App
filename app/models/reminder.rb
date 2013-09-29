@@ -6,6 +6,10 @@ class Reminder < ActiveRecord::Base
   
   belongs_to :user
   
+  def delete_delayed_job
+     Delayed::Job.find(self.job_id).destroy unless Delayed::Job.find_by_id(self.job_id).nil?
+  end
+  
   def create_station_texts
     data = get_station_data(station_abbr)
   
