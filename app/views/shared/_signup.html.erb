@@ -1,6 +1,6 @@
 <div class="accordion-group">
-	  <span> Never used reminders before?</span> <a class="accordion-toggle" data-toggle="collapse" href="#signup_form">
-	    <strong>Click here to sign up!</strong></a> 
+	  <span> Never used reminders before?</span> Click <a class="accordion-toggle" data-toggle="collapse" href="#signup_form">
+	    <strong> here </strong></a> to sign up!
 	<div id="signup_form" class="accordion-body collapse">
 	  <div class="accordion-inner">
 	    <form id="user_signup" action="/users" method="post">
@@ -10,8 +10,14 @@
 			<!-- add authentication field -->
 	        <input id="phone_number" type="text" name="user[phone_number]" 
 			 	class="input-medium bfh-phone" data-format="(ddd)ddd-dddd" placeholder="(555)555-5555">
-		 	 <input id="user_name" name="password" type="password" placeholder="Activation code" style="width: 150px">
-			 <strong>Click "Contact" for information</strong>
+		 	<input id="user_email" name="user[email]" type="text" placeholder="Email address (optional)" style="width: 200px">
+			 <br>
+			<input id="user_name" name="password" type="password" placeholder="Activation code" style="width: 150px">
+			 <br>
+			Click <a id="contact_link" data-toggle="modal" href="#contactModal"><strong>here</strong></a> for information about the activation code.
+			 <br>
+			 <br>
+			<strong>Note: </strong>Your email address will only be used for Bart-Live related updates and alerts.  You can also always add or delete it later with via the <b>My Info</b> link...
 			 <br>
 			<button type="submit" class="btn btn-inverse">Sign Me Up!</button>
 	        <button type="button" class="btn btn-inverse accordion-toggle" data-toggle="collapse" href="#signup_form" >Cancel</button>
@@ -19,3 +25,4 @@
 	  </div> <!--/.accordion-inner -->
 	</div> <!-- /#signup_form -->
 </div> <!-- /.accordion-group -->
+

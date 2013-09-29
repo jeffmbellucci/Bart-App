@@ -16,8 +16,10 @@
 }
 
 .reminder_list {
+	margin-bottom: 40px;
 	padding-bottom: 400px;
 }
+
 
 .reminder_container {
 	height: 50px;
@@ -74,6 +76,10 @@
 
 .accordion-inner {
 	padding: 0px;
+	padding-bottom: 0px; // was 40px
+}
+
+#reminder_inner {
 	padding-bottom: 40px;
 }
 
@@ -103,7 +109,7 @@
 }
 
 .empty_reminders {
-	margin-bottom: 30px;
+	padding-bottom: 30px;
 }
 
 .close {

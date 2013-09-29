@@ -16,12 +16,12 @@ module StationsHelper
     json_response = JSON.parse(response)
    
     if json_response['root']['message']
-      json_response['root']['message'] = "No trains at this time" 
+      json_response['root']['message'] = "No trains at this time." 
      return json_response
    end
     
     if json_response['root']['station']['message']
-      json_response['root']['message'] = "Bart server error"
+      json_response['root']['message'] = "No trains at this time."
       return json_response
     end
   

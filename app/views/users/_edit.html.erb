@@ -13,15 +13,22 @@
 			  <input type="hidden" name="_method" value="PUT">
 			  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   
-		  	  <strong> Your name: </strong> <div class="phone_label"> <strong> Your phone number: </strong> </div>
+		  	  <strong> Your name: </strong> 
+			  <div class="phone_label"> <strong> Your phone number: </strong> </div>
 			  	<br>
 			  <input style="width: 100px" type="text" name="user[name]" id="user_name" value= <%= current_user.name %> >
 			  
 			  <input id="phone_number" type="text" name="user[phone_number]" class="input-medium bfh-phone" 
 			  	data-format="(ddd)ddd-dddd" data-number= <%= current_user.phone_number %> >
 				<br>
+				<strong>Your email: </strong>
 				<br>
-			 <button type="submit" class="reminder_submit btn btn-inverse">Update</button>
+			 <input style="width: 200px" type="text" name="user[email]" id="user_email" value= <%= current_user.email %> >
+				<br>
+				Add or delete an email address here.
+				<br>
+				<br>
+			 <button type="submit" class="edit_submit btn btn-inverse">Update</button>
              <button type="button" class="btn btn-inverse" data-dismiss="modal">Cancel</button> 	 
           </form>
 		  	

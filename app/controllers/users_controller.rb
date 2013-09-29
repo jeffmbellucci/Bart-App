@@ -7,7 +7,8 @@ class UsersController < ApplicationController
       redirect_to root_url
       return
     end
-    
+      
+     params[:user][:email] = params[:user][:email].downcase;
      @user = User.new(params[:user])
      if @user.save
        flash[:success] = ["Hi #{params[:user][:name]}, your account has been created."]
@@ -34,6 +35,7 @@ class UsersController < ApplicationController
    def destroy
      @user = User.find(params[:id])
      @user.delete
+     @user.reminders.each { |reminder| reminder.destroy }
      render json: @user
    end
  end

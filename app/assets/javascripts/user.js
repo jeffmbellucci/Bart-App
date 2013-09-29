@@ -2,7 +2,8 @@
 	var BA = root.BA = (root.BA || {});
 	
 	var userHandler = BA.userHandler = function () {	
-		addUserDeleteListener();	
+		addUserDeleteListener();
+		signupCloser();	
 	};
 	
 	var deleteAccount = BA.deleteAccount = function () {
@@ -40,6 +41,12 @@
 		setTimeout(function() { 
 			$(".alert").fadeOut(300);
 		}, 2000);  	
+	};
+	
+	var signupCloser = BA.signupCloser = function () {
+		$('#contact_link').on('click', function () {
+			$('#signinModal').modal('hide');
+		});
 	};
 	
 })(this);
