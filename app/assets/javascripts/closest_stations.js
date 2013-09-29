@@ -3,7 +3,6 @@
 	
 	var closestStationsHandler = BA.closestStationsHandler = function () {	
 		addClosestStationsListener();
-		
 	};
 	
 	var addClosestStationsListener = BA.addClosestStationsListener = function () {
@@ -29,6 +28,7 @@
 			url: "/closest_stations",
 			data: position.coords,
 			success: function (data) {
+				$('.alert').remove();
 				var stationName = data[0]['name']
 				console.log(stationName);
 				if (stationName.contains("BART") || stationName.contains("Bart")) {

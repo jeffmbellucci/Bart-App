@@ -34,7 +34,7 @@
 	}
 	
 	var handleUserResponse = BA.handleUserResponse = function (alert) {
-		$('.alert').remove()										  									  
+		$('.alert').remove();										  									  
 	    $('#editModal').modal('hide');
 		$('#wrap').append(alert);	
 		setTimeout(function() { 
