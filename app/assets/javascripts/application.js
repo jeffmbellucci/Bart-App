@@ -19,6 +19,7 @@
 //= require station
 //= require reminder
 //= require user
+//= require closest_stations
 //= require empty_reminder
 //= require new_reminder_notice
 //= require deleted_reminder_notice

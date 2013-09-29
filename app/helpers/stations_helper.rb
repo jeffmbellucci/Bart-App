@@ -1,5 +1,5 @@
 module StationsHelper
-  API_KEY = ENV["BART_API_KEY"]
+  BART_API_KEY = ENV["BART_API_KEY"]
   
   def get_station_data(abbr)
     bart_query = Addressable::URI.new(
@@ -9,7 +9,7 @@ module StationsHelper
       query_values: {
         cmd: "etd",
         orig: abbr,
-        key: API_KEY 
+        key: BART_API_KEY 
       })
       
     response = HTTParty.get(bart_query).to_json
