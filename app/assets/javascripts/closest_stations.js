@@ -39,7 +39,7 @@
 				    $('#wrap').append(alert);		
 				} else {
 					var alert = JST['alert_template']({data: {'alertType': 'alert alert-success', 
-															  'message': 'Best guess:' + stationName}});
+															  'message': 'Best guess: ' + stationName}});
 															  
 				    $('#wrap').append(alert);	
 				}
