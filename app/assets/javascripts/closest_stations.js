@@ -7,6 +7,7 @@
 	
 	var addClosestStationsListener = BA.addClosestStationsListener = function () {
 		$('#closest_station').on("click", function () {
+			event.preventDefault();
 			getUserPosition();
 		});
 	};

@@ -57,7 +57,7 @@ html {
   
   .modal.fade.in {
 	  top: 5%;
-	  left: 50%;
+	  left: 40%;
   }
   
   .modal-header {
@@ -77,10 +77,10 @@ html {
   }
   
   .alert {
-	 // font-size: large;
-//	  font-weight: bold;
+	  font-size: large;
+	  font-weight: bold;
 	  position: absolute;
-	  left: 14.5%;
+	  left: 14%;
 	  top: 84px;
 	  z-index: 10;
   }
