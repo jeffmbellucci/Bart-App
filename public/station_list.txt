@@ -87,28 +87,38 @@ mdn positioning css
 
 render :json => @user.errors, status: :unprocessable_entity
 
-Never used reminders before? Sign Up
+HEROKU DB COMMANDS:
+____________________
+
+heroku pg:reset DATABASE --> CAUTION!!!
+heroku run rake db:migrate
+heroku run rake db:seed
+
+
+
+PUNCH LIST:
+_______________________
 
 -delayed job X
 -toggle data in bubble from minutes to absolute time X
 -clean up and namespace javascript X
 -widen map X
 -grayscale map? X
--recurring reminders
+-recurring reminders --> maybe not...
 	-reminders have many jobs
-	-join table between reminders and delayed jobs
+	-join table between reminders and delayed jobs --> don't need this
 	-or add column to delayed job table, find_all_by_reminder_id(@reminder.id), then delete
 -editable reminders X
--last train reminder
+-last train reminder --> maybe not...
 -regis/cache times
 -reminder model? X
 -gem daemon?
 -round corners of map X
 - add status column to reminders, and change status on perform instead of delete X
--authentication key for reminders
+-authentication key for reminders X
 - look into short code for number X
 - fix northbound/southbound no trains bug X
-- Text disclaimer...  (Text reminders will send you departure times at the station of your choosing... text reminders will come from # )
-- my info, edit/update user info
-- contact and about page
-- closest station
+- Text disclaimer...  (Text reminders will send you departure times at the station of your choosing... text reminders will come from # ) X
+- my info, edit/update user info X
+- contact and about page X
+- closest station X
