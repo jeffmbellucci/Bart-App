@@ -1,5 +1,33 @@
+p {
+	text-align:justify;
+	text-justify:auto;
+	margin-right: 10px;
+}
+
 #contactModal {
 	width: 500px;
+}
+
+#aboutModal {
+	width: 600px;
+}
+
+.alignleft { 
+	float: left;
+	margin-right: 10px; 
+}
+
+.alignright { 
+	float: right;
+	margin-left: 10px; 
+}
+.caption { 
+	margin: 0px 10px 0px 10px; 
+	padding: 5px 5px 0px 5px; 
+	border: solid 1px #000000; 
+	background: #0099CC; 
+	font-size:80%; 
+	color: black;
 }
 
 #fields_container {

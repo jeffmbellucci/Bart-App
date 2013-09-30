@@ -3,7 +3,8 @@
 	
 	var userHandler = BA.userHandler = function () {	
 		addUserDeleteListener();
-		signupCloser();	
+		signupCloser();
+		aboutCloser();	
 	};
 	
 	var deleteAccount = BA.deleteAccount = function () {
@@ -43,11 +44,17 @@
 	};
 	
 	var signupCloser = BA.signupCloser = function () {
-		$('#contact_link').on('click', function () {
+		$('#signup_contact_link').on('click', function () {
 			$('#signinModal').modal('hide');
 		});
 	};
 	
+	var aboutCloser = BA.aboutCloser = function () {
+		$('#about_contact_link').on('click', function () {
+			$('#aboutModal').modal('hide');
+		});
+	};
+		
 })(this);
 
 $(document).ready(BA.userHandler);
