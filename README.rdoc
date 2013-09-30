@@ -4,10 +4,14 @@ Bart-Live was created as my capstone project for App Academy, an intensive web d
 The inspiration for this project came from a desire to spend less time waiting for Bart trains and more time improving my coding skills.  
 It is an interactive resource for commuters that will hopefully save people time.  Visit the app on the web at www.bart-live.com.
 		 
+
+
 Bart-live is a Ruby on Rails based application utilizing a PostgreSQL database and deployed with GIT via Heroku.  
 Client side, this app uses Javascript, Twitter Bootstrap, CSS, JQuery, and Ajax to create the (awesome) user interface.  
 In case you're curious how some the features of this app work...  
 	  
+
+
 The departure times are pulled from the official Bart API by my Rails server when you click on a station.  
 The closest station finder uses HTML 5's geolocation functionality in conjunction with the Google Places API.  
 Text reminders are stored in the database using Delayed Job, and sent using Twilio's SMS messaging API.  
