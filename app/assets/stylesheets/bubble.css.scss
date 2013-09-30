@@ -3,7 +3,7 @@
 	font-size: 1em;
 	position: absolute;
 	bottom: 28px; // Moves bubble up and down
-	left: -110px; // Moves bubble side to side 
+	left: -40px; // Moves bubble side to side 
 	z-index: 1;
 	width: 290px;
 	//removed height so div would size dynamically
@@ -25,7 +25,7 @@
 	content: "";
 	position: absolute;
 	bottom: -25px;
-	left: 42%;  // 3px greater than "before" or 0.4% more
+	left: 20%;  // 3px greater than "before" or 0.4% more
 	border-style: solid;
 	border-width: 25px 15px 0;
 	border-color: #CCCCCC transparent; //background color e6e6e6
