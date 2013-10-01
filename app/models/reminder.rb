@@ -23,11 +23,20 @@ class Reminder < ActiveRecord::Base
     end
     
     header = "Hi #{user.name}, here are the #{direction.downcase} Bart departure times you requested for #{station_name} as of #{current_time}."
-    northbound = ["NORTHBOUND\n"]
-    southbound = ["SOUTHBOUND\n"]
+    northbound = []
+    southbound = []
       
     lines = data['root']['station']['etd']
     lines.each do |line|
+      
+      # line['destination'] = "MILL" if line['destination'] == "Millbrae"
+      # line['destination'] = "FREM" if line['destination'] == "Fremont"
+      # line['destination'] = "DALY" if line['destination'] == "Daly City"
+      # line['destination'] = "SFO" if line['destination'] == "SF Airport"
+      # line['destination'] = "RICH" if line['destination'] == "Richmond"
+      # line['destination'] = "PITT/BP" if line['destination'] == "Pittsburg/Bay Point"
+      # line['destination'] = "DB/PLTN" if line['destination'] == "Dublin/Pleasanton"
+      
       if line['estimate'][0]['direction'] == "North"
         northbound << "#{line['destination']}\n"
         times = line['estimate']
@@ -41,11 +50,11 @@ class Reminder < ActiveRecord::Base
       end
     end
     
-    northbound << "This station has no northbound trains at this time." if northbound.length == 1
-    southbound << "This station has no southbound trains at this time." if southbound.length == 1
+    northbound << "#{station_name} has no northbound trains at this time." if northbound.empty?
+    southbound << "#{station_name} has no southbound trains at this time." if southbound.empty?
     
     if direction == "Northbound"
-      [header, northbound.join("")[0...160]]  #split into 2 texts if too long
+      [header, northbound.join("")[0...160]]  #split into 2 texts if too long?
     elsif direction == "Southbound"
       [header, southbound.join("")[0...160]]
     end

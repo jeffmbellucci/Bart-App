@@ -12,7 +12,7 @@ module ClosestStationsHelper
            :rankby => "distance",
            :sensor => false,
            :types => "train_station",
-           :keyword => "Bart Station" 
+           :keyword => "Bart station" 
           })
           
       stations_response = HTTParty.get(stations_query).to_json

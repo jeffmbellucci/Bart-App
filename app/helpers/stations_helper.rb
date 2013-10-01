@@ -17,7 +17,7 @@ module StationsHelper
    
     if json_response['root']['message']
       json_response['root']['message'] = "No trains at this time." 
-     return json_response
+      return json_response
    end
     
     if json_response['root']['station']['message']
@@ -33,6 +33,6 @@ module StationsHelper
     lines.each do |line|
       line['estimate'] = [line['estimate']] unless line['estimate'].is_a?(Array)
     end
-    json_response
+    json_response   
   end
 end

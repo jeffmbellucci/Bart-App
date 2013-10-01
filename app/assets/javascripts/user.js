@@ -11,7 +11,7 @@
 		event.preventDefault();
 		var url = event.target.action;
 		
-		var choice = confirm("Just checking if you really meant to do that... \n \n Click OK to delete your account... \n");
+		var choice = confirm("Just checking if you really meant to do that... \n \n Click OK to delete your account. \n");
 		if (choice) {
 			BA.sendDeleteRequest(url, function(data) {
 				
