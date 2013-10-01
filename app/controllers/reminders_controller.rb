@@ -18,7 +18,7 @@ class RemindersController < ApplicationController
     
     runtime = Time.parse(params[:reminder][:runtime]) if params[:reminder][:date].blank?
     date_time = params[:reminder][:date] + " " + params[:reminder][:runtime]
-    runtime = Time.parse(date_time) 
+    runtime = Time.parse(date_time) + 7.hours
     @station = Station.find_by_abbr(params[:reminder][:station_abbr])
     
     params[:reminder][:station_name] = @station.name
@@ -30,7 +30,7 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new(params[:reminder])
     render :json => @reminder, :status => 422 unless @reminder.save
     
-    Delayed::Job.enqueue(@reminder, run_at: runtime + 7.hours) #adjust for time zone
+    Delayed::Job.enqueue(@reminder, run_at: runtime) #adjust for time zone
     @reminder.job_id = Delayed::Job.last.id
     @reminder.save
 
