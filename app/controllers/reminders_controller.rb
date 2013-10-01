@@ -23,7 +23,7 @@ class RemindersController < ApplicationController
     
     params[:reminder][:station_name] = @station.name
     params[:reminder][:user_id] = current_user.id
-    params[:reminder][:runtime] = runtime
+    params[:reminder][:runtime] = runtime + 7.hours
     params[:reminder][:completed] = false
     params[:reminder].delete(:date)
     
