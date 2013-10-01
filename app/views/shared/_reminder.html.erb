@@ -8,7 +8,7 @@
       <div class="modal-body reminder_modal">
 		 <h4>Choose a date, time, stations and direction:</h4>
         <div class="form-horizontal">
-			
+			FYI: If you leave the date field blank, it will default to today's date.
           <form id="reminder_form" action="/reminders" method="post">
 			  
 			  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -41,7 +41,7 @@
 			  </select>
 			  <!-- direction selector end -->
 			<br>
-			
+				
 			 <button type="submit" class="reminder_submit btn btn-inverse">Create reminder</button>
              <button type="button" class="btn btn-inverse" data-dismiss="modal">Cancel</button> 	 
           </form>
