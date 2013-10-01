@@ -40,12 +40,12 @@ class Reminder < ActiveRecord::Base
       if line['estimate'][0]['direction'] == "North"
         northbound << "#{line['destination']}\n"
         times = line['estimate']
-        times.each { |time| northbound << (Time.now + time['minutes'].to_i.minutes).strftime("%l:%M") + " " }
+        times.each { |time| northbound << (Time.now - 7.hours + time['minutes'].to_i.minutes).strftime("%l:%M") + " " }
         northbound <<"\n"
       elsif line['estimate'][0]['direction'] == "South"
         southbound << "#{line['destination']}\n"
         times = line['estimate']
-        times.each { |time| southbound << (Time.now + time['minutes'].to_i.minutes).strftime("%l:%M") + " " }
+        times.each { |time| southbound << (Time.now - 7.hours + time['minutes'].to_i.minutes).strftime("%l:%M") + " " }
         southbound <<"\n"
       end
     end
