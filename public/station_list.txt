@@ -93,6 +93,7 @@ ____________________
 heroku pg:reset DATABASE --> CAUTION!!!
 heroku run rake db:migrate
 heroku run rake db:seed
+heroku pg:psql --> heroku DB console, \d --> view all tables
 
 
 
