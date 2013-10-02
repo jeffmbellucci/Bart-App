@@ -6,6 +6,15 @@ class RemindersController < ApplicationController
   end
   
   def create
+    unless params[:reminder][:date].blank?
+      begin 
+        Date.parse(params[:reminder][:date])
+      rescue
+        render json: "Date is invalid."
+        return
+      end
+    end
+    
     if params[:reminder][:runtime].blank?
       render json: "Time cant be blank."
       return
@@ -30,7 +39,7 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new(params[:reminder])
     render :json => @reminder, :status => 422 unless @reminder.save
     
-    Delayed::Job.enqueue(@reminder, run_at: runtime) #adjust for time zone
+    Delayed::Job.enqueue(@reminder, run_at: runtime) 
     @reminder.job_id = Delayed::Job.last.id
     @reminder.save
 

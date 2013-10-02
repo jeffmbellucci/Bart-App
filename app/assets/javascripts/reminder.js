@@ -5,7 +5,7 @@
 		accordionToggleHider();
 		addDeleteListenerOld();
 		addRefreshListener();
-		$('#reminder_form').on('submit', function() {
+		$('#reminder_form').on('submit', function(event) {
 			event.preventDefault();
 			var formData = $(this).serialize();
 			var reminder_notice = JST["new_reminder_notice"]();
@@ -27,7 +27,7 @@
 		});
 	};
 	
-	var deleteReminder = BA.deleteReminder = function () {
+	var deleteReminder = BA.deleteReminder = function (event) {
 		event.preventDefault();
 		var url = event.target.action;
 		
@@ -50,7 +50,7 @@
 		});
 	};
 	
-	var refreshReminders = BA.refreshReminders = function () {
+	var refreshReminders = BA.refreshReminders = function (event) {
 		event.preventDefault();
 		getReminders(function (data) {
 			$(".reminder_container").remove(); // hide?

@@ -7,7 +7,7 @@
 		aboutCloser();	
 	};
 	
-	var deleteAccount = BA.deleteAccount = function () {
+	var deleteAccount = BA.deleteAccount = function (event) {
 		event.preventDefault();
 		var url = event.target.action;
 		

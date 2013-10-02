@@ -6,7 +6,7 @@
 	};
 	
 	var addClosestStationsListener = BA.addClosestStationsListener = function () {
-		$('#closest_station').on("click", function () {
+		$('#closest_station').on("click", function (event) {
 			event.preventDefault();
 			getUserPosition();
 		});
