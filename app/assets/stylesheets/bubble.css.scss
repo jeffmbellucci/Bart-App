@@ -87,17 +87,17 @@
 	bottom: 0px;
 	right: 4px;
 	a { 
-		font-size: 2em;
+		font-size: 1em;
 		color: black; 
 		font-family: futura;
 	}
 	a:hover {
 		color: white;
-		font-size: 2em;
+		font-size: 1em;
 	};
 	a:active { 
 		color: black;
-	}  /* selected link */
+	}  /* selected link unicode watch character &#8986; */
 }
 
 .currentTime {
