@@ -38,10 +38,8 @@
 		}, 300);
 		
 		sendDeleteRequest(url, function(data) {
-			console.log(data);
-			
+			console.log(data);	
 			var reminder_id = "#reminder_" + data[1]; 
-			console.log(reminder_id);
 			$(reminder_id).remove(); //hide?
 			if (data[0] == "0") {
 				var emptyReminder = JST["empty_reminder"]();
