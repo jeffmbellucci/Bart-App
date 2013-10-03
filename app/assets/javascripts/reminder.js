@@ -7,7 +7,6 @@
 		addRefreshListener();
 		$('#reminder_form').on('submit', function(event) {
 			event.preventDefault();
-			$(".empty_reminders").remove(); //versus hide?
 			var formData = $(this).serialize();
 			
 			var reminder_notice = JST["new_reminder_notice"]();
@@ -18,7 +17,7 @@
 			
 			sendReminderData(formData, function(data) {
 				console.log(data);
-				
+				$(".empty_reminders").remove(); //versus hide?
 				var reminderTemplateFn = JST["reminder_template"];
 				var reminderView = reminderTemplateFn({data: data});
 				$(reminderView).prependTo($("#reminder_list"));
