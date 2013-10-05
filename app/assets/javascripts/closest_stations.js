@@ -10,8 +10,7 @@
 			event.preventDefault();
 			$('.alert').remove();
 			var alert = JST['alert_template']({data: {'alertType': 'alert alert-success', 
-													  'message': 'Calculating your closest station...'}});
-													  
+													  'message': 'Calculating your closest station...'}});										  
 		    $('#wrap').append(alert);
 			getUserPosition();
 		});
