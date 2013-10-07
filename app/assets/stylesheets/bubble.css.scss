@@ -4,7 +4,7 @@
 	position: absolute;
 	bottom: 28px; // Moves bubble up and down
 	left: -25px; //Perfect!!! Moves bubble side to side, was 20px
-	z-index: 100;
+	z-index: 10;
 	width: 290px;
 	//removed height so div would size dynamically
 	padding-top: 5px;
@@ -31,7 +31,7 @@
 	border-color: #CCCCCC transparent; //background color e6e6e6
 	display: block;
 	width: 0;
-	z-index: 100;
+	z-index: 10;
 }
 
 //.bubble:before {
