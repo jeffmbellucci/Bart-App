@@ -23,6 +23,7 @@
 //= require empty_reminder
 //= require new_reminder_notice
 //= require deleted_reminder_notice
+//= require refreshed_reminder_notice
 //= require station_template
 //= require spinner_template
 //= require reminder_template

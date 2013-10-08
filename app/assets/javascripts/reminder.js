@@ -49,6 +49,13 @@
 	
 	var refreshReminders = BA.refreshReminders = function (event) {
 		event.preventDefault();
+		
+		var reminder_notice = JST["refreshed_reminder_notice"]();
+		$(reminder_notice).prependTo($(".reminder_link"));
+		setTimeout(function() { 
+			$(".reminder_notice").fadeOut(300);
+		}, 300); // remove?
+		
 		getReminders(function (data) {
 			$(".reminder_container").remove(); // hide?
 			console.log(data);
