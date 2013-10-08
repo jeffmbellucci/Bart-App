@@ -10,7 +10,7 @@ class RemindersController < ApplicationController
       begin 
         Date.parse(params[:reminder][:date])
       rescue
-        render json: "Date is invalid."
+        render json: "Date is invalid. Format must be YYYY-MM-DD."
         return
       end
     end
