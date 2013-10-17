@@ -20,7 +20,7 @@ module StationsHelper
       return json_response
    end
    
-   if json_response['root']['station']['message']['error'] == "Updates are temporarily unavailable."
+   if json_response['root']['station']['message'] == "Updates are temporarily unavailable."
      json_response['root']['message'] = "Bart is not providing updates at this time." 
      return json_response
   end
