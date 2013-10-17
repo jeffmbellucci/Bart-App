@@ -19,7 +19,7 @@ class Reminder < ActiveRecord::Base
     current_time = current_time[0..-7] + meridian
     
   	if data['root']['message'] == "Bart is not providing updates at this time." 
-      return ["Hi #{user.name}, unfortunately Bart is not providing departure data for #{station_name} at this time.  Please try again later."]
+      return ["Hi #{user.name}, Bart is not providing departure data for #{station_name} at this time.  Please try again later."]
     end
    
   	if data['root']['message']
