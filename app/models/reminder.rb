@@ -17,6 +17,10 @@ class Reminder < ActiveRecord::Base
   	current_time = data['root']['time'][0..-5].reverse.chomp("0").reverse
     meridian = current_time[-2..-1]
     current_time = current_time[0..-7] + meridian
+    
+  	if data['root']['message'] == "Bart is not providing updates at this time." 
+      return ["Hi #{user.name}, Unfortunately, Bart is not providing departure data for #{station_name} at this time.  Please try again later."]
+    end
    
   	if data['root']['message']
       return ["Hi #{user.name}, #{station_name} has no trains at this time #{current_time}"]
