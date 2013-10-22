@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       return
     end
       
-     params[:user][:email] = params[:user][:email].downcase;
+     params[:user][:email] = params[:user][:email].downcase
      @user = User.new(params[:user])
      if @user.save
        flash[:success] = ["Hi #{params[:user][:name]}, your account has been created."]
