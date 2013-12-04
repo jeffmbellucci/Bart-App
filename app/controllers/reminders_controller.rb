@@ -27,7 +27,8 @@ class RemindersController < ApplicationController
     
     runtime = Time.parse(params[:reminder][:runtime]) if params[:reminder][:date].blank?
     date_time = params[:reminder][:date] + " " + params[:reminder][:runtime]
-    runtime = Time.parse(date_time) + 7.hours  #adjustment for timezone
+    runtime = Time.parse(date_time) + 7.hours + 1.hours #adjustment for timezone
+                                              # plus 1hour for daylight savings
     @station = Station.find_by_abbr(params[:reminder][:station_abbr])
     
     params[:reminder][:station_name] = @station.name

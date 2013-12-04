@@ -24,7 +24,7 @@ class UsersController < ApplicationController
      params[:user][:email] = params[:user][:email].downcase
      @user = User.find(params[:id])
      if @user.update_attributes(params[:user])
-        flash[:success] = ["You're information has been updated."]
+       flash[:success] = ["You're information has been updated."]
        redirect_to root_url
      else
        flash[:error] = @user.errors.full_messages
