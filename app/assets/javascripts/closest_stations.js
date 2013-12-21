@@ -33,9 +33,12 @@
 			url: "/closest_stations",
 			data: position.coords,
 			success: function (data) {
-				console.log(data.length);
-				
 				$('.alert').remove();
+				console.log(data.length);
+				if (data.length === 20) {
+					var alert = JST['alert_template']({data: {'alertType': 'alert alert-success', 
+															  'message': 'Your closest station my balls: ' + stationName}});
+				}	
 				var stationName = data[0]['name']
 				console.log(stationName);
 				if (stationName.contains("BART") || stationName.contains("Bart") || stationName.contains("bart")) {
