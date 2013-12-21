@@ -36,11 +36,12 @@
 				$('.alert').remove();
 				console.log(data.length);
 				if (data.length === 20) {
+					var stationName = data[0]['name'];
+					console.log(stationName);
 					var alert = JST['alert_template']({data: {'alertType': 'alert alert-error', 
 															  'message': 'Your closest station my balls: ' + stationName}});
+					$('#wrap').append(alert);
 				}	
-				var stationName = data[0]['name'];
-				console.log(stationName);
 				else if (stationName.contains("BART") || stationName.contains("Bart") || stationName.contains("bart")) {
 					var alert = JST['alert_template']({data: {'alertType': 'alert alert-success', 
 															  'message': 'Your closest station : ' + stationName}});									  
