@@ -43,7 +43,7 @@
 				console.log(stationName);
 				if (stationName.contains("BART") || stationName.contains("Bart") || stationName.contains("bart")) {
 					var alert = JST['alert_template']({data: {'alertType': 'alert alert-success', 
-															  'message': 'Your closest station: ' + stationName}});									  
+															  'message': 'Your closest station probably: ' + stationName}});									  
 				    $('#wrap').append(alert);		
 				} else {
 					var alert = JST['alert_template']({data: {'alertType': 'alert alert-success', 
