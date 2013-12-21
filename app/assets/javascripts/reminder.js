@@ -29,7 +29,6 @@
 	var deleteReminder = BA.deleteReminder = function (event) {
 		event.preventDefault();
 		var url = event.target.action;
-		
 		var reminder_notice = JST["deleted_reminder_notice"]();
 		$(reminder_notice).prependTo($(".reminder_link"));
 		setTimeout(function() { 

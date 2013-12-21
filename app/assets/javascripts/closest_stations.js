@@ -33,7 +33,8 @@
 			url: "/closest_stations",
 			data: position.coords,
 			success: function (data) {
-				console.log(data);
+				console.log(data.length);
+				
 				$('.alert').remove();
 				var stationName = data[0]['name']
 				console.log(stationName);
