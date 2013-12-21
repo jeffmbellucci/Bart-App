@@ -35,14 +35,16 @@
 			success: function (data) {
 				$('.alert').remove();
 				console.log(data.length);
-				if (data.length === 20) {
+				if (data.length === 0) {
 					var stationName = data[0]['name'];
 					console.log(stationName);
 					var alert = JST['alert_template']({data: {'alertType': 'alert alert-error', 
-															  'message': 'There are no BART stations in your area' + stationName}});
+															  'message': 'There are no BART stations in your area.'}});
 					$('#wrap').append(alert);
 				}	
 				else if (stationName.contains("BART") || stationName.contains("Bart") || stationName.contains("bart")) {
+					var stationName = data[0]['name'];
+					console.log(stationName);
 					var alert = JST['alert_template']({data: {'alertType': 'alert alert-success', 
 															  'message': 'Your closest station : ' + stationName}});									  
 				    $('#wrap').append(alert);		
