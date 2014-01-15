@@ -9,15 +9,15 @@
 			event.preventDefault();
 			var formData = $(this).serialize();
 			
-			var reminder_notice = JST["new_reminder_notice"]();
-			$(reminder_notice).prependTo($(".reminder_link"));
-			setTimeout(function() { 
-				$(".reminder_notice").fadeOut(300);
-			}, 300); // remove?
-			
 			sendReminderData(formData, function(data) {
 				console.log(data);
 				$(".empty_reminders").remove(); //versus hide?
+  			var reminder_notice = JST["new_reminder_notice"]();
+  			$(reminder_notice).prependTo($(".reminder_link"));
+  			setTimeout(function() { 
+  				$(".reminder_notice").fadeOut(300);
+  			}, 300); // remove? 
+        
 				var reminderTemplateFn = JST["reminder_template"];
 				var reminderView = reminderTemplateFn({data: data});
 				$(reminderView).prependTo($("#reminder_list"));
@@ -29,6 +29,7 @@
 	var deleteReminder = BA.deleteReminder = function (event) {
 		event.preventDefault();
 		var url = event.target.action;
+    
 		var reminder_notice = JST["deleted_reminder_notice"]();
 		$(reminder_notice).prependTo($(".reminder_link"));
 		setTimeout(function() { 
