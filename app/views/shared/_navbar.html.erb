@@ -23,7 +23,7 @@
     $('#reminderModalLink, #signinModalLink').on('click', function () {
       $('.alert').remove();
 			var alert = JST['alert_template']({data: {'alertType': 'alert alert-error', 
-														  'message': 'Notice: Due to cost, text reminders have been disabled indefinitely.'}});
+														  'message': 'NOTICE: Due to cost, text reminders have been disabled indefinitely.'}});
 			$('#wrap').append(alert);
 		});
   });

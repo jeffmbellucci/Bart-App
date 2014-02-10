@@ -2,8 +2,8 @@
 	var BA = root.BA = (root.BA || {});
 	
 	var initialize = BA.initialize = function() {
-    
-		$('#stationsMap a').on('click', function(event) {
+  
+    $('#stationsMap a').on('click', function(event) {
 			event.preventDefault();
 			var $link = this;
 			closeAllTimes();
