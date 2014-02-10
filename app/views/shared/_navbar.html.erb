@@ -5,18 +5,28 @@
 			<% if logged_in? %>
 				<%= render "shared/reminder" %>
 				<%= render "users/edit" %>
-				<li><a data-toggle="modal" href="#reminderModal">My Reminders</a></li>
-				<li><a data-toggle="modal" href="#editModal">My Info</a></li>
+				<li><a data-toggle="modal" href="#reminderModal" id="reminderModalLink">My Reminders</a></li>
+        <li><a data-toggle="modal" href="#editModal">My Info</a></li>
 	            <li><a id="closest_station" href="#">Closest Station</a></li>		  
 				<li><%=link_to 'Logout', sessions_url, method: 'delete'%></li>
 			<% else %>
 				<%= render "shared/signin" %>
-				<li><a data-toggle="modal" href="#signinModal">Reminders</a></li>
+				<li><a data-toggle="modal" href="#signinModal" id="signinModalLink">Reminders</a></li>
 	            <li><a id="closest_station" href="#">Closest Station</a></li>	
 			<% end %>
 		</ul>	
   </div>
 </div>
-	
+
+<script type="text/javascript">
+  $(document).ready(function () { 
+    $('#reminderModalLink, #signinModalLink').on('click', function () {
+      $('.alert').remove();
+			var alert = JST['alert_template']({data: {'alertType': 'alert alert-error', 
+														  'message': 'Notice: Due to cost, text reminders have been disabled indefinitely.'}});
+			$('#wrap').append(alert);
+		});
+  });
+</script>
 	
 
