@@ -10,7 +10,7 @@ gem 'pg'
 gem 'rails_12factor'
 gem 'addressable', require: 'addressable/uri'
 gem 'httparty'
-gem 'json'
+gem 'json', '~>1.8.0'
 
 gem 'simple_form'
 gem 'ejs'
@@ -23,7 +23,7 @@ gem 'delayed_job_active_record'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
@@ -32,7 +32,7 @@ end
 
 gem 'jquery-rails'
 
-group :development do 
+group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
