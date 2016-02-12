@@ -1,4 +1,4 @@
-<div id="mapContainer">	
+<div id="mapContainer">
 	<div id="stationsMap">
 		<div class="mapText"> Click for <span class="live blue">live</span> station<br>departure times
 		</div>
@@ -6,7 +6,7 @@
 			<ul id="stationsList">
 			<% @stations.each do |station| %>
 			<li id="station_<%= station.abbr %>" >
-				<%= link_to station.name, station_url(station), id: "station_" + station.id.to_s, class: "stationLink" %>
+				<%= link_to station.name, station_url(station), class: "stationLink", data: { station_id: station.id } %>
 			</li>
 			<% end %>
 			</ul>
