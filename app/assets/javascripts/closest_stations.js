@@ -40,7 +40,7 @@
 					return;
 				}
 				var stationName = data[0]['name'];
-				console.log(data);
+				//console.log(data); // Will give response array from Google places API
 				if (stationName.contains("BART") || stationName.contains("Bart") || stationName.contains("Station")) {
 					var alert = JST['alert_template']({data: {'alertType': 'alert alert-success', 'message': 'Your closest station: ' + stationName}});
 					$('#wrap').append(alert);
