@@ -162,7 +162,6 @@ DEPENDENCIES
   figaro
   httparty
   jquery-rails
-  json (= 1.8.1)
   pg
   rails (= 3.2.13)
   rails_12factor

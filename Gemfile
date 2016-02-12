@@ -12,7 +12,6 @@ gem 'pg'
 gem 'rails_12factor'
 gem 'addressable', require: 'addressable/uri'
 gem 'httparty'
-gem 'json', '1.8.1'
 
 gem 'simple_form'
 gem 'ejs'
