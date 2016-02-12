@@ -1,6 +1,6 @@
 module ClosestStationsHelper
     GOOGLE_API_KEY = ENV["GOOGLE_API_KEY"]
-  
+
     def get_nearest_stations(user_position)
        stations_query = Addressable::URI.new(
          :scheme => "https",
@@ -11,12 +11,12 @@ module ClosestStationsHelper
            :location => user_position,
            :rankby => "distance",
            :sensor => false,
-           :types => "train_station",
-           :keyword => "Bart station" 
+           :types => "subway_station",
+           :keyword => "Bart station"
           })
-          
+
       stations_response = HTTParty.get(stations_query).to_json
       JSON.parse(stations_response)['results']
     end
-   
+
 end
