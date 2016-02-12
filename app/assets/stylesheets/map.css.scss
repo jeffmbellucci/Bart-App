@@ -12,7 +12,7 @@
 	margin: 0 auto;
 	background-image: url('new_map_square_10px.jpg');
 	background-repeat: no-repeat;
-	width: 960px;  
+	width: 960px;
 	height: 800px;
 	z-index: 0;
 	// border: 3px solid #000000;
@@ -22,7 +22,7 @@
 	position: absolute;
 	top: 2.5%;
 	left: 2.5%;
-	color: #FFFFFF; 
+	color: #FFFFFF;
 	font-family: futura;
 	font-size: 48px;
 	letter-spacing: -2px;
@@ -38,9 +38,9 @@
 #linkContainer {
 	position: relative;
 	margin: 0 auto;
-	width: 960px;  
+	width: 960px;
 	height: 800px;
-	z-index: 1;	
+	z-index: 1;
 }
 
 .stationLink {
@@ -51,385 +51,394 @@
 	z-index: 2;
 }
 
-#station_12th { 
-	position: absolute; 
+#station_12th {
+	position: absolute;
 	top: 44%;
 	left: 41.8%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_16th { 
-	position: absolute; 
+#station_16th {
+	position: absolute;
 	top: 56.7%;
 	left: 7.7%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_19th { 
-	position: absolute; 
+#station_19th {
+	position: absolute;
 	top: 41%;
 	left: 42%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_24th { 
-	position: absolute; 
+#station_24th {
+	position: absolute;
 	top: 58.7%;
 	left: 6.7%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_ashb { 
-	position: absolute; 
+#station_ashb {
+	position: absolute;
 	top: 34.2%;
 	left: 32.9%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_balb { 
-	position: absolute; 
+#station_balb {
+	position: absolute;
 	top: 62.5%;
 	left: 6.7%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_bayf { 
-	position: absolute; 
+#station_bayf {
+	position: absolute;
 	top: 66%;
 	left: 55.5%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_cast { 
-	position: absolute; 	
+#station_cast {
+	position: absolute;
 	top: 70.7%;
 	left: 61.8%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_civc { 
-	position: absolute; 
+#station_civc {
+	position: absolute;
 	top: 54.9%;
 	left: 11.1%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_cols { 
-	position: absolute; 
+#station_cols {
+	position: absolute;
 	top: 58.9%;
 	left: 49.5%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_colm { 
-	position: absolute; 
+#station_colm {
+	position: absolute;
 	top: 71%;
 	left: 10.4%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_conc { 
-	position: absolute; 
+#station_conc {
+	position: absolute;
 	top: 16.6%;
 	left: 69.6%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_daly { 
-	position: absolute; 
+#station_daly {
+	position: absolute;
 	top: 67%;
 	left: 1.5%;
 	.stationLink {
 		font-size: 2em;
 	}
-} 
+}
 
-#station_dbrk { 
-	position: absolute; 
+#station_dbrk {
+	position: absolute;
 	top: 31.8%;
 	left: 22.5%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_dubl { 
-	position: absolute; 
+#station_dubl {
+	position: absolute;
 	top: 64.5%;
 	left: 74%;
 	.stationLink {
 		font-size: 2em;
 	}
-} 
+}
 
-#station_deln { 
-	position: absolute; 
+#station_deln {
+	position: absolute;
 	top: 23%;
 	left: 18.5%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_plza { 
-	position: absolute; 
+#station_plza {
+	position: absolute;
 	top: 26%;
 	left: 22.7%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_embr { 
-	position: absolute; 
+#station_embr {
+	position: absolute;
 	top: 49.4%;
 	left: 13.1%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_frmt { 
-	position: absolute; 
+#station_frmt {
+	position: absolute;
 	top: 96.3%;
 	left: 67.4%;
 	.stationLink {
 		font-size: 2em;
 	}
-} 
+}
 
-#station_ftvl { 
-	position: absolute; 
+#station_ftvl {
+	position: absolute;
 	top: 55.3%;
 	left: 46.7%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_glen { 
-	position: absolute; 
+#station_glen {
+	position: absolute;
 	top: 60.6%;
 	left: 9.3%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_hayw { 
-	position: absolute; 
+#station_hayw {
+	position: absolute;
 	top: 77.4%;
 	left: 52.8%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_lafy { 
-	position: absolute; 
+#station_lafy {
+	position: absolute;
 	top: 27.5%;
 	left: 54.9%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_lake { 
-	position: absolute; 
+#station_lake {
+	position: absolute;
 	top: 51.6%;
 	left: 43.9%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_mcar { 
-	position: absolute; 
+#station_mcar {
+	position: absolute;
 	top: 38%;
 	left: 42.2%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_mlbr { 
-	position: absolute; 
+#station_mlbr {
+	position: absolute;
 	top: 89.2%;
 	left: 19.5%;
 	.stationLink {
 		font-size: 2em;
 	}
-} 
+}
 
-#station_mont { 
-	position: absolute; 
+#station_mont {
+	position: absolute;
 	top: 51.2%;
 	left: 10.5%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_nbrk { 
-	position: absolute; 
+#station_nbrk {
+	position: absolute;
 	top: 29%;
 	left: 24.4%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_ncon { 
-	position: absolute; 
+#station_ncon {
+	position: absolute;
 	top: 12.9%;
 	left: 74.9%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_orin { 
-	position: absolute; 
+#station_oakl {
+	position: absolute;
+	top: 71%;
+	left: 20.4%;
+	.stationLink {
+		font-size: 1.1em;
+	}
+}
+
+#station_orin {
+	position: absolute;
 	top: 31%;
 	left: 50%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_pitt { 
-	position: absolute; 
+#station_pitt {
+	position: absolute;
 	top: 5.8%;
 	left: 70%;
 	.stationLink {
 		font-size: 2em;
 	}
-} 
+}
 
-#station_phil { 
-	position: absolute; 
+#station_phil {
+	position: absolute;
 	top: 20.1%;
 	left: 65%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_powl { 
-	position: absolute; 
+#station_powl {
+	position: absolute;
 	top: 53.1%;
 	left: 13.6%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_rich { 
-	position: absolute; 
+#station_rich {
+	position: absolute;
 	top: 16.7%;
 	left: 22%;
 	.stationLink {
 		font-size: 2em;
 	}
-} 
+}
 
-#station_rock { 
-	position: absolute; 
+#station_rock {
+	position: absolute;
 	top: 34.7%;
 	left:45.1%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_sbrn { 
-	position: absolute; 
+#station_sbrn {
+	position: absolute;
 	top: 78.6%;
 	left: 12%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_sfia { 
-	position: absolute; 
+#station_sfia {
+	position: absolute;
 	top: 80.4%;
 	left: 25.6%;
 	.stationLink {
 		font-size: 1.5em;
 	}
-} 
+}
 
-#station_sanl { 
-	position: absolute; 
+#station_sanl {
+	position: absolute;
 	top: 62.4%;
 	left: 52.4%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_shay { 
-	position: absolute; 
+#station_shay {
+	position: absolute;
 	top: 83.2%;
 	left: 53.2%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_ssan { 
-	position: absolute; 
+#station_ssan {
+	position: absolute;
 	top: 74.4%;
 	left: 2.9%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_ucty { 
-	position: absolute; 
+#station_ucty {
+	position: absolute;
 	top: 89.8%;
 	left: 62.1%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 
-#station_wcrk { 
-	position: absolute; 
+#station_wcrk {
+	position: absolute;
 	top: 23.9%;
 	left: 59.9%;
 	.stationLink {
 		font-size: 1.1em;
 	}
-} 
+}
 #station_wdub {
-	position: absolute; 
+	position: absolute;
 	top: 69.5%;
 	left: 74.8%;
 	.stationLink {
@@ -437,8 +446,8 @@
 	}
 }
 
-#station_woak { 
-	position: absolute; 
+#station_woak {
+	position: absolute;
 	top: 45.3%;
 	left: 25.5%;
 	.stationLink {
