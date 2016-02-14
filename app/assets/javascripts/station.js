@@ -5,7 +5,7 @@
 
     $('#stationsMap a').on('click', function(event) {
 			event.preventDefault();
-			var $stationLink = $(this); // The link of the station clicked on by the user
+			var $stationLink = $(event.currentTarget); // The link of the station clicked on by the user
 
 			// Close all open time bubbles before opening a new one so that you can't open more than one at a time
 			closeAllTimes();
