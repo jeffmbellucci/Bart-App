@@ -4,13 +4,24 @@
     width: 800px;
 }
 
-a:link { color: black; }      /* unvisited link */
-a:visited { color: black; }  /* visited link */
-a:hover {
+a:link { // unvisited link
+  color: black;
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+a:hover, a:active { // mouse over
 	text-decoration: none;
 	cursor: pointer;
-	color: #FFFFFF; //or gray? #999999
-}  /* mouse over link */
+	color: #FFFFFF; 
+}
+a:active { // clicked link
+	text-decoration: none;
+	cursor: pointer;
+	color: #999999;
+}
 
 ul {
 	list-style-type: none;

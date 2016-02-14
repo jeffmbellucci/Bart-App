@@ -4,18 +4,18 @@
 <% unless data['root']['message'] %>
 	<% lines = data['root']['station']['etd'] %>
 	<% lines.each do |line|%>
-	
+
 		<span class='train <%=line['estimate'][0]['color'].downcase %>'>
 			<%= line['destination'] %>
 		</span>
 		<% times = line['estimate'] %>
 		<% times.each do |time|%>
-			<%= time['minutes'] + " min" unless time['minutes'] == 'Leaving'%>
-			<%= time['minutes'] +"," if time['minutes'] == 'Leaving'%>
+			<%= time['minutes'] + " min" unless time['minutes'] == 'Boarding' %>
+			<%= time['minutes'] + "," if time['minutes'] == 'Boarding' %>
 		<% end %>
 		<br>
 	<% end %>
-	
+
 <% else %>
 	<%= data['root']['message'] %>
 <% end %>
