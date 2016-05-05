@@ -47,7 +47,11 @@
 					var alert = JST['alert_template']({data: {'alertType': 'alert alert-success', 'message': 'Best guess: ' + stationName}});
 					$('#wrap').append(alert);
 				}
-			}
+			},
+      error: function (data) {
+				var alert = JST['alert_template']({data: {'alertType': 'alert alert-error', 'message': 'Geolocation has been deprecated without SSL.'}});
+				$('#wrap').append(alert);
+      }
 		});
 	};
 
